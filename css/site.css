@@ -1,68 +1,108 @@
 .sheet-tracker .character-sheet {
-    height: 478px;
-    width: 700px;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: auto;
-    position: relative; }
-    .sheet-tracker .character-sheet .hero {
-      height: 325px;
-      border-bottom: 1px solid black; }
-      .sheet-tracker .character-sheet .hero h4 {
-        border: 1px solid black; }
-    .sheet-tracker .character-sheet .main-stats span {
-      position: absolute;
-      border-radius: 50%;
-      height: 75px;
-      width: 75px;
-      border: 1px solid black;
-      text-align: center;
-      padding-top: 25px; }
-    .sheet-tracker .character-sheet .main-stats .speed {
-      left: 225px;
-      top: 50px; }
-    .sheet-tracker .character-sheet .main-stats .health {
-      left: 250px;
-      top: 150px; }
-    .sheet-tracker .character-sheet .main-stats .stamina {
-      left: 250px;
-      top: 250px; }
-    .sheet-tracker .character-sheet .main-stats .defense {
-      left: 225px;
-      top: 350px; }
-    .sheet-tracker .character-sheet .attribute-stats {
-      position: relative;
-      height: 141px; }
-      .sheet-tracker .character-sheet .attribute-stats span {
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        border: 1px solid black;
-        text-align: center;
-        padding-top: 10px; }
-      .sheet-tracker .character-sheet .attribute-stats .willpower {
-        left: 35px;
-        top: 10px; }
-      .sheet-tracker .character-sheet .attribute-stats .might {
-        left: 135px;
-        top: 10px; }
-      .sheet-tracker .character-sheet .attribute-stats .knowledge {
-        left: 35px;
-        top: 80px; }
-      .sheet-tracker .character-sheet .attribute-stats .awareness {
-        left: 135px;
-        top: 80px; }
-    .sheet-tracker .character-sheet .hero-skill {
-      height: 100%; }
-      .sheet-tracker .character-sheet .hero-skill .hero-ability, .sheet-tracker .character-sheet .hero-skill .hero-feat {
-        height: 50%;
-        border-left: 1px solid black; }
-        .sheet-tracker .character-sheet .hero-skill .hero-ability p, .sheet-tracker .character-sheet .hero-skill .hero-feat p {
-          padding-left: 60px;
-          padding-right: 60px; }
-      .sheet-tracker .character-sheet .hero-skill .hero-ability {
-        border-bottom: 1px solid black; }
-  
-  hr {
-    border-color: black; }
-  
+  height: 478px;
+  width: 700px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+}
+
+.sheet-tracker .character-sheet .hero {
+  height: 325px;
+  border-bottom: 1px solid black;
+}
+
+.sheet-tracker .character-sheet .hero h4 {
+  border: 1px solid black;
+}
+
+.sheet-tracker .character-sheet .main-stats span {
+  position: absolute;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.sheet-tracker .character-sheet .main-stats .speed {
+  left: 225px;
+  top: 50px;
+}
+
+.sheet-tracker .character-sheet .main-stats .health {
+  left: 250px;
+  top: 150px;
+}
+
+.sheet-tracker .character-sheet .main-stats .stamina {
+  left: 250px;
+  top: 250px;
+}
+
+.sheet-tracker .character-sheet .main-stats .defense {
+  left: 225px;
+  top: 350px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats {
+  position: relative;
+  height: 141px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats span {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .willpower {
+  left: 35px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .might {
+  left: 135px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .knowledge {
+  left: 35px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .awareness {
+  left: 135px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .hero-skill {
+  height: 100%;
+}
+
+.sheet-tracker .character-sheet .hero-skill .hero-ability, .sheet-tracker .character-sheet .hero-skill .hero-feat {
+  height: 50%;
+  border-left: 1px solid black;
+}
+
+.sheet-tracker .character-sheet .hero-skill .hero-ability h4, .sheet-tracker .character-sheet .hero-skill .hero-feat h4 {
+  margin: auto;
+}
+
+.sheet-tracker .character-sheet .hero-skill .hero-ability p, .sheet-tracker .character-sheet .hero-skill .hero-feat p {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.sheet-tracker .character-sheet .hero-skill .hero-ability {
+  border-bottom: 1px solid black;
+}
+
+hr {
+  border-color: black;
+}
+/*# sourceMappingURL=site.css.map */
