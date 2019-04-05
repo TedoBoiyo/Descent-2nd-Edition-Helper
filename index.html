@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Descent2E Tracker Helper</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid sheet-tracker">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                @Html.Partial("~/Views/SheetTracker/_TokenTracker.cshtml")
+                @Html.Partial("~/Views/SheetTracker/_CharacterSheet.cshtml")
+                @Html.Partial("~/Views/SheetTracker/_DiceSimulator.cshtml")
+                @Html.Partial("~/Views/SheetTracker/_MonsterSheet.cshtml")
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
