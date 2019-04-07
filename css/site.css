@@ -156,87 +156,87 @@
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-image {
-  left: -5px;
-  top: 80px;
+  left: 10px;
+  top: 85px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-stat {
-  left: 35px;
-  top: 80px;
+  left: 50px;
+  top: 85px;
   background-color: #D2691E;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-add-btn {
-  left: 85px;
-  top: 80px;
+  left: 100px;
+  top: 85px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-subtract-btn {
-  left: 85px;
-  top: 105px;
+  left: 100px;
+  top: 110px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .might .might-image {
-  left: -5px;
-  top: 10px;
+  left: 10px;
+  top: 15px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .might .might-stat {
-  left: 35px;
-  top: 10px;
+  left: 50px;
+  top: 15px;
   background-color: #800000;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .might .might-add-btn {
-  left: 85px;
-  top: 10px;
+  left: 100px;
+  top: 15px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .might .might-subtract-btn {
-  left: 85px;
-  top: 35px;
+  left: 100px;
+  top: 40px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-image {
-  left: 135px;
-  top: 10px;
+  left: 150px;
+  top: 15px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-stat {
-  left: 175px;
-  top: 10px;
+  left: 190px;
+  top: 15px;
   background-color: #4682B4;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-add-btn {
-  left: 225px;
-  top: 10px;
+  left: 240px;
+  top: 15px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-subtract-btn {
-  left: 225px;
-  top: 35px;
+  left: 240px;
+  top: 40px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-image {
-  left: 135px;
-  top: 80px;
+  left: 150px;
+  top: 85px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-stat {
-  left: 175px;
-  top: 80px;
+  left: 190px;
+  top: 85px;
   background-color: #696969;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-add-btn {
-  left: 225px;
-  top: 80px;
+  left: 240px;
+  top: 85px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-subtract-btn {
-  left: 225px;
-  top: 105px;
+  left: 240px;
+  top: 110px;
 }
 
 .sheet-tracker .character-sheet .hero-skill {
