@@ -13,38 +13,124 @@
 
             h4 {
                 border: 1px solid black;
+                width: 75%;
             }
         }
 
+        .icon-label {
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            position: absolute; 
+            border: 1px solid black; 
+        }
+
+        .btn-primary {
+            width:25px; 
+            height: 25px; 
+            position: absolute;
+            background-color: lightgray;
+            border-color: black;
+            color: black; 
+        }
+
         .main-stats {
-            span {
+            .stat-circle {
                 position: absolute;
                 border-radius: 50%;
-                height: 75px;
-                width: 75px;
+                height: 70px;
+                width: 70px;
                 border: 1px solid black;
                 text-align: center;
-                padding-top: 25px;
+                padding-top: 20px;
             }
-
+            
             .speed {
-                left: 225px;
-                top: 50px;
+                .speed-image {
+                    left: 205px;
+                    top: 0;
+                }
+
+                .speed-stat {
+                    left: 240px;
+                    top: 10px;
+                }
+
+                .speed-add-btn {
+                    left:300px; 
+                    top: 20px; 
+                }
+    
+                .speed-subtract-btn {
+                    left:300px; 
+                    top: 45px;
+                }
             }
 
             .health {
-                left: 250px;
-                top: 150px;
+                .health-image {
+                    left: 205px;
+                    top: 80px;
+                }
+
+                .health-stat {
+                    left: 240px;
+                    top: 90px;
+                }
+
+                .health-add-btn {
+                    left: 300px; 
+                    top: 100px; 
+                }
+    
+                .health-subtract-btn {
+                    left: 300px; 
+                    top: 125px;
+                }
             }
 
             .stamina {
-                left: 250px;
-                top: 250px;
+                .stamina-image {
+                    left: 205px;
+                    top: 160px;
+                }
+
+                .stamina-stat {
+                    left: 240px;
+                    top: 170px;
+                }
+
+                .stamina-add-btn {
+                    left: 300px; 
+                    top: 180px; 
+                }
+    
+                .stamina-subtract-btn {
+                    left: 300px; 
+                    top: 205px;
+                }
             }
 
             .defense {
-                left: 225px;
-                top: 350px;
+                .defense-image {
+                    left: 205px;
+                    top: 240px;
+                }
+
+                .defense-stat {
+                    left: 240px;
+                    top: 250px;
+                }
+
+                .defense-add-btn {
+                    left: 300px; 
+                    top: 260px; 
+                }
+    
+                .defense-subtract-btn {
+                    left: 300px; 
+                    top: 285px;
+                }
             }
         }
 
@@ -52,7 +138,7 @@
             position: relative;
             height: 141px;
 
-            span {
+            .stat-box {
                 position: absolute;
                 height: 50px;
                 width: 50px;
@@ -62,23 +148,91 @@
             }
 
             .willpower {
-                left: 35px;
-                top: 10px;
+                .willpower-image {
+                    left: -5px; 
+                    top: 80px;
+                }
+
+                .willpower-stat {
+                    left: 35px;
+                    top: 80px;
+                }
+
+                .willpower-add-btn {
+                    left:85px; 
+                    top: 80px; 
+                }
+    
+                .willpower-subtract-btn {
+                    left:85px; 
+                    top: 105px;
+                }
             }
 
             .might {
-                left: 135px;
-                top: 10px;
+                .might-image {
+                    left: -5px; 
+                    top: 10px;
+                }
+                
+                .might-stat {
+                    left: 35px;
+                    top: 10px;
+                }
+
+                .might-add-btn {
+                    left:85px; 
+                    top: 10px 
+                }
+    
+                .might-subtract-btn {
+                    left:85px; 
+                    top: 35px  
+                }
             }
 
             .knowledge {
-                left: 35px;
-                top: 80px;
+                .knowledge-image {
+                    left: 135px; 
+                    top: 10px;
+                }
+
+                .knowledge-stat {
+                    left: 175px;
+                    top: 10px;
+                }
+
+                .knowledge-add-btn {
+                    left:225px; 
+                    top: 10px; 
+                }
+
+                .knowledge-subtract-btn {
+                    left:225px; 
+                    top: 35px; 
+                }
             }
 
             .awareness {
-                left: 135px;
-                top: 80px;
+                .awareness-image {
+                    left: 135px; 
+                    top: 80px;
+                }
+
+                .awareness-stat {
+                    left: 175px;
+                    top: 80px;
+                }
+    
+                .awareness-add-btn {
+                    left:225px; 
+                    top: 80px; 
+                }
+    
+                .awareness-subtract-btn {
+                    left:225px; 
+                    top: 105px; 
+                }
             }
         }
 

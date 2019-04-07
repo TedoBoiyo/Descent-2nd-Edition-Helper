@@ -14,36 +14,114 @@
 
 .sheet-tracker .character-sheet .hero h4 {
   border: 1px solid black;
+  width: 75%;
 }
 
-.sheet-tracker .character-sheet .main-stats span {
+.sheet-tracker .character-sheet .icon-label {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid black;
+}
+
+.sheet-tracker .character-sheet .btn-primary {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: lightgray;
+  border-color: black;
+  color: black;
+}
+
+.sheet-tracker .character-sheet .main-stats .stat-circle {
   position: absolute;
   border-radius: 50%;
-  height: 75px;
-  width: 75px;
+  height: 70px;
+  width: 70px;
   border: 1px solid black;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
-.sheet-tracker .character-sheet .main-stats .speed {
-  left: 225px;
-  top: 50px;
+.sheet-tracker .character-sheet .main-stats .speed .speed-image {
+  left: 205px;
+  top: 0;
 }
 
-.sheet-tracker .character-sheet .main-stats .health {
-  left: 250px;
-  top: 150px;
+.sheet-tracker .character-sheet .main-stats .speed .speed-stat {
+  left: 240px;
+  top: 10px;
 }
 
-.sheet-tracker .character-sheet .main-stats .stamina {
-  left: 250px;
+.sheet-tracker .character-sheet .main-stats .speed .speed-add-btn {
+  left: 300px;
+  top: 20px;
+}
+
+.sheet-tracker .character-sheet .main-stats .speed .speed-subtract-btn {
+  left: 300px;
+  top: 45px;
+}
+
+.sheet-tracker .character-sheet .main-stats .health .health-image {
+  left: 205px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .main-stats .health .health-stat {
+  left: 240px;
+  top: 90px;
+}
+
+.sheet-tracker .character-sheet .main-stats .health .health-add-btn {
+  left: 300px;
+  top: 100px;
+}
+
+.sheet-tracker .character-sheet .main-stats .health .health-subtract-btn {
+  left: 300px;
+  top: 125px;
+}
+
+.sheet-tracker .character-sheet .main-stats .stamina .stamina-image {
+  left: 205px;
+  top: 160px;
+}
+
+.sheet-tracker .character-sheet .main-stats .stamina .stamina-stat {
+  left: 240px;
+  top: 170px;
+}
+
+.sheet-tracker .character-sheet .main-stats .stamina .stamina-add-btn {
+  left: 300px;
+  top: 180px;
+}
+
+.sheet-tracker .character-sheet .main-stats .stamina .stamina-subtract-btn {
+  left: 300px;
+  top: 205px;
+}
+
+.sheet-tracker .character-sheet .main-stats .defense .defense-image {
+  left: 205px;
+  top: 240px;
+}
+
+.sheet-tracker .character-sheet .main-stats .defense .defense-stat {
+  left: 240px;
   top: 250px;
 }
 
-.sheet-tracker .character-sheet .main-stats .defense {
-  left: 225px;
-  top: 350px;
+.sheet-tracker .character-sheet .main-stats .defense .defense-add-btn {
+  left: 300px;
+  top: 260px;
+}
+
+.sheet-tracker .character-sheet .main-stats .defense .defense-subtract-btn {
+  left: 300px;
+  top: 285px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats {
@@ -51,7 +129,7 @@
   height: 141px;
 }
 
-.sheet-tracker .character-sheet .attribute-stats span {
+.sheet-tracker .character-sheet .attribute-stats .stat-box {
   position: absolute;
   height: 50px;
   width: 50px;
@@ -60,24 +138,84 @@
   padding-top: 10px;
 }
 
-.sheet-tracker .character-sheet .attribute-stats .willpower {
-  left: 35px;
-  top: 10px;
+.sheet-tracker .character-sheet .attribute-stats .willpower .willpower-image {
+  left: -5px;
+  top: 80px;
 }
 
-.sheet-tracker .character-sheet .attribute-stats .might {
-  left: 135px;
-  top: 10px;
-}
-
-.sheet-tracker .character-sheet .attribute-stats .knowledge {
+.sheet-tracker .character-sheet .attribute-stats .willpower .willpower-stat {
   left: 35px;
   top: 80px;
 }
 
-.sheet-tracker .character-sheet .attribute-stats .awareness {
+.sheet-tracker .character-sheet .attribute-stats .willpower .willpower-add-btn {
+  left: 85px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .willpower .willpower-subtract-btn {
+  left: 85px;
+  top: 105px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .might .might-image {
+  left: -5px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .might .might-stat {
+  left: 35px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .might .might-add-btn {
+  left: 85px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .might .might-subtract-btn {
+  left: 85px;
+  top: 35px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-image {
+  left: 135px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-stat {
+  left: 175px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-add-btn {
+  left: 225px;
+  top: 10px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-subtract-btn {
+  left: 225px;
+  top: 35px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .awareness .awareness-image {
   left: 135px;
   top: 80px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .awareness .awareness-stat {
+  left: 175px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .awareness .awareness-add-btn {
+  left: 225px;
+  top: 80px;
+}
+
+.sheet-tracker .character-sheet .attribute-stats .awareness .awareness-subtract-btn {
+  left: 225px;
+  top: 105px;
 }
 
 .sheet-tracker .character-sheet .hero-skill {
