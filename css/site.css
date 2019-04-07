@@ -15,6 +15,11 @@
 .sheet-tracker .character-sheet .hero h4 {
   border: 1px solid black;
   width: 75%;
+  background-color: #FFFAFA;
+}
+
+.sheet-tracker .character-sheet .hero .hero-image {
+  width: 225px;
 }
 
 .sheet-tracker .character-sheet .icon-label {
@@ -22,16 +27,17 @@
   height: 50px;
   border-radius: 50%;
   position: absolute;
-  border: 1px solid black;
+  z-index: 3;
 }
 
 .sheet-tracker .character-sheet .btn-primary {
-  width: 25px;
   height: 25px;
   position: absolute;
   background-color: lightgray;
   border-color: black;
+  border-radius: 0 5px  5px 0;
   color: black;
+  z-index: 1;
 }
 
 .sheet-tracker .character-sheet .main-stats .stat-circle {
@@ -42,6 +48,8 @@
   border: 1px solid black;
   text-align: center;
   padding-top: 20px;
+  z-index: 2;
+  color: white;
 }
 
 .sheet-tracker .character-sheet .main-stats .speed .speed-image {
@@ -52,11 +60,13 @@
 .sheet-tracker .character-sheet .main-stats .speed .speed-stat {
   left: 240px;
   top: 10px;
+  background-color: #32CD32;
 }
 
 .sheet-tracker .character-sheet .main-stats .speed .speed-add-btn {
   left: 300px;
   top: 20px;
+  height: 25px;
 }
 
 .sheet-tracker .character-sheet .main-stats .speed .speed-subtract-btn {
@@ -72,6 +82,7 @@
 .sheet-tracker .character-sheet .main-stats .health .health-stat {
   left: 240px;
   top: 90px;
+  background-color: #FA8072;
 }
 
 .sheet-tracker .character-sheet .main-stats .health .health-add-btn {
@@ -92,6 +103,7 @@
 .sheet-tracker .character-sheet .main-stats .stamina .stamina-stat {
   left: 240px;
   top: 170px;
+  background-color: #FF8C00;
 }
 
 .sheet-tracker .character-sheet .main-stats .stamina .stamina-add-btn {
@@ -112,6 +124,7 @@
 .sheet-tracker .character-sheet .main-stats .defense .defense-stat {
   left: 240px;
   top: 250px;
+  padding-top: 0;
 }
 
 .sheet-tracker .character-sheet .main-stats .defense .defense-add-btn {
@@ -126,7 +139,9 @@
 
 .sheet-tracker .character-sheet .attribute-stats {
   position: relative;
-  height: 141px;
+  height: 151px;
+  background-color: #ffdd8a;
+  border-radius: 0 0 0 10px;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .stat-box {
@@ -136,6 +151,8 @@
   border: 1px solid black;
   text-align: center;
   padding-top: 10px;
+  color: white;
+  background-color: red;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-image {
@@ -146,6 +163,7 @@
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-stat {
   left: 35px;
   top: 80px;
+  background-color: #D2691E;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .willpower .willpower-add-btn {
@@ -166,6 +184,7 @@
 .sheet-tracker .character-sheet .attribute-stats .might .might-stat {
   left: 35px;
   top: 10px;
+  background-color: #800000;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .might .might-add-btn {
@@ -186,6 +205,7 @@
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-stat {
   left: 175px;
   top: 10px;
+  background-color: #4682B4;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .knowledge .knowledge-add-btn {
@@ -206,6 +226,7 @@
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-stat {
   left: 175px;
   top: 80px;
+  background-color: #696969;
 }
 
 .sheet-tracker .character-sheet .attribute-stats .awareness .awareness-add-btn {
@@ -220,6 +241,15 @@
 
 .sheet-tracker .character-sheet .hero-skill {
   height: 100%;
+  background-color: #ffec9e;
+  border-radius: 0 10px 10px 0;
+}
+
+.sheet-tracker .character-sheet .hero-skill h4 {
+  border: 1px solid black;
+  width: 200px;
+  text-align: center;
+  background-color: #ffdd8a;
 }
 
 .sheet-tracker .character-sheet .hero-skill .hero-ability, .sheet-tracker .character-sheet .hero-skill .hero-feat {
@@ -234,6 +264,7 @@
 .sheet-tracker .character-sheet .hero-skill .hero-ability p, .sheet-tracker .character-sheet .hero-skill .hero-feat p {
   padding-left: 50px;
   padding-right: 50px;
+  overflow: auto;
 }
 
 .sheet-tracker .character-sheet .hero-skill .hero-ability {

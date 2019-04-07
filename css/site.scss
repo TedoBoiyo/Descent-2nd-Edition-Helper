@@ -14,6 +14,11 @@
             h4 {
                 border: 1px solid black;
                 width: 75%;
+                background-color: #FFFAFA;
+            }
+
+            .hero-image {
+                width: 225px;
             }
         }
 
@@ -22,16 +27,17 @@
             height: 50px; 
             border-radius: 50%; 
             position: absolute; 
-            border: 1px solid black; 
+            z-index: 3;
         }
 
         .btn-primary {
-            width:25px; 
             height: 25px; 
             position: absolute;
             background-color: lightgray;
             border-color: black;
+            border-radius: 0 5px  5px 0;
             color: black; 
+            z-index: 1;
         }
 
         .main-stats {
@@ -43,6 +49,8 @@
                 border: 1px solid black;
                 text-align: center;
                 padding-top: 20px;
+                z-index: 2;
+                color: white;
             }
             
             .speed {
@@ -54,11 +62,13 @@
                 .speed-stat {
                     left: 240px;
                     top: 10px;
+                    background-color: #32CD32;
                 }
 
                 .speed-add-btn {
                     left:300px; 
                     top: 20px; 
+                    height: 25px;
                 }
     
                 .speed-subtract-btn {
@@ -76,6 +86,7 @@
                 .health-stat {
                     left: 240px;
                     top: 90px;
+                    background-color: #FA8072
                 }
 
                 .health-add-btn {
@@ -98,6 +109,7 @@
                 .stamina-stat {
                     left: 240px;
                     top: 170px;
+                    background-color: #FF8C00;
                 }
 
                 .stamina-add-btn {
@@ -120,6 +132,7 @@
                 .defense-stat {
                     left: 240px;
                     top: 250px;
+                    padding-top: 0;
                 }
 
                 .defense-add-btn {
@@ -136,7 +149,9 @@
 
         .attribute-stats {
             position: relative;
-            height: 141px;
+            height: 151px;
+            background-color: #ffdd8a;
+            border-radius: 0 0 0 10px;
 
             .stat-box {
                 position: absolute;
@@ -145,6 +160,8 @@
                 border: 1px solid black;
                 text-align: center;
                 padding-top: 10px;
+                color: white;
+                background-color: red;
             }
 
             .willpower {
@@ -156,6 +173,7 @@
                 .willpower-stat {
                     left: 35px;
                     top: 80px;
+                    background-color: #D2691E;
                 }
 
                 .willpower-add-btn {
@@ -178,6 +196,7 @@
                 .might-stat {
                     left: 35px;
                     top: 10px;
+                    background-color: #800000;
                 }
 
                 .might-add-btn {
@@ -200,6 +219,7 @@
                 .knowledge-stat {
                     left: 175px;
                     top: 10px;
+                    background-color: #4682B4;
                 }
 
                 .knowledge-add-btn {
@@ -222,6 +242,7 @@
                 .awareness-stat {
                     left: 175px;
                     top: 80px;
+                    background-color: #696969;
                 }
     
                 .awareness-add-btn {
@@ -238,6 +259,15 @@
 
         .hero-skill {
             height: 100%;
+            background-color: #ffec9e;
+            border-radius: 0 10px 10px 0;
+
+            h4 {
+                border: 1px solid black;
+                width: 200px;
+                text-align: center;
+                background-color: #ffdd8a;
+            }
 
             .hero-ability, .hero-feat {
                 height: 50%;
@@ -250,6 +280,7 @@
                 p {
                     padding-left: 50px;
                     padding-right: 50px;
+                    overflow: auto;
                 }
             }
 
