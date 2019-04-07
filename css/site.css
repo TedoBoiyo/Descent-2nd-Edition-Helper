@@ -13,6 +13,7 @@
 }
 
 .sheet-tracker .character-sheet .hero h4 {
+  margin-top: 10px;
   border: 1px solid black;
   width: 75%;
   background-color: #FFFAFA;
