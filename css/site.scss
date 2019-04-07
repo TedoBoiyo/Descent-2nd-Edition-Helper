@@ -19,7 +19,10 @@
             }
 
             .hero-image {
-                width: 225px;
+                height: 275px;
+                overflow: hidden;
+                padding-top: 2px;
+                padding-bottom: 5px;
             }
         }
 

@@ -20,7 +20,10 @@
 }
 
 .sheet-tracker .character-sheet .hero .hero-image {
-  width: 225px;
+  height: 275px;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 5px;
 }
 
 .sheet-tracker .character-sheet .icon-label {
