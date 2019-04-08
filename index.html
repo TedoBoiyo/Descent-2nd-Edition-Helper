@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sheetTracker">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container-fluid sheet-tracker">
+<body> 
+    <div class="container-fluid sheet-tracker" ng-controller="SheetTrackerController as vm">
         <div class="row">
             <div class="col-md-12">
                 <h2>Descent 2nd Edition Tracker Helper</h2>
@@ -30,83 +31,91 @@
                         <h4>Character Sheet</h4>
                     </div>
                 </div>
-                <div class="row character-sheet">
-                    <div class="main-stats">
-                        <div class="speed">
-                            <img class="icon-label speed-image" src="images/Speed.PNG" />
-                            <span class="stat-circle speed-stat">Sp</span>
-                            <input class="btn btn-primary speed-add-btn" type="image" src="images/ArrowUp.png" />
-                            <input class="btn btn-primary speed-subtract-btn" type="image" src="images/ArrowDown.png" />
-                        </div>
-                        <div class="health">
-                            <img class="icon-label health-image" src="images/Health.PNG" />
-                            <span class="stat-circle health-stat">H</span>
-                            <input class="btn btn-primary health-add-btn" type="image" src="images/ArrowUp.png" />
-                            <input class="btn btn-primary health-subtract-btn" type="image" src="images/ArrowDown.png" />
-                        </div>
-                        <div class="stamina">
-                            <img class="icon-label stamina-image" src="images/Stamina.PNG" />
-                            <span class="stat-circle stamina-stat">St</span>
-                            <input class="btn btn-primary stamina-add-btn" type="image" src="images/ArrowUp.png" />
-                            <input class="btn btn-primary stamina-subtract-btn" type="image" src="images/ArrowDown.png" />
-                        </div>
-                        <div class="defense">
-                            <img class="icon-label defense-image" src="images/Defense.png" />
-                            <img class="stat-circle defense-stat" src="images/Defense_Gray.PNG" />
-                        </div>  
+                <div class="row">
+                    <div class="col-md-2">
+                        <h6>Select a Hero</h6>
+                        <select ng-repeat="hero in heroes">
+                            <option value="{{hero.heroName}}">{{hero.heroName}}</option>
+                        </select>
                     </div>
-                    <div class="col-md-5 col-lg-5">
-                        <div class="row">
-                            <div class="col-md-12 hero">
-                                <h4 class="text-center">Name</h4>
-                                <img class="hero-image" src="images/heroes/Hero_Selection.PNG" />
-                            </div>
-                        </div>
-                        <div class="row attribute-stats">
-                            <div class="col-md-12">
-                                <div class="willpower">
-                                    <img class="icon-label willpower-image" src="images/Willpower.PNG" />
-                                    <span class="stat-box willpower-stat">W</span>
-                                    <input class="btn btn-primary willpower-add-btn" type="image" src="images/ArrowUp.png" />
-                                    <input class="btn btn-primary willpower-subtract-btn" type="image" src="images/ArrowDown.png" />
+                    <div class="col-md-8">
+                        <div class="row character-sheet">
+                            <div class="main-stats">
+                                    <div class="speed">
+                                        <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
+                                        <span class="stat-circle speed-stat">{{vm.heroSpeed || 0}}</span>
+                                        <input class="btn btn-primary speed-add-btn" ng-click="vm.heroSpeed = vm.heroSpeed + 1" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary speed-subtract-btn" ng-click="vm.heroSpeed = (vm.heroSpeed == 0 ? 0 : vm.heroSpeed - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                    </div>
+                                    <div class="health">
+                                        <img class="icon-label health-image" src="images/stats/Health.PNG" />
+                                        <span class="stat-circle health-stat">{{vm.heroHealth || 0}}</span>
+                                        <input class="btn btn-primary health-add-btn" ng-click="vm.heroHealth = vm.heroHealth + 1" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.heroHealth = (vm.heroHealth == 0 ? 0 : vm.heroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                    </div>
+                                    <div class="stamina">
+                                        <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
+                                        <span class="stat-circle stamina-stat">{{vm.heroStamina || 0}}</span>
+                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.heroStamina = vm.heroStamina + 1" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.heroStamina = (vm.heroStamina == 0 ? 0 : vm.heroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                    </div>
+                                    <div class="defense">
+                                        <img class="icon-label defense-image" src="images/stats/Defense.png" />
+                                        <img class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
+                                    </div>  
                                 </div>
-                                <div class="might">
-                                    <img class="icon-label might-image" src="images/Might.PNG">
-                                    <span class="stat-box might-stat">M</span>
-                                    <input class="btn btn-primary might-add-btn" type="image" src="images/ArrowUp.png" />
-                                    <input class="btn btn-primary might-subtract-btn" type="image" src="images/ArrowDown.png" />
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="row">
+                                        <div class="col-md-12 hero">
+                                            <h4 class="text-center">{{vm.heroName || 'Hero Name'}}</h4>
+                                            <img ng-show="vm.heroImage" class="hero-image" ng-src="vm.heroImageLink" />
+                                            <img ng-show="!vm.heroImage" class="hero-image" ng-src="images/heroes/Hero_Selection.PNG" />
+                                        </div>
+                                    </div>
+                                    <div class="row attribute-stats">
+                                        <div class="col-md-12">
+                                            <div class="willpower">
+                                                <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
+                                                <span class="stat-box willpower-stat">{{vm.heroWillpower || 0}}</span>
+                                                <input class="btn btn-primary willpower-add-btn" ng-click="vm.heroWillpower = vm.heroWillpower + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary willpower-subtract-btn" ng-click="vm.heroWillpower = (vm.heroWillpower == 0 ? 0 : vm.heroWillpower - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </div>
+                                            <div class="might">
+                                                <img class="icon-label might-image" src="images/attributes/Might.PNG">
+                                                <span class="stat-box might-stat">{{vm.heroMight || 0}}</span>
+                                                <input class="btn btn-primary might-add-btn" ng-click="vm.heroMight = vm.heroMight + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary might-subtract-btn" ng-click="vm.heroMight = (vm.heroMight == 0 ? 0 : vm.heroMight - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </div>
+                                            <div class="knowledge">
+                                                <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
+                                                <span class="stat-box knowledge-stat">{{vm.heroKnowledge || 0}}</span>
+                                                <input class="btn btn-primary knowledge-add-btn" ng-click="vm.heroKnowledge = vm.heroKnowledge + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary knowledge-subtract-btn" ng-click="vm.heroKnowledge = (vm.heroKnowledge == 0 ? 0 : vm.heroKnowledge - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </div>
+                                            <div class="awareness">
+                                                <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
+                                                <span class="stat-box awareness-stat">{{vm.heroAwareness || 0}}</span>
+                                                <input class="btn btn-primary awareness-add-btn" ng-click="vm.heroAwareness = vm.heroAwareness + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary awareness-subtract-btn" ng-click="vm.heroAwareness = (vm.heroAwareness == 0 ? 0 : vm.heroAwareness - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="knowledge">
-                                    <img class="icon-label knowledge-image" src="images/Knowledge.PNG" />
-                                    <span class="stat-box knowledge-stat">K</span>
-                                    <input class="btn btn-primary knowledge-add-btn" type="image" src="images/ArrowUp.png" />
-                                    <input class="btn btn-primary knowledge-subtract-btn" type="image" src="images/ArrowDown.png" />
+                                <div class="col-md-7 col-lg-7 hero-skill">
+                                    <div class="row hero-ability">
+                                        <h4>Hero Ability</h4>
+                                        <p class="text-center">{{vm.heroAbility}}</p>
+                                    </div>
+                                    <div class="row hero-feat">
+                                        <h4>Heroic Feat</h4>
+                                        <p class="text-center">{{vm.heroFeat}}</p>
+                                    </div>
                                 </div>
-                                <div class="awareness">
-                                    <img class="icon-label awareness-image" src="images/Awareness.PNG" />
-                                    <span class="stat-box awareness-stat">A</span>
-                                    <input class="btn btn-primary awareness-add-btn" type="image" src="images/ArrowUp.png" />
-                                    <input class="btn btn-primary awareness-subtract-btn" type="image" src="images/ArrowDown.png" />
-                                </div>
-                            </div>
-                        </div>
+
+                        </div> 
                     </div>
-                    <div class="col-md-7 col-lg-7 hero-skill">
-                        <div class="row hero-ability">
-                            <h4>Hero Ability</h4>
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Felis imperdiet proin fermentum leo vel orci. Enim tortor at auctor urna nunc id. 
-                            </p>
-                        </div>
-                        <div class="row hero-feat">
-                            <h4>Heroic Feat</h4>
-                            <p class="text-center">  
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Felis imperdiet proin fermentum leo vel orci. Enim tortor at auctor urna nunc id. Enim tortor at auctor urna nunc id.
-                                    Enim tortor at auctor urna nunc id. Enim tortor at auctor urna nunc id.
-                            </p>
-                        </div>
+                    <div class="col-md-2">
+                        <h6>Hero Equipment</h6>
                     </div>
                 </div>
                 <hr />
@@ -117,11 +126,79 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        Dice Results
+                    <div class="col-md-5 col-sm-5 dice-results">
+                        <div id="diceResults" name="diceResults">
+                           
+                        </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        Dice Setup
+                    <div class="col-md-7 col-sm-7 dice-selection">
+                        <div class="row">
+                            <div class="col-md-9">
+                                    <div class="col-md-12 attack-dice">
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.attackDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                <input class="btn btn-primary" ng-click="vm.attackDice = vm.attackDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.redPowerDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/attack/red/Red_Attack_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = vm.redPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = (vm.redPowerDice == 0 ? 0 : vm.redPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.yellowPowerDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/attack/yellow/Yellow_Attack_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = vm.yellowPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = (vm.yellowPowerDice == 0 ? 0 : vm.yellowPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.greenPowerDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/attack/green/Green_Attack_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = vm.greenPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = (vm.greenPowerDice == 0 ? 0 : vm.greenPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 defense-dice">
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.greyDefenseDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/defense/grey/Grey_Defense_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = vm.greyDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = (vm.greyDefenseDice == 0 ? 0 : vm.greyDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.blackDefenseDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/defense/black/Black_Defense_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = vm.blackDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = (vm.blackDefenseDice == 0 ? 0 : vm.blackDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                        <div class="dice-format">
+                                            <span class="dice-count">{{vm.brownDefenseDice}}</span>
+                                            <input class="dice" type="image" src="images/dices/defense/brown/Brown_Defense_Dice_6.PNG" />
+                                            <span class="dice-add-subtract">
+                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = vm.brownDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = (vm.brownDefenseDice == 0 ? 0 : vm.brownDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-3">
+                                <input class="btn btn-secondary"  type="button" value="Roll" ng-click="vm.diceRoll()" />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr />
@@ -135,5 +212,8 @@
             </div>
         </div>
     </div>
+
+    <script src="scripts/app/sheetTracker/sheetTracker.module.js"></script>
+    <script src="scripts/app/sheetTracker/sheetTracker.controller.js"></script>
 </body>
 </html>

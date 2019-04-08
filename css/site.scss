@@ -35,12 +35,12 @@
         }
 
         .btn-primary {
-            height: 25px; 
-            position: absolute;
+            height: 25px;
             background-color: lightgray;
             border-color: black;
             border-radius: 0 5px  5px 0;
             color: black; 
+            position: absolute;
             z-index: 1;
         }
 
@@ -293,8 +293,58 @@
             }
         }
     }
+
+    .dice-results, .dice-selection {
+        padding: 20px 10px 20px 10px;
+    }
+
+    .dice-results {
+        background-color: grey;
+    }
+
+    .dice-selection {
+        background-color: darkgray;
+
+        .attack-dice {
+            padding-bottom: 5px;
+        }
+
+        .defense-dice {
+            padding-top: 5px;
+        }
+
+        .dice-format {
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .dice-count {
+            vertical-align: top;
+        }
+
+        .dice {
+            width: 50px;
+        }
+
+        .dice-add-subtract {
+            display: inline-block;
+            margin-left: -5px;
+        }
+    }
+    
+    .btn-primary {
+        height: 25px;
+        background-color: lightgray;
+        border-color: black;
+        border-radius: 0 5px  5px 0;
+        color: black; 
+        display: block;
+    }
+    
+    .btn-secondary {
+        padding: 10px;
+        width: 100%;
+    }
 }
 
-hr {
-    border-color: black;
-}
+
