@@ -279,8 +279,17 @@
   padding: 20px 10px 20px 10px;
 }
 
+.sheet-tracker .dice-results .dice, .sheet-tracker .dice-selection .dice {
+  width: 50px;
+}
+
 .sheet-tracker .dice-results {
   background-color: grey;
+}
+
+.sheet-tracker .dice-results .dice-result-format {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .sheet-tracker .dice-selection {
@@ -302,10 +311,6 @@
 
 .sheet-tracker .dice-selection .dice-count {
   vertical-align: top;
-}
-
-.sheet-tracker .dice-selection .dice {
-  width: 50px;
 }
 
 .sheet-tracker .dice-selection .dice-add-subtract {

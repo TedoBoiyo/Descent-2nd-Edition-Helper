@@ -296,10 +296,19 @@
 
     .dice-results, .dice-selection {
         padding: 20px 10px 20px 10px;
+
+        .dice {
+            width: 50px;
+        }
     }
 
     .dice-results {
         background-color: grey;
+
+        .dice-result-format {
+            display: inline-block;
+            margin-right: 5px;
+        }
     }
 
     .dice-selection {
@@ -320,10 +329,6 @@
 
         .dice-count {
             vertical-align: top;
-        }
-
-        .dice {
-            width: 50px;
         }
 
         .dice-add-subtract {
