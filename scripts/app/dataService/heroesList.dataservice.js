@@ -21,14 +21,14 @@
                 {
                     "heroName" : "Hero Name",
                     "heroArcheType" : null, 
-                    "heroImageLink" : "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/heroes/Hero_Selection.PNG",
+                    "heroImageLink" : "images/heroes/Hero_Selection.PNG",
                     "heroAbility" : null,
                     "heroicFeat" : null, 
                     "heroQuote" : null, 
                     "heroSpeed" : 0,
                     "heroHealth" : 0,
                     "heroStamina" : 0,
-                    "heroDefense" : "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense_Gray.PNG", 
+                    "heroDefense" : "images/stats/Defense_Gray.PNG", 
                     "heroMight" : 0,
                     "heroKnowledge" : 0,  
                     "heroWillpower" : 0, 
@@ -37,7 +37,7 @@
                 {
                     "heroName" : "Jain Fairwood",
                     "heroArcheType" : "Scout", 
-                    "heroImageLink" : "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/heroes/Jain_Fairwood.PNG",
+                    "heroImageLink" : "images/heroes/Jain_Fairwood.PNG",
                     "heroAbility" : "When you suffer any amount of {heart/dmg} " +
                                     "from an attack, you may choose to suffer some " +
                                     "of all of that amount as {fatigue} instead; you " +
@@ -49,7 +49,7 @@
                     "heroSpeed" : 5,
                     "heroHealth" : 8,
                     "heroStamina" : 5,
-                    "heroDefense" : "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense_Gray.PNG", 
+                    "heroDefense" : "images/stats/Defense_Gray.PNG", 
                     "heroMight" : 2,
                     "heroKnowledge" : 3,  
                     "heroWillpower" : 2, 
