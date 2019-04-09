@@ -37,7 +37,7 @@
                 {
                     "heroName" : "Jain Fairwood",
                     "heroArcheType" : "Scout", 
-                    "heroImageLink" : "images/heroes/Jain_Fairwood.PNG",
+                    "heroImageLink" : "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/heroes/Jain_Fairwood.PNG",
                     "heroAbility" : "When you suffer any amount of {heart/dmg} " +
                                     "from an attack, you may choose to suffer some " +
                                     "of all of that amount as {fatigue} instead; you " +
