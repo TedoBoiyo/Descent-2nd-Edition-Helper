@@ -5,17 +5,24 @@
         .module('sheetTracker')
         .controller('SheetTrackerController', SheetTrackerController);
 
-    SheetTrackerController.$inject = [];
+    SheetTrackerController.$inject = [
+        'HeroesListDataService'
+    ];
 
-function SheetTrackerController() { 
+function SheetTrackerController(HeroesListDataService) { 
     var vm = this;
+    vm.heroesList = null;
     vm.heroName = null;
+    vm.heroArcheType = null;
     vm.heroImageLink = null;
     vm.heroAbility = null;
     vm.heroicFeat = null;
+    vm.heroQuote = null;
     vm.heroSpeed = 0;
-    vm.heroHealth = 0;
-    vm.heroStamina = 0;
+    vm.crntHeroHealth = 0;
+    vm.maxHeroHealth = 0;
+    vm.crntHeroStamina = 0;
+    vm.maxHeroStamina = 0;
     vm.heroDefense = null;
     vm.heroWillpower = 0;
     vm.heroMight = 0;
@@ -28,20 +35,42 @@ function SheetTrackerController() {
     vm.greyDefenseDice = 0;
     vm.blackDefenseDice = 0;
     vm.brownDefenseDice = 0;
-    vm.diceResults = [];
-
+    vm.attackDiceResults = [];
+    vm.defenseDiceResults = [];
+    
     vm.diceRoll = diceRoll;
+    vm.populateHero = populateHero;
 
-    activate();
+    activate(HeroesListDataService);
 
     ///////////
 
-    function activate() {
-        
+    function activate(HeroesListDataService) {
+        vm.heroesList = HeroesListDataService.getHeroesList();
     };
 
+    function populateHero(hero) {
+        vm.heroName = hero.heroName;
+        vm.heroArcheType = hero.heroArcheType;
+        vm.heroImageLink = hero.heroImageLink;
+        vm.heroAbility = hero.heroAbility;
+        vm.heroicFeat = hero.heroicFeat;
+        vm.heroQuote = hero.heroQuote;
+        vm.heroSpeed = hero.heroSpeed;
+        vm.crntHeroHealth = hero.heroHealth;
+        vm.maxHeroHealth = hero.heroHealth;
+        vm.crntHeroStamina = hero.heroStamina;
+        vm.maxHeroStamina = hero.heroStamina;
+        vm.heroDefense = hero.heroDefense;
+        vm.heroWillpower = hero.heroWillpower;
+        vm.heroMight = hero.heroMight;
+        vm.heroKnowledge = hero.heroKnowledge;
+        vm.heroAwareness = hero.heroAwareness;
+    }
+
     function diceRoll() {
-        vm.diceResults = [];
+        vm.attackDiceResults = [];
+        vm.defenseDiceResults = [];
 
         var arrayDice = [
             {
@@ -80,19 +109,19 @@ function SheetTrackerController() {
                     for (var i = 0; i < dice.diceCount; i++) {
                         roll = Math.floor(Math.random() * 6) + 1
                         if(dice.diceColor == 'blue') {
-                            vm.diceResults.push({"dice" : matchBlueDice(roll)});
+                            vm.attackDiceResults.push({"dice" : matchBlueDice(roll)});
                         } else if(dice.diceColor == 'red') {
-                            vm.diceResults.push({"dice" : matchRedDice(roll)});
+                            vm.attackDiceResults.push({"dice" : matchRedDice(roll)});
                         } else if(dice.diceColor == 'yellow') {
-                            vm.diceResults.push({"dice" : matchYellowDice(roll)});
+                            vm.attackDiceResults.push({"dice" : matchYellowDice(roll)});
                         } else if(dice.diceColor == 'green') {
-                            vm.diceResults.push({"dice" : matchGreenDice(roll)});
+                            vm.attackDiceResults.push({"dice" : matchGreenDice(roll)});
                         } else if(dice.diceColor == 'grey') {
-                            vm.diceResults.push({"dice" : matchGreyDice(roll)});
+                            vm.defenseDiceResults.push({"dice" : matchGreyDice(roll)});
                         } else if(dice.diceColor == 'black') {
-                            vm.diceResults.push({"dice" : matchBlackDice(roll)});
+                            vm.defenseDiceResults.push({"dice" : matchBlackDice(roll)});
                         } else if(dice.diceColor == 'brown') {
-                            vm.diceResults.push({"dice" : matchBrownDice(roll)});
+                            vm.defenseDiceResults.push({"dice" : matchBrownDice(roll)});
                         }
                     };
                 };

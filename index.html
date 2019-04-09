@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="sheetTracker">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +36,12 @@
                 <div class="row">
                     <div class="col-md-2">
                         <h6>Select a Hero</h6>
-                        <select ng-repeat="hero in heroes">
-                            <option value="{{hero.heroName}}">{{hero.heroName}}</option>
+                        <select class="character-selection">
+                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" value="{{hero.heroName}}">{{hero.heroName}}</option>
+                        </select>
+                        <h6>Select a Class</h6>
+                        <select>
+                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" value="{{hero.heroName}}">{{hero.heroName}}</option>
                         </select>
                     </div>
                     <div class="col-md-8">
@@ -43,60 +49,51 @@
                             <div class="main-stats">
                                     <div class="speed">
                                         <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
-                                        <span class="stat-circle speed-stat">{{vm.heroSpeed || 0}}</span>
-                                        <input class="btn btn-primary speed-add-btn" ng-click="vm.heroSpeed = vm.heroSpeed + 1" type="image" src="images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary speed-subtract-btn" ng-click="vm.heroSpeed = (vm.heroSpeed == 0 ? 0 : vm.heroSpeed - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                        <span class="stat-circle speed-stat">{{vm.heroSpeed}}</span>
                                     </div>
                                     <div class="health">
                                         <img class="icon-label health-image" src="images/stats/Health.PNG" />
-                                        <span class="stat-circle health-stat">{{vm.heroHealth || 0}}</span>
-                                        <input class="btn btn-primary health-add-btn" ng-click="vm.heroHealth = vm.heroHealth + 1" type="image" src="images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.heroHealth = (vm.heroHealth == 0 ? 0 : vm.heroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                        <span class="stat-circle health-stat">{{vm.crntHeroHealth + '/' + vm.maxHeroHealth}}</span>
+                                        <input class="btn btn-primary health-add-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == vm.maxHeroHealth ? vm.crntHeroHealth : vm.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == 0 ? 0 : vm.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
                                     </div>
                                     <div class="stamina">
                                         <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
-                                        <span class="stat-circle stamina-stat">{{vm.heroStamina || 0}}</span>
-                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.heroStamina = vm.heroStamina + 1" type="image" src="images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.heroStamina = (vm.heroStamina == 0 ? 0 : vm.heroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                        <span class="stat-circle stamina-stat">{{vm.crntHeroStamina + '/' + vm.maxHeroStamina}}</span>
+                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == vm.maxHeroStamina ? vm.crntHeroStamina : vm.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == 0 ? 0 : vm.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
                                     </div>
                                     <div class="defense">
                                         <img class="icon-label defense-image" src="images/stats/Defense.png" />
-                                        <img class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
+                                        <img ng-show="vm.heroDefense" class="stat-circle defense-stat" src="{{vm.heroDefense}}" />
+                                        <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
                                     </div>  
                                 </div>
                                 <div class="col-md-5 col-lg-5">
                                     <div class="row">
                                         <div class="col-md-12 hero">
                                             <h4 class="text-center">{{vm.heroName || 'Hero Name'}}</h4>
-                                            <img ng-show="vm.heroImage" class="hero-image" ng-src="vm.heroImageLink" />
-                                            <img ng-show="!vm.heroImage" class="hero-image" ng-src="images/heroes/Hero_Selection.PNG" />
+                                            <img ng-show="vm.heroImageLink" class="hero-image" src="{{vm.heroImageLink}}" />
+                                            <img ng-show="!vm.heroImageLink" class="hero-image" src="images/heroes/Hero_Selection.PNG" />
                                         </div>
                                     </div>
                                     <div class="row attribute-stats">
                                         <div class="col-md-12">
                                             <div class="willpower">
                                                 <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
-                                                <span class="stat-box willpower-stat">{{vm.heroWillpower || 0}}</span>
-                                                <input class="btn btn-primary willpower-add-btn" ng-click="vm.heroWillpower = vm.heroWillpower + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary willpower-subtract-btn" ng-click="vm.heroWillpower = (vm.heroWillpower == 0 ? 0 : vm.heroWillpower - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                                <span class="stat-box willpower-stat">{{vm.heroWillpower}}</span>
                                             </div>
                                             <div class="might">
                                                 <img class="icon-label might-image" src="images/attributes/Might.PNG">
-                                                <span class="stat-box might-stat">{{vm.heroMight || 0}}</span>
-                                                <input class="btn btn-primary might-add-btn" ng-click="vm.heroMight = vm.heroMight + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary might-subtract-btn" ng-click="vm.heroMight = (vm.heroMight == 0 ? 0 : vm.heroMight - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                                <span class="stat-box might-stat">{{vm.heroMight}}</span>
                                             </div>
                                             <div class="knowledge">
                                                 <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
-                                                <span class="stat-box knowledge-stat">{{vm.heroKnowledge || 0}}</span>
-                                                <input class="btn btn-primary knowledge-add-btn" ng-click="vm.heroKnowledge = vm.heroKnowledge + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary knowledge-subtract-btn" ng-click="vm.heroKnowledge = (vm.heroKnowledge == 0 ? 0 : vm.heroKnowledge - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                                <span class="stat-box knowledge-stat">{{vm.heroKnowledge}}</span>
                                             </div>
                                             <div class="awareness">
                                                 <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
-                                                <span class="stat-box awareness-stat">{{vm.heroAwareness || 0}}</span>
-                                                <input class="btn btn-primary awareness-add-btn" ng-click="vm.heroAwareness = vm.heroAwareness + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary awareness-subtract-btn" ng-click="vm.heroAwareness = (vm.heroAwareness == 0 ? 0 : vm.heroAwareness - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                                <span class="stat-box awareness-stat">{{vm.heroAwareness}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +105,7 @@
                                     </div>
                                     <div class="row hero-feat">
                                         <h4>Heroic Feat</h4>
-                                        <p class="text-center">{{vm.heroFeat}}</p>
+                                        <p class="text-center">{{vm.heroicFeat}}</p>
                                     </div>
                                 </div>
 
@@ -128,14 +125,18 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 dice-results">
                         <div id="diceResults" name="diceResults">
-                           <div class="dice-result-format" ng-if="vm.diceResults.length > 0" ng-repeat="diceResult in vm.diceResults">
-                                <input class="dice" type="image" ng-src="{{diceResult.dice}}" />
+                           <div class="dice-result-format" ng-if="vm.attackDiceResults.length > 0" ng-repeat="attack in vm.attackDiceResults">
+                                <input class="dice" type="image" ng-src="{{attack.dice}}" />
                            </div>
+                           <hr />
+                           <div class="dice-result-format" ng-if="vm.defenseDiceResults.length > 0" ng-repeat="defense in vm.defenseDiceResults">
+                                <input class="dice" type="image" ng-src="{{defense.dice}}" />
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 dice-selection">
                         <div class="row">
-                            <div class="col-md-9">
+                            <div class="col-md-10">
                                     <div class="col-md-12 attack-dice">
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.attackDice}}</span>
@@ -197,7 +198,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <input class="btn btn-secondary"  type="button" value="Roll" ng-click="vm.diceRoll()" />
                             </div>
                         </div>
@@ -215,6 +216,8 @@
         </div>
     </div>
 
+    <script src="scripts/app/dataService/dataservice.module.js"></script>
+    <script src="scripts/app/dataService/heroesList.dataservice.js"></script>
     <script src="scripts/app/sheetTracker/sheetTracker.module.js"></script>
     <script src="scripts/app/sheetTracker/sheetTracker.controller.js"></script>
 </body>

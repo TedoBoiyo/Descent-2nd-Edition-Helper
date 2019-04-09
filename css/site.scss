@@ -1,4 +1,9 @@
 .sheet-tracker {
+
+    .character-selection {
+        margin-bottom: 10px;
+    }
+
     .character-sheet {
         height: 478px;
         width: 700px;
@@ -6,6 +11,10 @@
         border-radius: 10px;
         margin: auto;
         position: relative;
+
+        span {
+            font-size: 20px;
+        }
 
         .hero {
             height: 325px;
@@ -68,17 +77,6 @@
                     top: 10px;
                     background-color: #32CD32;
                 }
-
-                .speed-add-btn {
-                    left:300px; 
-                    top: 20px; 
-                    height: 25px;
-                }
-    
-                .speed-subtract-btn {
-                    left:300px; 
-                    top: 45px;
-                }
             }
 
             .health {
@@ -138,16 +136,6 @@
                     top: 250px;
                     padding-top: 0;
                 }
-
-                .defense-add-btn {
-                    left: 300px; 
-                    top: 260px; 
-                }
-    
-                .defense-subtract-btn {
-                    left: 300px; 
-                    top: 285px;
-                }
             }
         }
 
@@ -179,16 +167,6 @@
                     top: 85px;
                     background-color: #D2691E;
                 }
-
-                .willpower-add-btn {
-                    left: 100px; 
-                    top: 85px; 
-                }
-    
-                .willpower-subtract-btn {
-                    left: 100px; 
-                    top: 110px;
-                }
             }
 
             .might {
@@ -201,16 +179,6 @@
                     left: 50px;
                     top: 15px;
                     background-color: #800000;
-                }
-
-                .might-add-btn {
-                    left: 100px; 
-                    top: 15px 
-                }
-    
-                .might-subtract-btn {
-                    left: 100px; 
-                    top: 40px  
                 }
             }
 
@@ -225,16 +193,6 @@
                     top: 15px;
                     background-color: #4682B4;
                 }
-
-                .knowledge-add-btn {
-                    left:240px; 
-                    top: 15px; 
-                }
-
-                .knowledge-subtract-btn {
-                    left:240px; 
-                    top: 40px; 
-                }
             }
 
             .awareness {
@@ -247,16 +205,6 @@
                     left: 190px;
                     top: 85px;
                     background-color: #696969;
-                }
-    
-                .awareness-add-btn {
-                    left:240px; 
-                    top: 85px; 
-                }
-    
-                .awareness-subtract-btn {
-                    left:240px; 
-                    top: 110px; 
                 }
             }
         }
@@ -329,6 +277,7 @@
 
         .dice-count {
             vertical-align: top;
+            font-size: 28px;
         }
 
         .dice-add-subtract {
