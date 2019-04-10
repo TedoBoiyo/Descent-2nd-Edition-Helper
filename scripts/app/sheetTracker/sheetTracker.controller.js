@@ -130,60 +130,60 @@ function SheetTrackerController(HeroesListDataService) {
     };
 
     function matchBlueDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Blue/Blue_Attack_Dice_" + roll + ".PNG";
+        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/blue/Blue_Attack_Dice_" + roll + ".PNG";
     };
 
     function matchRedDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Red/Red_Attack_Dice_1.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Red/Red_Attack_Dice_5.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Red/Red_Attack_Dice_6.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Red/Red_Attack_Dice_234.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/aices/attack/red/Red_Attack_Dice_234.PNG";
         };
     }
 
     function matchYellowDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Yellow/Yellow_Attack_Dice_" + roll + ".PNG";
+        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/yellow/Yellow_Attack_Dice_" + roll + ".PNG";
     }
 
     function matchGreenDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Attack/Green/Green_Attack_Dice_" + roll + ".PNG";
+        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/green/Green_Attack_Dice_" + roll + ".PNG";
     }
 
     function matchGreyDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Grey/Grey_Defense_Dice_1.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Grey/Grey_Defense_Dice_5.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Grey/Grey_Defense_Dice_6.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Grey/Grey_Defense_Dice_234.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_234.PNG";
         };
     }
 
     function matchBlackDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Black/Black_Defense_Dice_1.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Black/Black_Defense_Dice_5.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Black/Black_Defense_Dice_6.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Black/Black_Defense_Dice_234.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_234.PNG";
         };
     }
 
     function matchBrownDice(roll) {
         if(roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Brown/Brown_Defense_Dice_6.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_6.PNG";
         } else if (roll == 4 || roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Brown/Brown_Defense_Dice_45.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_45.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/Dices/Defense/Brown/Brown_Defense_Dice_123.PNG";
+            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_123.PNG";
         };
     }
 }
