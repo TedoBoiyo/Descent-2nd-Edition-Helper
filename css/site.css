@@ -15,6 +15,22 @@
   font-size: 20px;
 }
 
+.sheet-tracker .character-sheet .Warrior {
+  background-color: red;
+}
+
+.sheet-tracker .character-sheet .Mage {
+  background-color: gold;
+}
+
+.sheet-tracker .character-sheet .Scout {
+  background-color: green;
+}
+
+.sheet-tracker .character-sheet .Healer {
+  background-color: blue;
+}
+
 .sheet-tracker .character-sheet .hero {
   height: 325px;
   border-bottom: 1px solid black;
