@@ -16,7 +16,7 @@
 }
 
 .sheet-tracker .character-sheet .Warrior {
-  background-color: red;
+  background-color: darkred;
 }
 
 .sheet-tracker .character-sheet .Mage {
@@ -24,11 +24,11 @@
 }
 
 .sheet-tracker .character-sheet .Scout {
-  background-color: green;
+  background-color: darkgreen;
 }
 
 .sheet-tracker .character-sheet .Healer {
-  background-color: blue;
+  background-color: darkblue;
 }
 
 .sheet-tracker .character-sheet .hero {
