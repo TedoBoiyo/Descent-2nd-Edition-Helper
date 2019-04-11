@@ -15,6 +15,10 @@
   font-size: 20px;
 }
 
+.sheet-tracker .character-sheet .Warrior, .sheet-tracker .character-sheet .Mage, .sheet-tracker .character-sheet .Scout, .sheet-tracker .character-sheet .Healer {
+  border-radius: 10px 0 0 0;
+}
+
 .sheet-tracker .character-sheet .Warrior {
   background-color: darkred;
 }
