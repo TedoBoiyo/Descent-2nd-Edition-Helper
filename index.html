@@ -36,7 +36,7 @@
                     <div class="col-md-2">
                         <h6>Select a Hero</h6>
                         <select class="character-selection">
-                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" value="{{hero.heroName}}">{{hero.heroName}}</option>
+                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" onclick="{{vm.populateHero(hero)}}" value="{{hero.heroName}}">{{hero.heroName}}</option>
                         </select>
                         <h6>Select a Class</h6>
                         <select>
