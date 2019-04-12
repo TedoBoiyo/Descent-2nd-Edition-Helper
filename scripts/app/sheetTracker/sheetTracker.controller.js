@@ -6,27 +6,12 @@
         .controller('SheetTrackerController', SheetTrackerController);
 
     SheetTrackerController.$inject = [
+        'HeroesListDataService',
+        '$scope'
     ];
 
-function SheetTrackerController(HeroesListDataService) { 
+function SheetTrackerController(HeroesListDataService, $scope) { 
     var vm = this;
-    vm.heroesList = null;
-    vm.heroName = null;
-    vm.heroArcheType = null;
-    vm.heroImageLink = null;
-    vm.heroAbility = null;
-    vm.heroicFeat = null;
-    vm.heroQuote = null;
-    vm.heroSpeed = 0;
-    vm.crntHeroHealth = 0;
-    vm.maxHeroHealth = 0;
-    vm.crntHeroStamina = 0;
-    vm.maxHeroStamina = 0;
-    vm.heroDefense = null;
-    vm.heroWillpower = 0;
-    vm.heroMight = 0;
-    vm.heroKnowledge = 0;
-    vm.heroAwareness = 0;
     vm.attackDice = 0;
     vm.redPowerDice = 0;
     vm.yellowPowerDice = 0;
@@ -36,16 +21,20 @@ function SheetTrackerController(HeroesListDataService) {
     vm.brownDefenseDice = 0;
     vm.attackDiceResults = [];
     vm.defenseDiceResults = [];
-    
+
+    vm.heroesList = HeroesListDataService.getHeroesList();
+    vm.selectedHero = vm.heroesList[0];
     vm.diceRoll = diceRoll;
     vm.populateHero = populateHero;
+
+    $scope.$watch('vm.selectedHero', _setNewHero)
 
     activate();
 
     ///////////
 
     function activate() {
-        
+        populateHero(vm.selectedHero)
     };
 
     function populateHero(hero) {
@@ -129,61 +118,71 @@ function SheetTrackerController(HeroesListDataService) {
     };
 
     function matchBlueDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/blue/Blue_Attack_Dice_" + roll + ".PNG";
+        return "images/dices/attack/blue/Blue_Attack_Dice_" + roll + ".PNG";
     };
 
     function matchRedDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_1.PNG";
+            return "images/dices/attack/red/Red_Attack_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_5.PNG";
+            return "images/dices/attack/red/Red_Attack_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_6.PNG";
+            return "images/dices/attack/red/Red_Attack_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/aices/attack/red/Red_Attack_Dice_234.PNG";
+            return "images/dices/attack/red/Red_Attack_Dice_234.PNG";
         };
     }
 
     function matchYellowDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/yellow/Yellow_Attack_Dice_" + roll + ".PNG";
+        return "images/dices/attack/yellow/Yellow_Attack_Dice_" + roll + ".PNG";
     }
 
     function matchGreenDice(roll) {
-        return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/green/Green_Attack_Dice_" + roll + ".PNG";
+        return "images/dices/attack/green/Green_Attack_Dice_" + roll + ".PNG";
     }
 
     function matchGreyDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_1.PNG";
+            return "images/dices/defense/grey/Grey_Defense_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_5.PNG";
+            return "images/dices/defense/grey/Grey_Defense_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_6.PNG";
+            return "images/dices/defense/grey/Grey_Defense_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_234.PNG";
+            return "images/dices/defense/grey/Grey_Defense_Dice_234.PNG";
         };
     }
 
     function matchBlackDice(roll) {
         if(roll == 1) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_1.PNG";
+            return "images/dices/defense/black/Black_Defense_Dice_1.PNG";
         } else if (roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_5.PNG";
+            return "images/dices/defense/black/Black_Defense_Dice_5.PNG";
         } else if (roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_6.PNG";
+            return "images/dices/defense/black/Black_Defense_Dice_6.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_234.PNG";
+            return "images/dices/defense/black/Black_Defense_Dice_234.PNG";
         };
     }
 
     function matchBrownDice(roll) {
         if(roll == 6) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_6.PNG";
+            return "images/dices/defense/brown/Brown_Defense_Dice_6.PNG";
         } else if (roll == 4 || roll == 5) {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_45.PNG";
+            return "images/dices/defense/brown/Brown_Defense_Dice_45.PNG";
         } else {
-            return "https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_123.PNG";
+            return "images/dices/defense/brown/Brown_Defense_Dice_123.PNG";
         };
+    }
+
+    //////////////////
+    // private methods
+    //////////////////
+
+    function _setNewHero(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            populateHero(JSON.parse(newVal));
+        }
     }
 }
 

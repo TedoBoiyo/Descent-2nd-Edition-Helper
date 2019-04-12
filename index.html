@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descent 2E Tracker Helper</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" type="text/css" href="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
@@ -35,8 +38,8 @@
                 <div class="row">
                     <div class="col-md-2">
                         <h6>Select a Hero</h6>
-                        <select class="character-selection">
-                            <option data-ng-repeat="hero in heroesList.getHeroesList()" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
+                        <select ng-model="vm.selectedHero" class="character-selection">
+                            <option ng-repeat="hero in vm.heroesList" value="{{hero}}">{{hero.heroName}}</option>
                         </select>
                         <h6>Select a Class</h6>
                         <select>
@@ -47,25 +50,25 @@
                         <div class="row character-sheet">
                             <div class="main-stats">
                                     <div class="speed">
-                                        <img class="icon-label speed-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Speed.PNG" />
+                                        <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
                                         <span class="stat-circle speed-stat">{{vm.heroSpeed}}</span>
                                     </div>
                                     <div class="health">
-                                        <img class="icon-label health-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Health.PNG" />
+                                        <img class="icon-label health-image" src="images/stats/Health.PNG" />
                                         <span class="stat-circle health-stat">{{vm.crntHeroHealth + '/' + vm.maxHeroHealth}}</span>
-                                        <input class="btn btn-primary health-add-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == vm.maxHeroHealth ? vm.crntHeroHealth : vm.crntHeroHealth + 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == 0 ? 0 : vm.crntHeroHealth - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                        <input class="btn btn-primary health-add-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == vm.maxHeroHealth ? vm.crntHeroHealth : vm.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.crntHeroHealth = (vm.crntHeroHealth == 0 ? 0 : vm.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
                                     </div>
                                     <div class="stamina">
-                                        <img class="icon-label stamina-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Stamina.PNG" />
+                                        <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
                                         <span class="stat-circle stamina-stat">{{vm.crntHeroStamina + '/' + vm.maxHeroStamina}}</span>
-                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == vm.maxHeroStamina ? vm.crntHeroStamina : vm.crntHeroStamina + 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == 0 ? 0 : vm.crntHeroStamina - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == vm.maxHeroStamina ? vm.crntHeroStamina : vm.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.crntHeroStamina = (vm.crntHeroStamina == 0 ? 0 : vm.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
                                     </div>
                                     <div class="defense">
-                                        <img class="icon-label defense-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense.png" />
+                                        <img class="icon-label defense-image" src="images/stats/Defense.png" />
                                         <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.heroDefense}}" />
-                                        <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense_Gray.PNG" />
+                                        <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
                                     </div>  
                                 </div>
                                 <div class="col-md-5 col-lg-5">
@@ -73,25 +76,25 @@
                                         <div class="col-md-12 hero {{vm.heroArcheType}}">
                                             <h4 class="text-center">{{vm.heroName || 'Hero Name'}}</h4>
                                             <img ng-show="vm.heroImageLink" class="hero-image" ng-src="{{vm.heroImageLink}}" />
-                                            <img ng-show="!vm.heroImageLink" class="hero-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/heroes/Hero_Selection.PNG" />
+                                            <img ng-show="!vm.heroImageLink" class="hero-image" src="images/heroes/Hero_Selection.PNG" />
                                         </div>
                                     </div>
                                     <div class="row attribute-stats">
                                         <div class="col-md-12">
                                             <div class="willpower">
-                                                <img class="icon-label willpower-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/attributes/Willpower.PNG" />
+                                                <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
                                                 <span class="stat-box willpower-stat">{{vm.heroWillpower}}</span>
                                             </div>
                                             <div class="might">
-                                                <img class="icon-label might-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/attributes/Might.PNG">
+                                                <img class="icon-label might-image" src="images/attributes/Might.PNG">
                                                 <span class="stat-box might-stat">{{vm.heroMight}}</span>
                                             </div>
                                             <div class="knowledge">
-                                                <img class="icon-label knowledge-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/attributes/Knowledge.PNG" />
+                                                <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
                                                 <span class="stat-box knowledge-stat">{{vm.heroKnowledge}}</span>
                                             </div>
                                             <div class="awareness">
-                                                <img class="icon-label awareness-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/attributes/Awareness.PNG" />
+                                                <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
                                                 <span class="stat-box awareness-stat">{{vm.heroAwareness}}</span>
                                             </div>
                                         </div>
@@ -139,60 +142,60 @@
                                     <div class="col-md-12 attack-dice">
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.attackDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.attackDice = vm.attackDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                <input class="btn btn-primary" ng-click="vm.attackDice = vm.attackDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                <input class="btn btn-primary" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.redPowerDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/red/Red_Attack_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/attack/red/Red_Attack_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = vm.redPowerDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = (vm.redPowerDice == 0 ? 0 : vm.redPowerDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = vm.redPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.redPowerDice = (vm.redPowerDice == 0 ? 0 : vm.redPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.yellowPowerDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/yellow/Yellow_Attack_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/attack/yellow/Yellow_Attack_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = vm.yellowPowerDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = (vm.yellowPowerDice == 0 ? 0 : vm.yellowPowerDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = vm.yellowPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.yellowPowerDice = (vm.yellowPowerDice == 0 ? 0 : vm.yellowPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.greenPowerDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/attack/green/Green_Attack_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/attack/green/Green_Attack_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = vm.greenPowerDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = (vm.greenPowerDice == 0 ? 0 : vm.greenPowerDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = vm.greenPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greenPowerDice = (vm.greenPowerDice == 0 ? 0 : vm.greenPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                     </div>
                                     <div class="col-md-12 defense-dice">
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.greyDefenseDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/grey/Grey_Defense_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/defense/grey/Grey_Defense_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = vm.greyDefenseDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = (vm.greyDefenseDice == 0 ? 0 : vm.greyDefenseDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = vm.greyDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.greyDefenseDice = (vm.greyDefenseDice == 0 ? 0 : vm.greyDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.blackDefenseDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/black/Black_Defense_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/defense/black/Black_Defense_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = vm.blackDefenseDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = (vm.blackDefenseDice == 0 ? 0 : vm.blackDefenseDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = vm.blackDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.blackDefenseDice = (vm.blackDefenseDice == 0 ? 0 : vm.blackDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                         <div class="dice-format">
                                             <span class="dice-count">{{vm.brownDefenseDice}}</span>
-                                            <input class="dice" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/dices/defense/brown/Brown_Defense_Dice_6.PNG" />
+                                            <input class="dice" type="image" src="images/dices/defense/brown/Brown_Defense_Dice_6.PNG" />
                                             <span class="dice-add-subtract">
-                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = vm.brownDefenseDice + 1" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowUp.png" />
-                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = (vm.brownDefenseDice == 0 ? 0 : vm.brownDefenseDice - 1)" type="image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/misc/ArrowDown.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = vm.brownDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
+                                                    <input class="btn btn-primary" ng-click="vm.brownDefenseDice = (vm.brownDefenseDice == 0 ? 0 : vm.brownDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                             </span>
                                         </div>
                                     </div>
@@ -215,10 +218,9 @@
         </div>
     </div>
 
-    <script src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/scripts/app/heroesList/heroesList.js"></script>
-    <script src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/scripts/app/dataService/dataservice.module.js"></script>
-    <script src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/scripts/app/dataService/heroesList.dataservice.js"></script>
-    <script src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/scripts/app/sheetTracker/sheetTracker.module.js"></script>
-    <script src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/scripts/app/sheetTracker/sheetTracker.controller.js"></script>
+    <script src="scripts/app/dataService/dataservice.module.js"></script>
+    <script src="scripts/app/dataService/heroesList.dataservice.js"></script>
+    <script src="scripts/app/sheetTracker/sheetTracker.module.js"></script>
+    <script src="scripts/app/sheetTracker/sheetTracker.controller.js"></script>
 </body>
 </html>
