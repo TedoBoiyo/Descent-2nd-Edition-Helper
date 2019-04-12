@@ -36,11 +36,11 @@
                     <div class="col-md-2">
                         <h6>Select a Hero</h6>
                         <select class="character-selection">
-                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" value="{{hero.heroName}}">{{hero.heroName}}</option>
+                            <option ng-repeat="hero in heroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
                         </select>
                         <h6>Select a Class</h6>
                         <select>
-                            <option ng-repeat="hero in vm.heroesList" ng-click="vm.populateHero(hero)" value="{{hero.heroName}}">{{hero.heroName}}</option>
+                            <option ng-repeat="hero in heroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
                         </select>
                     </div>
                     <div class="col-md-8">
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="defense">
                                         <img class="icon-label defense-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense.png" />
-                                        <!-- <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.heroDefense}}" /> -->
+                                        <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.heroDefense}}" />
                                         <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/stats/Defense_Gray.PNG" />
                                     </div>  
                                 </div>
@@ -72,7 +72,7 @@
                                     <div class="row">
                                         <div class="col-md-12 hero {{vm.heroArcheType}}">
                                             <h4 class="text-center">{{vm.heroName || 'Hero Name'}}</h4>
-                                            <!-- <img ng-show="vm.heroImageLink" class="hero-image" ng-src="{{vm.heroImageLink}}" /> -->
+                                            <img ng-show="vm.heroImageLink" class="hero-image" ng-src="{{vm.heroImageLink}}" />
                                             <img ng-show="!vm.heroImageLink" class="hero-image" src="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/images/heroes/Hero_Selection.PNG" />
                                         </div>
                                     </div>

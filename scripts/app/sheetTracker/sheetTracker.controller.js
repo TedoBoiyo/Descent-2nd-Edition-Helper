@@ -6,7 +6,8 @@
         .controller('SheetTrackerController', SheetTrackerController);
 
     SheetTrackerController.$inject = [
-        'HeroesListDataService'
+        'HeroesListDataService',
+        '$scope'
     ];
 
 function SheetTrackerController(HeroesListDataService) { 
@@ -37,7 +38,8 @@ function SheetTrackerController(HeroesListDataService) {
     vm.brownDefenseDice = 0;
     vm.attackDiceResults = [];
     vm.defenseDiceResults = [];
-    vm.heroesList = HeroesListDataService.getHeroesList();
+    
+    $scope.heroesList = HeroesListDataService.getHeroesList();
     
     vm.diceRoll = diceRoll;
     vm.populateHero = populateHero;
@@ -47,7 +49,7 @@ function SheetTrackerController(HeroesListDataService) {
     ///////////
 
     function activate() {
-        populateHero(vm.heroesList[0]);
+        
     };
 
     function populateHero(hero) {
