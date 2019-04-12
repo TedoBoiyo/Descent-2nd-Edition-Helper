@@ -3,8 +3,7 @@
 
     angular
         .module('sheetTracker', [
-            'ngRoute',
-            'dataservice',
+            'dataService',
         ]);
         
 })();

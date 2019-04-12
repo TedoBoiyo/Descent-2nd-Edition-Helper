@@ -9,7 +9,7 @@
         'HeroesListDataService'
     ];
 
-function SheetTrackerController() { 
+function SheetTrackerController(HeroesListDataService) { 
     var vm = this;
     vm.heroesList = null;
     vm.heroName = null;
@@ -37,6 +37,7 @@ function SheetTrackerController() {
     vm.brownDefenseDice = 0;
     vm.attackDiceResults = [];
     vm.defenseDiceResults = [];
+    vm.heroesList = HeroesListDataService.getHeroesList();
     
     vm.diceRoll = diceRoll;
     vm.populateHero = populateHero;
@@ -46,7 +47,7 @@ function SheetTrackerController() {
     ///////////
 
     function activate() {
-        vm.heroesList = HeroesListDataService.getHeroesList();
+        
     };
 
     function populateHero(hero) {
