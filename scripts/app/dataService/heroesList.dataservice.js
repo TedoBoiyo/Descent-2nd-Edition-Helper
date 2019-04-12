@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('dataservice')
+        .module('dataService')
         .service('HeroesListDataService', HeroesListDataService);
 
         HeroesListDataService.$inject = [
