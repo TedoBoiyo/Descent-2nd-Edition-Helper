@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="sheetTracker">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="https://tedoboiyo.github.io/Descent2ndEditionTrackerHelper/css/site.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
 </head>
 <body> 
     <div class="container-fluid sheet-tracker" ng-controller="SheetTrackerController as vm">
@@ -36,11 +36,11 @@
                     <div class="col-md-2">
                         <h6>Select a Hero</h6>
                         <select class="character-selection">
-                            <option ng-repeat="hero in heroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
+                            <option ng-repeat="hero in heroesList.getHeroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
                         </select>
                         <h6>Select a Class</h6>
                         <select>
-                            <option ng-repeat="hero in heroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option>
+                            <!-- <option ng-repeat="hero in heroesList" ng-click="vm.populateHero(hero)">{{hero.heroName}}</option> -->
                         </select>
                     </div>
                     <div class="col-md-8">
