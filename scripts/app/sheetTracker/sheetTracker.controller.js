@@ -47,7 +47,7 @@ function SheetTrackerController(HeroesListDataService) {
     ///////////
 
     function activate() {
-        
+        populateHero(vm.heroesList[0]);
     };
 
     function populateHero(hero) {
