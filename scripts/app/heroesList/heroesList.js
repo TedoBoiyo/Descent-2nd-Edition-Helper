@@ -2,7 +2,8 @@ var heroesList = (function() {
     //private methods go here
 
     return {
-        getHeroesList : getHeroesList
+        getHeroesList : getHeroesList,
+        test : 2
     };
 
     function getHeroesList() {
