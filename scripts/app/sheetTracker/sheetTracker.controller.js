@@ -7,6 +7,7 @@
 
     SheetTrackerController.$inject = [
         'HeroesListDataService',
+        'HeroClassListDataService',
         '$scope'
     ];
 
