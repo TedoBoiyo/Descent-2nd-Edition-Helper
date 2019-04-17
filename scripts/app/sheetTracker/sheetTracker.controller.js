@@ -11,8 +11,11 @@
         '$scope'
     ];
 
-function SheetTrackerController(HeroesListDataService, $scope) { 
+function SheetTrackerController(HeroesListDataService, HeroClassListDataService, $scope) { 
     var vm = this;
+    vm.selectedHero = null;
+    vm.heroClassList = null;
+    vm.selectedClass = null;
     vm.attackDice = 0;
     vm.redPowerDice = 0;
     vm.yellowPowerDice = 0;
@@ -24,37 +27,21 @@ function SheetTrackerController(HeroesListDataService, $scope) {
     vm.defenseDiceResults = [];
 
     vm.heroesList = HeroesListDataService.getHeroesList();
-    vm.selectedHero = vm.heroesList[0];
+    vm.getHeroClassList = getHeroClassList;
     vm.diceRoll = diceRoll;
-    vm.populateHero = populateHero;
 
     $scope.$watch('vm.selectedHero', _setNewHero)
+    $scope.$watch('vm.selectedClass', _setNewClass)
 
     activate();
 
     ///////////
 
     function activate() {
-        populateHero(vm.selectedHero)
     };
 
-    function populateHero(hero) {
-        vm.heroName = hero.heroName;
-        vm.heroArcheType = hero.heroArcheType;
-        vm.heroImageLink = hero.heroImageLink;
-        vm.heroAbility = hero.heroAbility;
-        vm.heroicFeat = hero.heroicFeat;
-        vm.heroQuote = hero.heroQuote;
-        vm.heroSpeed = hero.heroSpeed;
-        vm.crntHeroHealth = hero.heroHealth;
-        vm.maxHeroHealth = hero.heroHealth;
-        vm.crntHeroStamina = hero.heroStamina;
-        vm.maxHeroStamina = hero.heroStamina;
-        vm.heroDefense = hero.heroDefense;
-        vm.heroWillpower = hero.heroWillpower;
-        vm.heroMight = hero.heroMight;
-        vm.heroKnowledge = hero.heroKnowledge;
-        vm.heroAwareness = hero.heroAwareness;
+    function populateHeroClass(heroClass) {
+        
     }
 
     function diceRoll() {
@@ -183,7 +170,26 @@ function SheetTrackerController(HeroesListDataService, $scope) {
     function _setNewHero(newVal, oldVal) {
         if (newVal !== oldVal) {
             populateHero(JSON.parse(newVal));
+            getHeroClassList(vm.hero.heroArcheType);
         }
+    }
+
+    function _setNewClass(newVal, oldVal) {
+        if (newVal !== oldVal) {
+            populateHeroClass(JSON.parse(newVal));
+        }
+    }
+
+    function populateHero(hero) {
+        vm.hero = hero;
+        vm.hero.crntHeroHealth = hero.heroHealth;
+        vm.hero.maxHeroHealth = hero.heroHealth;
+        vm.hero.crntHeroStamina = hero.heroStamina;
+        vm.hero.maxHeroStamina = hero.heroStamina;
+    }
+
+    function getHeroClassList (heroArcheType) {
+        vm.heroClassList = HeroClassListDataService.getHeroClasses(heroArcheType);
     }
 }
 

@@ -10,21 +10,33 @@
 
     function HeroClassListDataService() { 
         var service = {
-            "getHealerClassList" : getHealerClassList,
-            "getMageClassList" : getMageClassList,
-            "getWarriorClassList" : getWarriorClassList,
-            "getScoutClassList" : getScoutClassList
+            "getHeroClasses" : getHeroClasses
         };
 
         return service;
 
         ///////////
 
+        function getHeroClasses(archetype) {
+            switch(archetype) {
+                case "Healer":
+                    return getHealerClassList();
+                case "Mage":
+                    return getMageClassList();
+                case "Warrior":
+                    return getWarriorClassList();
+                case "Scout":
+                    return getScoutClassList();
+                default:
+                    return null;
+            }
+        }
+
         function getHealerClassList() {
             return [
                 {
-                    "Apothecary" : 
-                    [{
+                    "className" : "Apothecary", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -68,10 +80,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Bard" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Bard", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -115,10 +128,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Disciple" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Disciple",  
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Prayer of Healing",
                         "Image" : "images/classes/disciple/Prayer_of_Healing.PNG"
@@ -163,9 +177,10 @@
                         "Name" : "Radiant Light",
                         "Image" : "images/classes/disciple/Radiant_Light.PNG"
                     }],
-
-                    "Prophet" : 
-                    [{
+                },   
+                {
+                    "className": "Prophet",  
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -209,10 +224,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Spiritspeaker" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Spiritspeaker", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -256,10 +272,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Watchman" : 
-                    [{
+                    }]
+                },  
+                {
+                    "className": "Watchman", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -305,14 +322,14 @@
                         "Image" : null
                     }]
                 }
-            ]     
+            ]  
         };
 
         function getMageClassList() {
             return [
                 {
-                    "Battlemage" : 
-                    [{
+                    "className": "Battlemage",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -356,10 +373,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Conjurer" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Conjurer", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -403,10 +421,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Geomancer" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Geomancer",  
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -450,10 +469,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Hexer" : 
-                    [{
+                    }]
+                },
+                {
+                    "className": "Hexer",  
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -497,10 +517,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Necromancer" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Necromancer",  
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -544,53 +565,54 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Runemaster" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Runemaster", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
-                        "Name" : "Runic Knowledge",
-                        "Image" : "images/classes/runemaster/Runic_Knowledge.PNG"
+                        "Name" : "Brew Elixir",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Exploding Rune",
-                        "Image" : "images/classes/runemaster/Exploding_Rune.PNG"
+                        "Name" : "Concotion",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Ghost Armor",
-                        "Image" : "images/classes/runemaster/Ghost_Armor.PNG"
+                        "Name" : "Herbal Lore",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Inscribe Rune",
-                        "Image" : "images/classes/runemaster/Inscribe_Rune.PNG"
+                        "Name" : "Inky Substance",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Iron Will",
-                        "Image" : "images/classes/runemaster/Iron_Will.PNG"
+                        "Name" : "Bottled Courage",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Rune Mastery",
-                        "Image" : "images/classes/runemaster/Rune_Mastery.PNG"
+                        "Name" : "Protective Tonic",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Runic Sorcery",
-                        "Image" : "images/classes/runemaster/Runic_Sorcery.PNG"
+                        "Name" : "Secret Formula",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 3,
-                        "Name" : "Break the Rune",
-                        "Image" : "images/classes/runemaster/Break_the_Rune.PNG"
+                        "Name" : "Hidden Stash",
+                        "Image" : null
                     },
                     {
                         "XP_Cost" : 3,
-                        "Name" : "Quick Casting",
-                        "Image" : "images/classes/runemaster/Quick_Casting.PNG"
+                        "Name" : "Potent Remedies",
+                        "Image" : null
                     }]
                 }
             ]
@@ -599,8 +621,8 @@
         function getWarriorClassList() {
             return [
                 {
-                    "Beastmaster" : 
-                    [{
+                    "className": "Beastmaster", 
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -644,10 +666,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Beserker" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Beserker",  
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -691,10 +714,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Champion" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Champion", 
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Valor of Heroes",
                         "Image" : "images/classes/disciple/Valor_of_Heroes.PNG"
@@ -738,104 +762,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Valorous Strike",
                         "Image" : "images/classes/disciple/Valorous_Strike.PNG"
-                    }],
-
-                    "Knight" : 
-                    [{
-                        "XP_Cost" : 0,
-                        "Name" : "Brew Elixir",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Concotion",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Herbal Lore",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Inky Substance",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Bottled Courage",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Protective Tonic",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Secret Formula",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 3,
-                        "Name" : "Hidden Stash",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 3,
-                        "Name" : "Potent Remedies",
-                        "Image" : null
-                    }],
-
-                    "Skirmisher" : 
-                    [{
-                        "XP_Cost" : 0,
-                        "Name" : "Brew Elixir",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Concotion",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Herbal Lore",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 1,
-                        "Name" : "Inky Substance",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Bottled Courage",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Protective Tonic",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 2,
-                        "Name" : "Secret Formula",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 3,
-                        "Name" : "Hidden Stash",
-                        "Image" : null
-                    },
-                    {
-                        "XP_Cost" : 3,
-                        "Name" : "Potent Remedies",
-                        "Image" : null
-                    }],
-
-                    "Steelcaster" :
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Knight",
+                    "skills" : [{ 
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -880,15 +811,111 @@
                         "Name" : "Potent Remedies",
                         "Image" : null
                     }]
-                }
+                },
+                {
+                    "className" : "Skirmisher", 
+                    "skills" : [{ 
+                        "XP_Cost" : 0,
+                        "Name" : "Brew Elixir",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Concotion",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Herbal Lore",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Inky Substance",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Bottled Courage",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Protective Tonic",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Secret Formula",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 3,
+                        "Name" : "Hidden Stash",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 3,
+                        "Name" : "Potent Remedies",
+                        "Image" : null
+                    }]
+                },
+                {
+                    "className" : "Steelcaster",
+                    "skills" : [{ 
+                        "XP_Cost" : 0,
+                        "Name" : "Brew Elixir",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Concotion",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Herbal Lore",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 1,
+                        "Name" : "Inky Substance",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Bottled Courage",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Protective Tonic",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 2,
+                        "Name" : "Secret Formula",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 3,
+                        "Name" : "Hidden Stash",
+                        "Image" : null
+                    },
+                    {
+                        "XP_Cost" : 3,
+                        "Name" : "Potent Remedies",
+                        "Image" : null
+                    }]
+                }    
             ]
         };
 
         function getScoutClassList() {
             return [
                 {
-                    "Bounty Hunter" : 
-                    [{
+                    "className" : "Bounty Hunter",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -932,10 +959,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Monk" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Monk",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -979,10 +1007,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Stalker" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Stalker", 
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -1026,10 +1055,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Thief" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Thief",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Greedy",
                         "Image" : "images/classes/disciple/Greedy.PNG"
@@ -1073,10 +1103,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Lurk",
                         "Image" : "images/classes/disciple/Lurk.PNG"
-                    }],
-
-                    "Treasure Hunter" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Treasure Hunter",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -1120,10 +1151,11 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
-
-                    "Wildlander" : 
-                    [{
+                    }]
+                },
+                {
+                    "className" : "Wildlander",
+                    "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Brew Elixir",
                         "Image" : null
@@ -1167,7 +1199,7 @@
                         "XP_Cost" : 3,
                         "Name" : "Potent Remedies",
                         "Image" : null
-                    }],
+                    }]
                 }
             ]
         };

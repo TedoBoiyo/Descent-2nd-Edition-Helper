@@ -1,5 +1,7 @@
-.sheet-tracker .character-selection {
+.sheet-tracker .character-selection, .sheet-tracker .class-selection {
   margin-bottom: 10px;
+  width: 100%;
+  font-size: 12px;
 }
 
 .sheet-tracker .character-sheet {
@@ -45,6 +47,7 @@
   border: 1px solid black;
   width: 75%;
   background-color: #FFFAFA;
+  font-size: 18px;
 }
 
 .sheet-tracker .character-sheet .hero .hero-image {
