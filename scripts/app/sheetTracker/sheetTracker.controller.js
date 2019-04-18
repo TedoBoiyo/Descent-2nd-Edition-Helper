@@ -31,7 +31,7 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
     vm.diceRoll = diceRoll;
 
     $scope.$watch('vm.selectedHero', _setNewHero)
-    $scope.$watch('vm.selectedClass', _setNewClass)
+    $scope.$watch('vm.selectedHeroClass', _setNewClass)
 
     activate();
 
@@ -39,10 +39,6 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
 
     function activate() {
     };
-
-    function populateHeroClass(heroClass) {
-        
-    }
 
     function diceRoll() {
         vm.attackDiceResults = [];
@@ -186,6 +182,11 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
         vm.hero.maxHeroHealth = hero.heroHealth;
         vm.hero.crntHeroStamina = hero.heroStamina;
         vm.hero.maxHeroStamina = hero.heroStamina;
+    }
+
+    function populateHeroClass(heroClass) {
+        vm.heroClass = heroClass;
+
     }
 
     function getHeroClassList (heroArcheType) {
