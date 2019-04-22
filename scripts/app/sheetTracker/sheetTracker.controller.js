@@ -16,6 +16,7 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
     vm.selectedHero = null;
     vm.heroClassList = null;
     vm.selectedClass = null;
+    vm.activeSkills = [];
     vm.attackDice = 0;
     vm.redPowerDice = 0;
     vm.yellowPowerDice = 0;
@@ -28,6 +29,7 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
 
     vm.heroesList = HeroesListDataService.getHeroesList();
     vm.getHeroClassList = getHeroClassList;
+    vm.skillSelected = skillSelected;
     vm.diceRoll = diceRoll;
 
     $scope.$watch('vm.selectedHero', _setNewHero)
@@ -39,6 +41,21 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
 
     function activate() {
     };
+
+    //Test this function
+    function skillSelected(skill) {
+        this.toggleClass('bg-primary');
+        
+        if (this.hasClass('bg-primary')) {
+            // this.addClass('bg-primary'); Test for later
+            vm.activeSkills.push(skill);
+        } else {
+            // this.removeClass('bg-primary'); Test for later
+            _.remove(vm.activeSkills, function(n) {
+                return n.Name = skill.Name; // Test to make sure this validation returns selected skill
+            }); //Replace this line with specific removal 
+        }
+    }
 
     function diceRoll() {
         vm.attackDiceResults = [];

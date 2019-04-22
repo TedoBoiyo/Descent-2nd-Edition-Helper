@@ -53,9 +53,9 @@
                                     </h6>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body" ng-repeat="skill in vm.heroClass.skills | filter : skill.XP_Cost = 1" >
-                                        {{skill.Name}}
-                                    </div>
+                                    <button class="panel-body" data-value="{{firstSkills.Name}}" ng-click="vm.skillSelected(firstSkills)" ng-repeat="firstSkills in vm.heroClass.skills | filter : skill.XP_Cost = 1" >
+                                        {{firstSkills.Name}}
+                                    </button>
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -65,9 +65,9 @@
                                     </h6>
                                 </div>
                                 <div id="collapse2" class="panel-collapse collapse">
-                                    <div class="panel-body" ng-repeat="skill in vm.heroClass.skills | filter : skill.XP_Cost = 2" >
-                                        {{skill.Name}}
-                                    </div>
+                                    <button class="panel-body" data-value="{{secondSkills.Name}}" ng-click="vm.skillSelected(secondSkills)" ng-repeat="secondSkills in vm.heroClass.skills | filter : skill.XP_Cost = 2" >
+                                        {{secondSkills.Name}}
+                                    </button>
                                 </div>
                             </div>
                             <div class="panel panel-default">
@@ -77,24 +77,18 @@
                                     </h6>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
-                                    <div class="panel-body" ng-repeat="skill in vm.heroClass.skills | filter : skill.XP_Cost = 3" >
-                                        {{skill.Name}}
-                                    </div>
+                                    <button class="panel-body" data-value="{{thirdSkills.Name}}" ng-click="vm.skillSelected(thirdSkills)" ng-repeat="thirdSkills in vm.heroClass.skills | filter : skill.XP_Cost = 3" >
+                                        {{thirdSkills.Name}}
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div ng-show="vm.heroClassList">
-                            <button class="btn btn-link" >Select Lvl 2 Skills</button>
-                            <select ng-model="vm.selectedHeroClass" class="class-selection">
-                                <option class="class-options" ng-repeat="class in vm.heroClassList" value="{{class}}">{{class.className}}</option>
-                            </select>
+                        <div ng-show="vm.selectedHeroClass">
+                            <div class="active-skills {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
+                                {{skill.Name}}
+                                <span class="skillRemoval" ng-click="">x</span>
+                            </div>
                         </div>
-                        <div ng-show="vm.heroClassList">
-                            <h6>Select Lvl 3 Skills</h6>
-                            <select ng-model="vm.selectedHeroClass" class="class-selection">
-                                <option class="class-options" ng-repeat="class in vm.heroClassList" value="{{class}}">{{class.className}}</option>
-                            </select>
-                        </div> -->
                     </div>
                     <div class="col-md-8">
                         <div class="row character-sheet">
