@@ -29,7 +29,8 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
 
     vm.heroesList = HeroesListDataService.getHeroesList();
     vm.getHeroClassList = getHeroClassList;
-    vm.skillSelected = skillSelected;
+    vm.addSkill = addSkill;
+    vm.removeSkill = removeSkill;
     vm.diceRoll = diceRoll;
 
     $scope.$watch('vm.selectedHero', _setNewHero)
@@ -42,18 +43,27 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
     function activate() {
     };
 
-    //Test this function
-    function skillSelected(skill) {
-        this.toggleClass('bg-primary');
-        
-        if (this.hasClass('bg-primary')) {
-            // this.addClass('bg-primary'); Test for later
+    function addSkill(skill) {
+        if(!hasActiveSkill(skill)) {
             vm.activeSkills.push(skill);
-        } else {
-            // this.removeClass('bg-primary'); Test for later
-            _.remove(vm.activeSkills, function(n) {
-                return n.Name = skill.Name; // Test to make sure this validation returns selected skill
-            }); //Replace this line with specific removal 
+        } ;
+
+        function hasActiveSkill(skill) {
+            for(var i = 0; i < vm.activeSkills.length; i++) {
+                if (vm.activeSkills[i] === skill) {
+                    return true;
+                };
+            };
+
+            return false;
+        }
+    }
+
+    function removeSkill(skill) {
+        for(var i = 0; i < vm.activeSkills.length; i++) {
+            if (vm.activeSkills[i] === skill) {
+                vm.activeSkills.splice(i, 1)
+            }
         }
     }
 
@@ -189,6 +199,7 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
 
     function _setNewClass(newVal, oldVal) {
         if (newVal !== oldVal) {
+            vm.activeSkills = [];
             populateHeroClass(JSON.parse(newVal));
         }
     }

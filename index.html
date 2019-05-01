@@ -49,11 +49,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse1">Select Lvl 1 Skills</a>
+                                        <a data-toggle="collapse" href="#collapse1">Add Lvl 1 Skills</a>
                                     </h6>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{firstSkills.Name}}" ng-click="vm.skillSelected(firstSkills)" ng-repeat="firstSkills in vm.heroClass.skills | filter : skill.XP_Cost = 1" >
+                                    <button class="panel-body" data-value="{{firstSkills.Name}}" ng-click="vm.addSkill(firstSkills)" ng-repeat="firstSkills in vm.heroClass.skills | filter : skill.XP_Cost = 1" >
                                         {{firstSkills.Name}}
                                     </button>
                                 </div>
@@ -61,11 +61,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse2">Select Lvl 2 Skills</a>
+                                        <a data-toggle="collapse" href="#collapse2">Add Lvl 2 Skills</a>
                                     </h6>
                                 </div>
                                 <div id="collapse2" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{secondSkills.Name}}" ng-click="vm.skillSelected(secondSkills)" ng-repeat="secondSkills in vm.heroClass.skills | filter : skill.XP_Cost = 2" >
+                                    <button class="panel-body" data-value="{{secondSkills.Name}}" ng-click="vm.addSkill(secondSkills)" ng-repeat="secondSkills in vm.heroClass.skills | filter : skill.XP_Cost = 2" >
                                         {{secondSkills.Name}}
                                     </button>
                                 </div>
@@ -73,89 +73,91 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse3">Select Lvl 3 Skills</a>
+                                        <a data-toggle="collapse" href="#collapse3">Add Lvl 3 Skills</a>
                                     </h6>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{thirdSkills.Name}}" ng-click="vm.skillSelected(thirdSkills)" ng-repeat="thirdSkills in vm.heroClass.skills | filter : skill.XP_Cost = 3" >
+                                    <button class="panel-body" data-value="{{thirdSkills.Name}}" ng-click="vm.addSkill(thirdSkills)" ng-repeat="thirdSkills in vm.heroClass.skills | filter : skill.XP_Cost = 3" >
                                         {{thirdSkills.Name}}
                                     </button>
                                 </div>
-                            </div>
-                        </div>
-                        <div ng-show="vm.selectedHeroClass">
-                            <div class="active-skills {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
-                                {{skill.Name}}
-                                <span class="skillRemoval" ng-click="">x</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="row character-sheet">
                             <div class="main-stats">
-                                    <div class="speed">
-                                        <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
-                                        <span class="stat-circle speed-stat">{{vm.hero.heroSpeed}}</span>
-                                    </div>
-                                    <div class="health">
-                                        <img class="icon-label health-image" src="images/stats/Health.PNG" />
-                                        <span class="stat-circle health-stat">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
-                                        <input class="btn btn-primary health-add-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == vm.hero.maxHeroHealth ? vm.hero.crntHeroHealth : vm.hero.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary health-subtract-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == 0 ? 0 : vm.hero.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                    </div>
-                                    <div class="stamina">
-                                        <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
-                                        <span class="stat-circle stamina-stat">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
-                                        <input class="btn btn-primary stamina-add-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == vm.hero.maxHeroStamina ? vm.hero.crntHeroStamina : vm.hero.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
-                                        <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == 0 ? 0 : vm.hero.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                    </div>
-                                    <div class="defense">
-                                        <img class="icon-label defense-image" src="images/stats/Defense.png" />
-                                        <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.hero.heroDefense}}" />
-                                        <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
-                                    </div>  
+                                <div class="speed">
+                                    <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
+                                    <span class="stat-circle speed-stat">{{vm.hero.heroSpeed}}</span>
                                 </div>
-                                <div class="col-md-5 col-lg-5">
-                                    <div class="row">
-                                        <div class="col-md-12 hero {{vm.hero.heroArcheType}}">
-                                            <h4 class="text-center">{{vm.hero.heroName || 'Hero Name'}}</h4>
-                                            <img ng-show="vm.hero.heroImageLink" class="hero-image" ng-src="{{vm.hero.heroImageLink}}" />
-                                            <img ng-show="!vm.hero.heroImageLink" class="hero-image" src="images/heroes/Hero_Selection.PNG" />
+                                <div class="health">
+                                    <img class="icon-label health-image" src="images/stats/Health.PNG" />
+                                    <span class="stat-circle health-stat">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
+                                    <input class="btn btn-primary health-add-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == vm.hero.maxHeroHealth ? vm.hero.crntHeroHealth : vm.hero.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                    <input class="btn btn-primary health-subtract-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == 0 ? 0 : vm.hero.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                </div>
+                                <div class="stamina">
+                                    <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
+                                    <span class="stat-circle stamina-stat">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
+                                    <input class="btn btn-primary stamina-add-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == vm.hero.maxHeroStamina ? vm.hero.crntHeroStamina : vm.hero.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                    <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == 0 ? 0 : vm.hero.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
+                                </div>
+                                <div class="defense">
+                                    <img class="icon-label defense-image" src="images/stats/Defense.png" />
+                                    <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.hero.heroDefense}}" />
+                                    <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
+                                </div> 
+                            </div>
+                            <div class="col-md-5 col-lg-5">
+                                <div class="row">
+                                    <div class="col-md-12 hero {{vm.hero.heroArcheType}}">
+                                        <h4 class="text-center">{{vm.hero.heroName || 'Hero Name'}}</h4>
+                                        <img ng-show="vm.hero.heroImageLink" class="hero-image" ng-src="{{vm.hero.heroImageLink}}" />
+                                        <img ng-show="!vm.hero.heroImageLink" class="hero-image" src="images/heroes/Hero_Selection.PNG" />
+                                    </div>
+                                </div>
+                                <div class="row attribute-stats">
+                                    <div class="col-md-12">
+                                        <div class="willpower">
+                                            <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
+                                            <span class="stat-box willpower-stat">{{vm.hero.heroWillpower}}</span>
+                                        </div>
+                                        <div class="might">
+                                            <img class="icon-label might-image" src="images/attributes/Might.PNG">
+                                            <span class="stat-box might-stat">{{vm.hero.heroMight}}</span>
+                                        </div>
+                                        <div class="knowledge">
+                                            <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
+                                            <span class="stat-box knowledge-stat">{{vm.hero.heroKnowledge}}</span>
+                                        </div>
+                                        <div class="awareness">
+                                            <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
+                                            <span class="stat-box awareness-stat">{{vm.hero.heroAwareness}}</span>
                                         </div>
                                     </div>
-                                    <div class="row attribute-stats">
-                                        <div class="col-md-12">
-                                            <div class="willpower">
-                                                <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
-                                                <span class="stat-box willpower-stat">{{vm.hero.heroWillpower}}</span>
-                                            </div>
-                                            <div class="might">
-                                                <img class="icon-label might-image" src="images/attributes/Might.PNG">
-                                                <span class="stat-box might-stat">{{vm.hero.heroMight}}</span>
-                                            </div>
-                                            <div class="knowledge">
-                                                <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
-                                                <span class="stat-box knowledge-stat">{{vm.hero.heroKnowledge}}</span>
-                                            </div>
-                                            <div class="awareness">
-                                                <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
-                                                <span class="stat-box awareness-stat">{{vm.hero.heroAwareness}}</span>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-lg-5 hero-skill">
+                                <div class="row hero-ability">
+                                    <h4>Hero Ability</h4>
+                                    <p class="text-center">{{vm.hero.heroAbility}}</p>
+                                </div>
+                                <div class="row hero-feat">
+                                    <h4>Heroic Feat</h4>
+                                    <p class="text-center">{{vm.hero.heroicFeat}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-lg-2 active-skills">
+                                <div class="row">
+                                    <h4>Active Skills</h4>
+                                    <div class="skill-format {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
+                                        {{skill.Name}}
+                                        <div class="skill-removal btn btn-danger" ng-click="vm.removeSkill(skill)">x</div>
                                     </div>
                                 </div>
-                                <div class="col-md-7 col-lg-7 hero-skill">
-                                    <div class="row hero-ability">
-                                        <h4>Hero Ability</h4>
-                                        <p class="text-center">{{vm.hero.heroAbility}}</p>
-                                    </div>
-                                    <div class="row hero-feat">
-                                        <h4>Heroic Feat</h4>
-                                        <p class="text-center">{{vm.hero.heroicFeat}}</p>
-                                    </div>
-                                </div>
-
-                        </div> 
+                            </div> 
+                        </div>
                     </div>
                     <div class="col-md-2">
                         <h6>Hero Equipment</h6>
@@ -276,7 +278,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
 </body>
 </html>

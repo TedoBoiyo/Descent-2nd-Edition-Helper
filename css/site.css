@@ -1,7 +1,11 @@
 .sheet-tracker .character-selection, .sheet-tracker .class-selection {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   width: 100%;
   font-size: 12px;
+}
+
+.sheet-tracker .panel-body {
+  width: 100%;
 }
 
 .sheet-tracker .character-sheet {
@@ -11,14 +15,11 @@
   border-radius: 10px;
   margin: auto;
   position: relative;
+  overflow: hidden;
 }
 
 .sheet-tracker .character-sheet span {
   font-size: 20px;
-}
-
-.sheet-tracker .character-sheet .Warrior, .sheet-tracker .character-sheet .Mage, .sheet-tracker .character-sheet .Scout, .sheet-tracker .character-sheet .Healer {
-  border-radius: 10px 0 0 0;
 }
 
 .sheet-tracker .character-sheet .Warrior {
@@ -47,7 +48,7 @@
   border: 1px solid black;
   width: 75%;
   background-color: #FFFAFA;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .sheet-tracker .character-sheet .hero .hero-image {
@@ -55,6 +56,12 @@
   overflow: hidden;
   padding-top: 2px;
   padding-bottom: 5px;
+}
+
+.sheet-tracker .character-sheet .skill-removal {
+  background-color: red;
+  color: white;
+  border-radius: 100%;
 }
 
 .sheet-tracker .character-sheet .icon-label {
@@ -216,7 +223,6 @@
 .sheet-tracker .character-sheet .hero-skill {
   height: 100%;
   background-color: #ffec9e;
-  border-radius: 0 10px 10px 0;
 }
 
 .sheet-tracker .character-sheet .hero-skill h4 {
@@ -224,11 +230,13 @@
   width: 200px;
   text-align: center;
   background-color: #ffdd8a;
+  font-size: 16px;
 }
 
 .sheet-tracker .character-sheet .hero-skill .hero-ability, .sheet-tracker .character-sheet .hero-skill .hero-feat {
   height: 50%;
   border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .sheet-tracker .character-sheet .hero-skill .hero-ability h4, .sheet-tracker .character-sheet .hero-skill .hero-feat h4 {
@@ -243,6 +251,44 @@
 
 .sheet-tracker .character-sheet .hero-skill .hero-ability {
   border-bottom: 1px solid black;
+}
+
+.sheet-tracker .character-sheet .active-skills {
+  background-color: #ffdd8a;
+}
+
+.sheet-tracker .character-sheet .active-skills h4 {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 5px;
+  color: black;
+  font-size: 16px;
+  margin: 10px auto 0 auto;
+}
+
+.sheet-tracker .character-sheet .active-skills .skill-format {
+  font-size: 12px;
+  margin: 5px auto 0 auto;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  width: 100px;
+  font-weight: bold;
+  position: relative;
+}
+
+.sheet-tracker .character-sheet .active-skills .skill-format .skill-removal {
+  background-color: red;
+  color: white;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  top: -7px;
+  right: -6px;
+  padding: 0;
+  position: absolute;
 }
 
 .sheet-tracker .dice-results, .sheet-tracker .dice-selection {

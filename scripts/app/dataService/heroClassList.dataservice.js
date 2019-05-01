@@ -571,47 +571,47 @@
                     "className" : "Runemaster", 
                     "skills" : [{ 
                         "XP_Cost" : 0,
-                        "Name" : "Brew Elixir",
+                        "Name" : "Runic Knowledge",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Concotion",
+                        "Name" : "Exploding Rune",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Herbal Lore",
+                        "Name" : "Ghost Armor",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 1,
-                        "Name" : "Inky Substance",
+                        "Name" : "Inscribe Rune",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Bottled Courage",
+                        "Name" : "Iron Will",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Protective Tonic",
+                        "Name" : "Rune Mastery",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 2,
-                        "Name" : "Secret Formula",
+                        "Name" : "Runic Sorcery",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 3,
-                        "Name" : "Hidden Stash",
+                        "Name" : "Break the Rune",
                         "Image" : null
                     },
                     {
                         "XP_Cost" : 3,
-                        "Name" : "Potent Remedies",
+                        "Name" : "Quick Casting",
                         "Image" : null
                     }]
                 }

@@ -1,9 +1,13 @@
 .sheet-tracker {
 
     .character-selection, .class-selection {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         width: 100%;
         font-size: 12px;
+    }
+
+    .panel-body {
+        width: 100%;
     }
 
     .character-sheet {
@@ -13,13 +17,10 @@
         border-radius: 10px;
         margin: auto;
         position: relative;
+        overflow: hidden;
 
         span {
             font-size: 20px;
-        }
-
-        .Warrior, .Mage, .Scout, .Healer {
-            border-radius: 10px 0 0 0;
         }
 
         .Warrior {
@@ -47,7 +48,7 @@
                 border: 1px solid black;
                 width: 75%;
                 background-color: #FFFAFA;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .hero-image {
@@ -56,18 +57,6 @@
                 padding-top: 2px;
                 padding-bottom: 5px;
             }
-        }
-
-        .panel-body {
-            width: 100%;
-        }
-
-        .active-skills {
-            display: inline block;
-            border-radius: 25%;
-            color: white;
-            font-size: 16px;
-            padding: 5px;
         }
 
         .skill-removal {
@@ -253,18 +242,19 @@
         .hero-skill {
             height: 100%;
             background-color: #ffec9e;
-            border-radius: 0 10px 10px 0;
 
             h4 {
                 border: 1px solid black;
                 width: 200px;
                 text-align: center;
                 background-color: #ffdd8a;
+                font-size: 16px;
             }
 
             .hero-ability, .hero-feat {
                 height: 50%;
                 border-left: 1px solid black;
+                border-right: 1px solid black;
 
                 h4 {
                     margin: auto;
@@ -279,6 +269,44 @@
 
             .hero-ability {
                 border-bottom: 1px solid black;
+            }
+        }
+
+        .active-skills {
+            background-color: #ffdd8a;
+
+            h4 {
+                border-bottom: 1px solid black;
+                margin-bottom: 10px;
+                text-align: center;
+                padding: 5px;
+                color: black;
+                font-size: 16px;
+                margin: 10px auto 0 auto;
+            }
+
+            .skill-format {
+                font-size: 12px;
+                margin: 5px auto 0 auto;
+                color: white;
+                border-radius: 20px;
+                padding: 5px 10px 5px 10px;
+                text-align: center;
+                width: 100px;
+                font-weight: bold;
+                position: relative;
+
+                .skill-removal {
+                    background-color: red;
+                    color: white;
+                    border-radius: 100%;
+                    width: 20px;
+                    height: 20px;
+                    top: -7px;
+                    right: -6px;
+                    padding: 0;
+                    position: absolute;
+                }
             }
         }
     }
