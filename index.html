@@ -26,6 +26,20 @@
                         <h4>Token Tracker</h4>
                     </div>
                 </div>
+                <!-- Test this section -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="token-group" ng-repeat="token in vm.tokenList">
+                            <span ng-show="token.hasCount">{{token.count}}</span>
+                            <img class="token" src="{{token.imageLink}}" ng-click="" ng-disable="token.hasCount" />
+                            <div ng-show="token.hasCount">
+                                <input class="btn btn-primary" ng-click="token.count = token.count + 1)" type="image" src="images/misc/ArrowUp.png" />
+                                <input class="btn btn-primary" ng-click="token.count = (token.count == 0 ? 0 : token.count - 1)" type="image" src="images/misc/ArrowDown.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section end -->
                 <hr />
                 
                 <div class="row">
