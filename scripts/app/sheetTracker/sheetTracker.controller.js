@@ -41,6 +41,7 @@ function SheetTrackerController(HeroesListDataService, HeroClassListDataService,
     ///////////
 
     function activate() {
+        
     };
 
     function addSkill(skill) {
