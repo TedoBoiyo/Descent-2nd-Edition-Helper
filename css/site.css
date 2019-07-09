@@ -1,3 +1,7 @@
+.sheet-tracker .token-group .token {
+  border-radius: 100%;
+}
+
 .sheet-tracker .character-selection, .sheet-tracker .class-selection {
   margin-bottom: 5px;
   width: 100%;
