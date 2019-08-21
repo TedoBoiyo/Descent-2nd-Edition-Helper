@@ -1,0 +1,11 @@
+<div class="title-bar" ng-show="!isLoading">
+    <div class="row">
+        <div class="title-area col-md-12">
+            <h1 class="title-name">{{name}}</h1>
+        </div>
+    </div>
+</div>
+<div ng-show='isLoading' class="loading">
+    <span class="fa fa-spinner"></span>
+</div>
+<div ng-transclude ng-show='!isLoading'></div>

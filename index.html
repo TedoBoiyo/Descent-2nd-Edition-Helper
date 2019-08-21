@@ -1,287 +1,47 @@
 <!DOCTYPE html>
-<html ng-app="sheetTracker">
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descent 2E Tracker Helper</title>
-    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="scripts/modules/framework/css/framework.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body> 
-    <div class="container-fluid sheet-tracker" ng-controller="SheetTrackerController as vm">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Descent 2nd Edition Tracker Helper</h2>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-10 offset-1">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Token Tracker</h4>
-                    </div>
-                </div>
-                <!-- Test this section -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="token-group" ng-repeat="token in vm.tokenList">
-                            <span ng-show="token.hasCount">{{token.count}}</span>
-                            <img class="token" src="{{token.imageLink}}" ng-click="" ng-disable="token.hasCount" />
-                            <div ng-show="token.hasCount">
-                                <input class="btn btn-primary" ng-click="token.count = token.count + 1)" type="image" src="images/misc/ArrowUp.png" />
-                                <input class="btn btn-primary" ng-click="token.count = (token.count == 0 ? 0 : token.count - 1)" type="image" src="images/misc/ArrowDown.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Section end -->
-                <hr />
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Character Sheet</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <h6>Select a Hero</h6>
-                        <select ng-model="vm.selectedHero" class="character-selection">
-                            <option class="hero-options" ng-repeat="hero in vm.heroesList" value="{{hero}}">{{hero.heroName}}</option>
-                        </select>
-                        <div ng-show="vm.heroClassList">
-                            <h6>Select a Class</h6>
-                            <select ng-model="vm.selectedHeroClass" class="class-selection">
-                                <option class="class-options" ng-repeat="class in vm.heroClassList" value="{{class}}">{{class.className}}</option>
-                            </select>
-                        </div>
-                        <div class="panel-group" ng-show="vm.selectedHeroClass">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse1">Add Lvl 1 Skills</a>
-                                    </h6>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{firstSkills.Name}}" ng-click="vm.addSkill(firstSkills)" ng-repeat="firstSkills in vm.heroClass.skills | filter : skill.XP_Cost = 1" >
-                                        {{firstSkills.Name}}
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse2">Add Lvl 2 Skills</a>
-                                    </h6>
-                                </div>
-                                <div id="collapse2" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{secondSkills.Name}}" ng-click="vm.addSkill(secondSkills)" ng-repeat="secondSkills in vm.heroClass.skills | filter : skill.XP_Cost = 2" >
-                                        {{secondSkills.Name}}
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h6 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse3">Add Lvl 3 Skills</a>
-                                    </h6>
-                                </div>
-                                <div id="collapse3" class="panel-collapse collapse">
-                                    <button class="panel-body" data-value="{{thirdSkills.Name}}" ng-click="vm.addSkill(thirdSkills)" ng-repeat="thirdSkills in vm.heroClass.skills | filter : skill.XP_Cost = 3" >
-                                        {{thirdSkills.Name}}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row character-sheet">
-                            <div class="main-stats">
-                                <div class="speed">
-                                    <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
-                                    <span class="stat-circle speed-stat">{{vm.hero.heroSpeed}}</span>
-                                </div>
-                                <div class="health">
-                                    <img class="icon-label health-image" src="images/stats/Health.PNG" />
-                                    <span class="stat-circle health-stat">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
-                                    <input class="btn btn-primary health-add-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == vm.hero.maxHeroHealth ? vm.hero.crntHeroHealth : vm.hero.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
-                                    <input class="btn btn-primary health-subtract-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == 0 ? 0 : vm.hero.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                </div>
-                                <div class="stamina">
-                                    <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
-                                    <span class="stat-circle stamina-stat">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
-                                    <input class="btn btn-primary stamina-add-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == vm.hero.maxHeroStamina ? vm.hero.crntHeroStamina : vm.hero.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
-                                    <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == 0 ? 0 : vm.hero.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                </div>
-                                <div class="defense">
-                                    <img class="icon-label defense-image" src="images/stats/Defense.png" />
-                                    <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.hero.heroDefense}}" />
-                                    <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
-                                </div> 
-                            </div>
-                            <div class="col-md-5 col-lg-5">
-                                <div class="row">
-                                    <div class="col-md-12 hero {{vm.hero.heroArcheType}}">
-                                        <h4 class="text-center">{{vm.hero.heroName || 'Hero Name'}}</h4>
-                                        <img ng-show="vm.hero.heroImageLink" class="hero-image" ng-src="{{vm.hero.heroImageLink}}" />
-                                        <img ng-show="!vm.hero.heroImageLink" class="hero-image" src="images/heroes/Hero_Selection.PNG" />
-                                    </div>
-                                </div>
-                                <div class="row attribute-stats">
-                                    <div class="col-md-12">
-                                        <div class="willpower">
-                                            <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
-                                            <span class="stat-box willpower-stat">{{vm.hero.heroWillpower}}</span>
-                                        </div>
-                                        <div class="might">
-                                            <img class="icon-label might-image" src="images/attributes/Might.PNG">
-                                            <span class="stat-box might-stat">{{vm.hero.heroMight}}</span>
-                                        </div>
-                                        <div class="knowledge">
-                                            <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
-                                            <span class="stat-box knowledge-stat">{{vm.hero.heroKnowledge}}</span>
-                                        </div>
-                                        <div class="awareness">
-                                            <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
-                                            <span class="stat-box awareness-stat">{{vm.hero.heroAwareness}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-lg-5 hero-skill">
-                                <div class="row hero-ability">
-                                    <h4>Hero Ability</h4>
-                                    <p class="text-center">{{vm.hero.heroAbility}}</p>
-                                </div>
-                                <div class="row hero-feat">
-                                    <h4>Heroic Feat</h4>
-                                    <p class="text-center">{{vm.hero.heroicFeat}}</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-lg-2 active-skills">
-                                <div class="row">
-                                    <h4>Active Skills</h4>
-                                    <div class="skill-format {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
-                                        {{skill.Name}}
-                                        <div class="skill-removal btn btn-danger" ng-click="vm.removeSkill(skill)">x</div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <h6>Hero Equipment</h6>
-                    </div>
-                </div>
-            </div>    
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#diceModal">
-            Roll Dices!
-        </button>
-        <div id="diceModal" class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Dice Simulator</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="dice-selection">
-                                <div class="col-md-12 attack-dice">
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.attackDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                            <input class="btn btn-primary" ng-click="vm.attackDice = vm.attackDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                            <input class="btn btn-primary" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.redPowerDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/attack/red/Red_Attack_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.redPowerDice = vm.redPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.redPowerDice = (vm.redPowerDice == 0 ? 0 : vm.redPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.yellowPowerDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/attack/yellow/Yellow_Attack_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.yellowPowerDice = vm.yellowPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.yellowPowerDice = (vm.yellowPowerDice == 0 ? 0 : vm.yellowPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.greenPowerDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/attack/green/Green_Attack_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.greenPowerDice = vm.greenPowerDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.greenPowerDice = (vm.greenPowerDice == 0 ? 0 : vm.greenPowerDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 defense-dice">
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.greyDefenseDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/defense/grey/Grey_Defense_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.greyDefenseDice = vm.greyDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.greyDefenseDice = (vm.greyDefenseDice == 0 ? 0 : vm.greyDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.blackDefenseDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/defense/black/Black_Defense_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.blackDefenseDice = vm.blackDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.blackDefenseDice = (vm.blackDefenseDice == 0 ? 0 : vm.blackDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                    <div class="dice-format">
-                                        <span class="dice-count">{{vm.brownDefenseDice}}</span>
-                                        <input class="dice" type="image" src="images/dices/defense/brown/Brown_Defense_Dice_6.PNG" />
-                                        <span class="dice-add-subtract">
-                                                <input class="btn btn-primary" ng-click="vm.brownDefenseDice = vm.brownDefenseDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                                <input class="btn btn-primary" ng-click="vm.brownDefenseDice = (vm.brownDefenseDice == 0 ? 0 : vm.brownDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 dice-results">
-                                <div id="diceResults" name="diceResults">
-                                    <div class="dice-result-format" ng-if="vm.attackDiceResults.length > 0" ng-repeat="attack in vm.attackDiceResults">
-                                        <input class="dice" type="image" ng-src="{{attack.dice}}" />
-                                    </div>
-                                    <hr />
-                                    <div class="dice-result-format" ng-if="vm.defenseDiceResults.length > 0" ng-repeat="defense in vm.defenseDiceResults">
-                                        <input class="dice" type="image" ng-src="{{defense.dice}}" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" ng-click="vm.diceRoll()">Roll</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <script src="https://kit.fontawesome.com/79b48fcc9b.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script> -->
+</head>
+<body class="container-fluid" ng-cloak> 
+    
+    <framework name="Descent 2nd Edition Character Tracker">
+        <dice></dice>
+    </framework>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+
+    <script src="scripts/app/app.module.js"></script>
+    <script src="scripts/app/app.config.js"></script>
+
+    <script src="scripts/modules/framework/framework.module.js"></script>
+    <script src="scripts/modules/framework/framework.directive.js"></script>
+    <script src="scripts/modules/framework/framework.controller.js"></script>
+
+    <script src="scripts/modules/dice/dice.module.js"></script>
+    <script src="scripts/modules/dice/dice.directive.js"></script>
+    <script src="scripts/modules/dice/dice.controller.js"></script>
 
     <script src="scripts/app/dataService/dataservice.module.js"></script>
     <script src="scripts/app/dataService/heroesList.dataservice.js"></script>

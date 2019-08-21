@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,UAAU,EAAE,MAAM;CAiBrB;;AAlBD,AAGI,QAHI,CAGJ,WAAW,CAAC;EACR,SAAS,EAAE,uBAAuB;EAClC,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;CAWnB;;AATG,UAAU,CAAV,IAAU;EACN,EAAE;IACE,SAAS,EAAE,YAAY;;EAG3B,IAAI;IACA,SAAS,EAAE,cAAc",
+    "sources": [
+        "framework.scss"
+    ],
+    "names": [],
+    "file": "framework.css"
+}
