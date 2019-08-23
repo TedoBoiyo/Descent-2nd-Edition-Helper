@@ -1,0 +1,56 @@
+.dice {
+    width: 50px;
+}
+
+.dice-selection {
+    background-color: darkgray;
+    width: 100%;
+
+    .attack-dice {
+        padding-bottom: 5px;
+    }
+
+    .defense-dice {
+        padding-top: 5px;
+    }
+
+    .dice-format {
+        margin-right: 10px;
+        display: inline-block;
+
+        .dice-count {
+            vertical-align: top;
+            font-size: 28px;
+            display: inline-block;
+        }
+
+        .dice-image {
+            display: inline-block;
+        }
+
+        .dice-arrows {
+            display: inline-block;
+            margin-left: -5px;
+        }
+    }
+
+    
+
+    
+}
+
+.dice-results {
+    background-color: grey;
+
+    .dice-result-format {
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+
+.dice-results, .dice-selection {
+    padding: 20px 10px 20px 10px; 
+}
+
+
+

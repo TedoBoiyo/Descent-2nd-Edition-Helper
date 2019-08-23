@@ -295,50 +295,6 @@
   position: absolute;
 }
 
-.sheet-tracker .dice-results, .sheet-tracker .dice-selection {
-  padding: 20px 10px 20px 10px;
-}
-
-.sheet-tracker .dice-results .dice, .sheet-tracker .dice-selection .dice {
-  width: 50px;
-}
-
-.sheet-tracker .dice-results {
-  background-color: grey;
-}
-
-.sheet-tracker .dice-results .dice-result-format {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.sheet-tracker .dice-selection {
-  background-color: darkgray;
-}
-
-.sheet-tracker .dice-selection .attack-dice {
-  padding-bottom: 5px;
-}
-
-.sheet-tracker .dice-selection .defense-dice {
-  padding-top: 5px;
-}
-
-.sheet-tracker .dice-selection .dice-format {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.sheet-tracker .dice-selection .dice-count {
-  vertical-align: top;
-  font-size: 28px;
-}
-
-.sheet-tracker .dice-selection .dice-add-subtract {
-  display: inline-block;
-  margin-left: -5px;
-}
-
 .sheet-tracker .btn-primary {
   height: 25px;
   background-color: lightgray;

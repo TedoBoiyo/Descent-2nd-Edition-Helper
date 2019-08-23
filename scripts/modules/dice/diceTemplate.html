@@ -15,14 +15,20 @@
                     <div class="dice-selection">
                         <div class="col-md-12 attack-dice">
                             <div class="dice-format">
-                                <span class="dice-count">{{vm.attackDice}}</span>
-                                <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
-                                <span class="dice-add-subtract">
-                                    <input class="btn btn-primary" ng-click="vm.attackDice = vm.attackDice + 1" type="image" src="images/misc/ArrowUp.png" />
-                                    <input class="btn btn-primary" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)" type="image" src="images/misc/ArrowDown.png" />
-                                </span>
+                                <div class="dice-count">{{vm.attackDice}}</div>
+                                <div class="dice-image">
+                                    <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
+                                </div>
+                                <div class="dice-arrows">
+                                    <div>
+                                        <i class="btn btn-primary fa fa-caret-up" ng-click="vm.attackDice = vm.attackDice + 1"></i>
+                                    </div>
+                                    <div>
+                                            <i class="btn btn-primary fa fa-caret-down" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="dice-format">
+                            <!-- <div class="dice-format">
                                 <span class="dice-count">{{vm.redPowerDice}}</span>
                                 <input class="dice" type="image" src="images/dices/attack/red/Red_Attack_Dice_6.PNG" />
                                 <span class="dice-add-subtract">
@@ -72,9 +78,9 @@
                                         <input class="btn btn-primary" ng-click="vm.brownDefenseDice = (vm.brownDefenseDice == 0 ? 0 : vm.brownDefenseDice - 1)" type="image" src="images/misc/ArrowDown.png" />
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
-                    <div class="col-md-12 dice-results">
+                    <!-- <div class="col-md-12 dice-results">
                         <div id="diceResults" name="diceResults">
                             <div class="dice-result-format" ng-if="vm.attackDiceResults.length > 0" ng-repeat="attack in vm.attackDiceResults">
                                 <input class="dice" type="image" ng-src="{{attack.dice}}" />
@@ -84,7 +90,7 @@
                                 <input class="dice" type="image" ng-src="{{defense.dice}}" />
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>    
             </div>
             <div class="modal-footer">
