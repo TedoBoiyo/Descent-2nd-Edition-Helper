@@ -15,7 +15,7 @@
                     <div class="dice-selection">
                         <div class="col-md-12 attack-dice">
                             <div class="dice-format">
-                                <div class="dice-count">{{vm.attackDice}}</div>
+                                <div class="dice-count">{{count}}</div>
                                 <div class="dice-image">
                                     <input class="dice" type="image" src="images/dices/attack/blue/Blue_Attack_Dice_6.PNG" />
                                 </div>
@@ -24,7 +24,7 @@
                                         <i class="btn btn-primary fa fa-caret-up" ng-click="vm.attackDice = vm.attackDice + 1"></i>
                                     </div>
                                     <div>
-                                            <i class="btn btn-primary fa fa-caret-down" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)"></i>
+                                        <i class="btn btn-primary fa fa-caret-down" ng-click="vm.attackDice = (vm.attackDice == 0 ? 0 : vm.attackDice - 1)"></i>
                                     </div>
                                 </div>
                             </div>
