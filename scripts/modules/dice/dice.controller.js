@@ -6,47 +6,38 @@
         .controller('diceController', diceController);
 
         diceController.$inject = [
-        '$scope'
+        '$scope',
+        'DiceService'
     ];
 
-    function diceController($scope) {
-        $scope.isLoading = false;
-        $scope.attackDice = [
-            {
-                count: 0,
-                image: 'images/dices/blue/Blue_Attack_Dice_6.PNG'
-            },
-            {
-                count: 0,
-                image: 'images/dices/red/Red_Attack_Dice_6.PNG'
-            },
-            {
-                count: 0,
-                image: 'images/dices/yellow/Yellow_Attack_Dice_6.PNG'
-            },
-            {
-                count: 0,
-                image: 'images/dices/green/Green_Attack_Dice_6.PNG'
-            },
-        ];
-        $scope.defenseDice = [
-            {
-                count: 0,
-                image: 'images/dices/defense/grey/Grey_Defense_Dice_6.PNG'
-            },
-            {
-                count: 0,
-                image: 'images/dices/defense/black/Black_Defense_Dice_6.PNG'
-            },
-            {
-                count: 0,
-                image: 'images/dices/defense/brown/Brown_Defense_Dice_6.PNG'
-            },
-            
-        ];
+    function diceController($scope, DiceService) {
+        $scope.isDiceCalculated = false;
+        $scope.attackDiceResult = [];
+        $scope.defenseDiceResult = [];
+
+        $scope.attackDice = DiceService.getAttackDice();
+        $scope.defenseDice = DiceService.getDefenseDice();
+        $scope.getDiceRoll = getDiceRoll;
+        $scope.resetDice = resetDice;
 
         ///////////
 
-        
+        function getDiceRoll() {
+            $scope.isDiceCalculated = false;
+            $scope.attackDiceResult = DiceService.getDiceRoll($scope.attackDice);
+            $scope.defenseDiceResult = DiceService.getDiceRoll($scope.defenseDice);
+            
+            if($scope.attackDiceResult.length > 0 || $scope.defenseDiceResult.length > 0) {
+                $scope.isDiceCalculated = true;
+            }
+        }
+
+        function resetDice() {
+            $scope.isDiceCalculated = false;
+            $scope.attackDiceResult = [];
+            $scope.defenseDiceResult = [];
+            $scope.attackDice = DiceService.getAttackDice();
+            $scope.defenseDice = DiceService.getDefenseDice();
+        }
     }
 })();

@@ -1,10 +1,11 @@
 .dice {
-    width: 50px;
+    width: 60px;
 }
 
 .dice-selection {
     background-color: darkgray;
     width: 100%;
+    //text-align: center;
 
     .attack-dice {
         padding-bottom: 5px;
@@ -17,6 +18,9 @@
     .dice-format {
         margin-right: 10px;
         display: inline-block;
+        text-align: center;
+        height: 60px;
+        position: relative;
 
         .dice-count {
             vertical-align: top;
@@ -30,17 +34,30 @@
 
         .dice-arrows {
             display: inline-block;
-            margin-left: -5px;
+            margin-right: 50px;
+
+            .fa-plus {
+                height: 50%;
+                top: 0;
+                position: absolute;
+            }
+
+            .fa-minus {
+                height: 50%;
+                bottom: 0;
+                position: absolute;
+            }
         }
     }
+}
 
-    
-
-    
+.result-border {
+    border-top: 2px solid black;
 }
 
 .dice-results {
     background-color: grey;
+    width: 100%;
 
     .dice-result-format {
         display: inline-block;

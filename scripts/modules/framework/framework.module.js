@@ -3,7 +3,8 @@
 
     angular
         .module('framework', [
-            'dice'
+            'dice',
+            'characterSelection'
         ]);
         
 })();
