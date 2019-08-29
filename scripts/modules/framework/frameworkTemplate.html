@@ -9,6 +9,14 @@
     <span class="fa fa-spinner"></span>
 </div>
 <div ng-transclude ng-show='!isLoading'>
-    <dice></dice>
-    <character-selection></character-selection>
+    <div class="row">
+        <div class="col-md-12">
+            <dice></dice>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <character-selection></character-selection>
+        </div>
+    </div>
 </div>

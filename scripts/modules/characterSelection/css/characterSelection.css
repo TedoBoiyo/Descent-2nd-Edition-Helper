@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=characterSelection.css.map */
+.character-selection .selection {
+  display: inline-block;
+  margin: 25px;
+}
+
+.character-selection .selection .select-option {
+  width: 100%;
+}
+/*# sourceMappingURL=characterSelection.css.map */

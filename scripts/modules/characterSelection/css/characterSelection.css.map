@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAEI,oBAFgB,CAEhB,UAAU,CAAC;EACP,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,IAAI;CAKf;;AATL,AAMQ,oBANY,CAEhB,UAAU,CAIN,cAAc,CAAC;EACX,KAAK,EAAE,IAAI;CACd",
     "sources": [
         "characterSelection.scss"
     ],

@@ -1,0 +1,31 @@
+<div class="character-selection">
+    <div class="row text-center">
+        <h2 class="col-md-12">SELECT YOUR CHARACTER!</h2>
+        <div class="col-md-4">
+            
+            <div class="selection">
+                <h3>ROLE</h3>
+                <select class="select-option" ng-model="selectedRole" ng-options="role for role in roles"></select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="selection" ng-show="selectedRole">
+                <h3>HERO</h3>
+                <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole}"></select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="selection" ng-show="selectedRole">
+                <h3>CLASS</h3>
+                <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole}"></select>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button ng-click="confirmSelection()" ng-disabled="!selectedHero || !selectedClass">Confirm</button>
+            <button ng-click="cancelSelection()" ng-disabled="!selectedRole">Cancel</button>
+        </div>
+    </div>
+</div>
