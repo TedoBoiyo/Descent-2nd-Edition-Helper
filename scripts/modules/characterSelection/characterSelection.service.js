@@ -20,7 +20,24 @@
         ///////////
 
         function getRoles() {
-            return ['Healer', 'Mage', 'Scout', 'Warrior']
+            return [
+                {
+                    roleName: 'Healer',
+                    roleImage: 'images/roles/Healer.png'
+                }, 
+                {
+                    roleName: 'Mage',
+                    roleImage: 'images/roles/Mage.png'
+                }, 
+                {
+                    roleName: 'Scout',
+                    roleImage: 'images/roles/Scout.png'
+                },
+                {
+                    roleName: 'Warrior',
+                    roleImage: 'images/roles/Warrior.png'
+                }
+            ]
         }
 
         function getHeroes() {

@@ -21,7 +21,7 @@
         ///////////
 
         function confirmSelection() {
-            alert($scope.selectedRole.concat(' ', $scope.selectedHero.heroName, ' ', $scope.selectedClass.className));
+            alert($scope.selectedRole.roleName.concat(' ', $scope.selectedHero.heroName, ' ', $scope.selectedClass.className));
         }
 
         function cancelSelection() {

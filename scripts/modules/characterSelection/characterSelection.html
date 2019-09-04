@@ -5,19 +5,32 @@
             
             <div class="selection">
                 <h3>ROLE</h3>
-                <select class="select-option" ng-model="selectedRole" ng-options="role for role in roles"></select>
+                <select class="select-option" ng-model="selectedRole" ng-options="role.roleName for role in roles"></select>
+                <div ng-show="selectedRole">
+                    <img src="{{selectedRole.roleImage}}" />
+                </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="selection" ng-show="selectedRole">
                 <h3>HERO</h3>
-                <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole}"></select>
+                <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole.roleName}"></select>
+                <div ng-show="selectedHero">
+                    <img src="{{selectedHero.heroImageLink}}" />
+                </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="selection" ng-show="selectedRole">
                 <h3>CLASS</h3>
-                <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole}"></select>
+                <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole.roleName}"></select>
+                <div ng-show="selectedClass">
+                    <ul>
+                        <li ng-repeat="skill in selectedClass.skills">
+                            {{skill.Name}}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
