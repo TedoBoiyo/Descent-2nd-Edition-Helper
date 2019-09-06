@@ -10,9 +10,9 @@
 </div>
 <div ng-transclude ng-show='!isLoading'>
     <div class="row" ng-show="characterSelected !== null">
-        <div class="col-md-12">
-            <dice></dice>
+        <div class="col-lg-10 offset-lg-1 text-right">
             <button ng-click="characterSelected = null">New Character</button>
+            <dice></dice>
         </div>
     </div>
     <div class="row" ng-show="characterSelected === null">

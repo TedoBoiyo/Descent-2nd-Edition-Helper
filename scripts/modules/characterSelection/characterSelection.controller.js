@@ -41,6 +41,7 @@
             $scope.selectedRole = null;
             $scope.selectedHero = null;
             $scope.selectedClass = null;
+            $scope.characterSelected = null;
         }
     }
 })();

@@ -38,7 +38,10 @@
     </div>
     <hr />
     <div class="row">
-        <div class="col-md-12 text-right">
+        <div class="col-md-3">
+            <button ng-show="characterSelected" ng-click="confirmSelection()" ng-disabled="!characterSelected">Back</button>
+        </div>
+        <div class="col-md-9 text-right">
             <button ng-click="confirmSelection()" ng-disabled="!selectedHero || !selectedClass">Confirm</button>
             <button ng-click="cancelSelection()" ng-disabled="!selectedRole">Cancel</button>
         </div>
