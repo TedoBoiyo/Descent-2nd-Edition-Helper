@@ -5,5 +5,20 @@
 
 .character-selection .selection .select-option {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.character-selection .selection .hero {
+  height: 250px;
+}
+
+.character-selection .selection .skills {
+  text-align: left;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.character-selection .selection .skills .skill-info {
+  height: 250px;
 }
 /*# sourceMappingURL=characterSelection.css.map */

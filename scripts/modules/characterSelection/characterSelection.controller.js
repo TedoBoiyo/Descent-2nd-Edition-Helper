@@ -7,10 +7,14 @@
 
         characterSelectionController.$inject = [
         '$scope',
+        '$rootScope',
         'characterSelectionService'
     ];
 
-    function characterSelectionController($scope, characterSelectionService) {
+    function characterSelectionController($scope, $rootScope, characterSelectionService) {
+        $scope.viewSkillInfo = false;
+        $scope.characterSelected = null;
+
         $scope.roles = characterSelectionService.getRoles();
         $scope.heroes = characterSelectionService.getHeroes();
         $scope.classes = characterSelectionService.getClasses();
@@ -21,7 +25,16 @@
         ///////////
 
         function confirmSelection() {
-            alert($scope.selectedRole.roleName.concat(' ', $scope.selectedHero.heroName, ' ', $scope.selectedClass.className));
+            $scope.characterSelected = {
+                role: $scope.selectedRole,
+                hero: $scope.selectedHero,
+                class: $scope.selectedClass
+            };
+            
+            $rootScope.$broadcast('character-selected', {
+                selectedCharacter: $scope.characterSelected
+            });
+
         }
 
         function cancelSelection() {

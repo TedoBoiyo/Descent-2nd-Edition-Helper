@@ -1110,47 +1110,47 @@
                     "skills" : [{
                         "XP_Cost" : 0,
                         "Name" : "Valor of Heroes",
-                        "Image" : "images/classes/disciple/Valor_of_Heroes.PNG"
+                        "Image" : "images/classes/warrior/champion/Valor_of_Heroes.jpeg"
                     },
                     {
                         "XP_Cost" : 1,
                         "Name" : "A Living Legend",
-                        "Image" : "images/classes/disciple/A_Living_Legend.PNG"
+                        "Image" : "images/classes/warrior/champion/A_Living_Legend.jpeg"
                     },
                     {
                         "XP_Cost" : 1,
                         "Name" : "Glory of Battle",
-                        "Image" : "images/classes/disciple/Glory_of_Battle.PNG"
+                        "Image" : "images/classes/warrior/champion/Glory_of_Battle.jpeg"
                     },
                     {
                         "XP_Cost" : 1,
                         "Name" : "Inspiring Presence",
-                        "Image" : "images/classes/disciple/Inspiring_Presence.PNG"
+                        "Image" : "images/classes/warrior/champion/Inspiring_Presence.jpeg"
                     },
                     {
                         "XP_Cost" : 2,
                         "Name" : "Motivating Charge",
-                        "Image" : "images/classes/disciple/Motivating_Charge.PNG"
+                        "Image" : "images/classes/warrior/champion/Motivating_Charge.jpeg"
                     },
                     {
                         "XP_Cost" : 2,
                         "Name" : "No Mercy",
-                        "Image" : "images/classes/disciple/No_Mercy.PNG"
+                        "Image" : "images/classes/warrior/champion/No_Mercy.jpeg"
                     },
                     {
                         "XP_Cost" : 2,
                         "Name" : "Stoic Resolve",
-                        "Image" : "images/classes/disciple/Stoic_Resolve.PNG"
+                        "Image" : "images/classes/warrior/champion/Stoic_Resolve.jpeg"
                     },
                     {
                         "XP_Cost" : 3,
                         "Name" : "For the Cause",
-                        "Image" : "images/classes/disciple/For_the_Cause.PNG"
+                        "Image" : "images/classes/warrior/champion/For_the_Cause.jpeg"
                     },
                     {
                         "XP_Cost" : 3,
                         "Name" : "Valorous Strike",
-                        "Image" : "images/classes/disciple/Valorous_Strike.PNG"
+                        "Image" : "images/classes/warrior/champion/Valorous_Strike.jpeg"
                     }]
                 },
                 {

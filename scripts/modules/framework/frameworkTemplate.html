@@ -9,12 +9,13 @@
     <span class="fa fa-spinner"></span>
 </div>
 <div ng-transclude ng-show='!isLoading'>
-    <div class="row">
+    <div class="row" ng-show="characterSelected !== null">
         <div class="col-md-12">
             <dice></dice>
+            <button ng-click="characterSelected = null">New Character</button>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-show="characterSelected === null">
         <div class="col-lg-10 offset-lg-1">
             <character-selection></character-selection>
         </div>
