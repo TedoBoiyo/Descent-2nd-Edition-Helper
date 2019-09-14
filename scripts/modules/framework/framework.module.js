@@ -4,7 +4,8 @@
     angular
         .module('framework', [
             'dice',
-            'characterSelection'
+            'characterSelection',
+            'characterSheet'
         ]);
         
 })();

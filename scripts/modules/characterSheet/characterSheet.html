@@ -1,0 +1,83 @@
+
+<div class="character-sheet">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="hero">
+                <h4>{{chosenHero.hero.heroName || 'Hero Name'}}</h4>
+                <div class="hero-image"> 
+                    <img class="image" ng-show="chosenHero" ng-src="{{chosenHero.hero.heroImageLink}}" />
+                    <img class="image" ng-show="!chosenHero" src="images/heroes/Hero_Selection.PNG" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="hero-skill">
+                <div class="row hero-ability">
+                    <h4>Hero Ability</h4>
+                    <p class="text-center">{{vm.hero.heroAbility}}</p>
+                </div>
+                <div class="row hero-feat">
+                    <h4>Heroic Feat</h4>
+                    <p class="text-center">{{vm.hero.heroicFeat}}</p>
+                </div>
+                <div class="col-md-2 col-lg-2 active-skills">
+                    <div class="row">
+                        <h4>Active Skills</h4>
+                        <div class="skill-format {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
+                            {{skill.Name}}
+                            <div class="skill-removal btn btn-danger" ng-click="vm.removeSkill(skill)">x</div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- <div class="main-stats">
+            <div class="speed">
+                <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
+                <span class="stat-circle speed-stat">{{vm.hero.heroSpeed}}</span>
+            </div>
+            <div class="health">
+                <img class="icon-label health-image" src="images/stats/Health.PNG" />
+                <span class="stat-circle health-stat">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
+                <input class="btn btn-primary health-add-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == vm.hero.maxHeroHealth ? vm.hero.crntHeroHealth : vm.hero.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
+                <input class="btn btn-primary health-subtract-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == 0 ? 0 : vm.hero.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
+            </div>
+            <div class="stamina">
+                <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
+                <span class="stat-circle stamina-stat">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
+                <input class="btn btn-primary stamina-add-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == vm.hero.maxHeroStamina ? vm.hero.crntHeroStamina : vm.hero.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
+                <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == 0 ? 0 : vm.hero.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
+            </div>
+            <div class="defense">
+                <img class="icon-label defense-image" src="images/stats/Defense.png" />
+                <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.hero.heroDefense}}" />
+                <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
+            </div> 
+        </div> -->
+            <!-- <div class="row attribute-stats">
+                <div class="col-md-12">
+                    <div class="willpower">
+                        <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
+                        <span class="stat-box willpower-stat">{{vm.hero.heroWillpower}}</span>
+                    </div>
+                    <div class="might">
+                        <img class="icon-label might-image" src="images/attributes/Might.PNG">
+                        <span class="stat-box might-stat">{{vm.hero.heroMight}}</span>
+                    </div>
+                    <div class="knowledge">
+                        <img class="icon-label knowledge-image" src="images/attributes/Knowledge.PNG" />
+                        <span class="stat-box knowledge-stat">{{vm.hero.heroKnowledge}}</span>
+                    </div>
+                    <div class="awareness">
+                        <img class="icon-label awareness-image" src="images/attributes/Awareness.PNG" />
+                        <span class="stat-box awareness-stat">{{vm.hero.heroAwareness}}</span>
+                    </div>
+                </div>
+            </div> -->
+        
+<div style="margin-top: 100px">{{chosenHero}}</div>
+    

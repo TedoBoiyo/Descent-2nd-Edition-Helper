@@ -20,7 +20,13 @@
         $scope.classes = characterSelectionService.getClasses();
 
         $scope.confirmSelection = confirmSelection;
-        $scope.cancelSelection = cancelSelection;
+        $scope.resetSelection = resetSelection;
+
+        // For testing purposes only
+        $scope.selectedRole = $scope.roles[3]
+        $scope.selectedHero = $scope.heroes[3]
+        $scope.selectedClass = $scope.classes[20]
+        confirmSelection();
 
         ///////////
 
@@ -37,7 +43,7 @@
 
         }
 
-        function cancelSelection() {
+        function resetSelection() {
             $scope.selectedRole = null;
             $scope.selectedHero = null;
             $scope.selectedClass = null;

@@ -3,7 +3,7 @@
         <h2 class="col-md-12">SELECT YOUR CHARACTER!</h2>
         <div class="col-md-4 text-right">
             <div class="selection">
-                <h3>ROLE</h3>
+                <h3 class="text-left">ROLE</h3>
                 <select class="select-option" ng-model="selectedRole" ng-options="role.roleName for role in roles"></select>
                 <div ng-show="selectedRole">
                     <img src="{{selectedRole.roleImage}}" />
@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-4">
             <div class="selection" ng-show="selectedRole">
-                <h3>HERO</h3>
+                <h3 class="text-left">HERO</h3>
                 <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole.roleName}"></select>
                 <div ng-show="selectedHero">
                     <img class="hero" src="{{selectedHero.heroImageLink}}" />
@@ -21,7 +21,7 @@
         </div>
         <div class="col-md-4 text-left">
             <div class="selection" ng-show="selectedRole">
-                <h3>CLASS</h3>
+                <h3 class="text-left">CLASS</h3>
                 <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole.roleName}"></select>
                 <div ng-show="selectedClass">
                     <ul class="skills">
@@ -43,7 +43,7 @@
         </div>
         <div class="col-md-9 text-right">
             <button ng-click="confirmSelection()" ng-disabled="!selectedHero || !selectedClass">Confirm</button>
-            <button ng-click="cancelSelection()" ng-disabled="!selectedRole">Cancel</button>
+            <button ng-click="resetSelection()" ng-disabled="!selectedRole">Reset</button>
         </div>
     </div>
 </div>

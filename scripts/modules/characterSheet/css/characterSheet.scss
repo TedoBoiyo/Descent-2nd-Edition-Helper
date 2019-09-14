@@ -1,0 +1,278 @@
+.character-sheet {
+    position: relative;
+
+    span {
+        font-size: 20px;
+    }
+
+    .hero {
+        height: 325px;
+        text-align: center;
+
+        h4 {
+            border: 1px solid black;
+            width: 100%;
+            background-color: #FFFAFA;
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 0;
+        }
+
+        .hero-image {
+            position: relative;
+
+            .image {
+                width: 100%;
+            }
+        }
+    }
+
+    .skill-removal {
+        background-color: red;
+        color: white;
+        border-radius: 100%;
+    }
+
+    .icon-label {
+        width: 50px; 
+        height: 50px; 
+        border-radius: 50%; 
+        position: absolute; 
+        z-index: 3;
+    }
+
+    .btn-primary {
+        height: 25px;
+        background-color: lightgray;
+        border-color: black;
+        border-radius: 0 5px  5px 0;
+        color: black; 
+        position: absolute;
+        z-index: 1;
+    }
+
+    .main-stats {
+        .stat-circle {
+            position: absolute;
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 20px;
+            z-index: 2;
+            color: white;
+        }
+        
+        .speed {
+            .speed-image {
+                left: 205px;
+                top: 0;
+            }
+
+            .speed-stat {
+                left: 240px;
+                top: 10px;
+                background-color: #32CD32;
+            }
+        }
+
+        .health {
+            .health-image {
+                left: 205px;
+                top: 80px;
+            }
+
+            .health-stat {
+                left: 240px;
+                top: 90px;
+                background-color: #FA8072
+            }
+
+            .health-add-btn {
+                left: 300px; 
+                top: 100px; 
+            }
+
+            .health-subtract-btn {
+                left: 300px; 
+                top: 125px;
+            }
+        }
+
+        .stamina {
+            .stamina-image {
+                left: 205px;
+                top: 160px;
+            }
+
+            .stamina-stat {
+                left: 240px;
+                top: 170px;
+                background-color: #FF8C00;
+            }
+
+            .stamina-add-btn {
+                left: 300px; 
+                top: 180px; 
+            }
+
+            .stamina-subtract-btn {
+                left: 300px; 
+                top: 205px;
+            }
+        }
+
+        .defense {
+            .defense-image {
+                left: 205px;
+                top: 240px;
+            }
+
+            .defense-stat {
+                left: 240px;
+                top: 250px;
+                padding-top: 0;
+            }
+        }
+    }
+
+    .attribute-stats {
+        position: relative;
+        height: 151px;
+        background-color: #ffdd8a;
+        border-radius: 0 0 0 10px;
+
+        .stat-box {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 10px;
+            color: white;
+            background-color: red;
+        }
+
+        .willpower {
+            .willpower-image {
+                left: 10px; 
+                top: 85px;
+            }
+
+            .willpower-stat {
+                left: 50px;
+                top: 85px;
+                background-color: #D2691E;
+            }
+        }
+
+        .might {
+            .might-image {
+                left: 10px; 
+                top: 15px;
+            }
+            
+            .might-stat {
+                left: 50px;
+                top: 15px;
+                background-color: #800000;
+            }
+        }
+
+        .knowledge {
+            .knowledge-image {
+                left: 150px; 
+                top: 15px;
+            }
+
+            .knowledge-stat {
+                left: 190px;
+                top: 15px;
+                background-color: #4682B4;
+            }
+        }
+
+        .awareness {
+            .awareness-image {
+                left: 150px; 
+                top: 85px;
+            }
+
+            .awareness-stat {
+                left: 190px;
+                top: 85px;
+                background-color: #696969;
+            }
+        }
+    }
+
+    .hero-skill {
+        height: 100%;
+        background-color: #ffec9e;
+
+        h4 {
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+            background-color: #ffdd8a;
+            font-size: 16px;
+        }
+
+        .hero-ability, .hero-feat {
+            height: 50%;
+
+            h4 {
+                margin: auto;
+            }
+
+            p {
+                padding-left: 50px;
+                padding-right: 50px;
+                overflow: auto;
+            }
+        }
+
+        .hero-ability {
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .active-skills {
+        background-color: #ffdd8a;
+
+        h4 {
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 5px;
+            color: black;
+            font-size: 16px;
+            margin: 10px auto 0 auto;
+        }
+
+        .skill-format {
+            font-size: 12px;
+            margin: 5px auto 0 auto;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 10px 5px 10px;
+            text-align: center;
+            width: 100px;
+            font-weight: bold;
+            position: relative;
+
+            .skill-removal {
+                background-color: red;
+                color: white;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                top: -7px;
+                right: -6px;
+                padding: 0;
+                position: absolute;
+            }
+        }
+    }
+}
