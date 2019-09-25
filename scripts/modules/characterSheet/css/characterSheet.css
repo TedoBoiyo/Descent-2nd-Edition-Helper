@@ -217,8 +217,8 @@
   overflow: auto;
 }
 
-.character-sheet .hero-skill .hero-ability {
-  border-bottom: 1px solid black;
+.character-sheet .class-skill {
+  text-align: left;
 }
 
 .character-sheet .active-skills {

@@ -1,7 +1,7 @@
 
 <div class="character-sheet">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="hero">
                 <h4>{{chosenHero.hero.heroName || 'Hero Name'}}</h4>
                 <div class="hero-image"> 
@@ -10,25 +10,33 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-6">
             <div class="hero-skill">
-                <div class="row hero-ability">
+                <div class="hero-ability">
                     <h4>Hero Ability</h4>
-                    <p class="text-center">{{vm.hero.heroAbility}}</p>
+                    <p class="text-center">{{chosenHero.hero.heroAbility}}</p>
                 </div>
-                <div class="row hero-feat">
+                <div class="hero-feat">
                     <h4>Heroic Feat</h4>
-                    <p class="text-center">{{vm.hero.heroicFeat}}</p>
+                    <p class="text-center">{{chosenHero.hero.heroicFeat}}</p>
                 </div>
-                <div class="col-md-2 col-lg-2 active-skills">
-                    <div class="row">
-                        <h4>Active Skills</h4>
-                        <div class="skill-format {{vm.hero.heroArcheType}}" ng-repeat="skill in vm.activeSkills">
-                            {{skill.Name}}
-                            <div class="skill-removal btn btn-danger" ng-click="vm.removeSkill(skill)">x</div>
-                        </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="class-skill">
+                <h4>Class Skills</h4>
+                <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
+                <span>Show Active Skills</span>
+                <div class="" ng-repeat="skill in chosenHero.class.skills | filter:''">
+                    <input type="checkbox" ng-click="skill.active = !skill.active" />
+                    <a href="#" class="btn">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
+                    <div>
+                        <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
