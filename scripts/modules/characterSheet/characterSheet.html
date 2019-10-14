@@ -1,72 +1,36 @@
-
-<div class="character-sheet">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="hero">
-                <h4>{{chosenHero.hero.heroName || 'Hero Name'}}</h4>
-                <div class="hero-image"> 
-                    <img class="image" ng-show="chosenHero" ng-src="{{chosenHero.hero.heroImageLink}}" />
-                    <img class="image" ng-show="!chosenHero" src="images/heroes/Hero_Selection.PNG" />
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-6">
-            <div class="hero-skill">
-                <div class="hero-ability">
-                    <h4>Hero Ability</h4>
-                    <p class="text-center">{{chosenHero.hero.heroAbility}}</p>
-                </div>
-                <div class="hero-feat">
-                    <h4>Heroic Feat</h4>
-                    <p class="text-center">{{chosenHero.hero.heroicFeat}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="class-skill">
-                <h4>Class Skills</h4>
-                <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
-                <span>Show Active Skills</span>
-                <div class="" ng-repeat="skill in chosenHero.class.skills | filter:''">
-                    <input type="checkbox" ng-click="skill.active = !skill.active" />
-                    <a href="#" class="btn">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
-                    <div>
-                        <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
-                    </div>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="hero">
+            <h4>{{chosenHero.hero.heroName || 'Hero Name'}}</h4>
+            <img class="hero-image" ng-show="chosenHero" ng-src="{{chosenHero.hero.heroImageLink}}" />
+            <img class="hero-image" ng-show="!chosenHero" src="images/heroes/Hero_Selection.PNG" />
         </div>
     </div>
-</div>
-
-
-        <!-- <div class="main-stats">
-            <div class="speed">
-                <img class="icon-label speed-image" src="images/stats/Speed.PNG" />
-                <span class="stat-circle speed-stat">{{vm.hero.heroSpeed}}</span>
+    <div class="col-md-3">
+        <div class="main-stats">
+            <div class="">
+                <img class="" src="images/stats/Speed.PNG" />
+                <span class="">{{vm.hero.heroSpeed}}</span>
             </div>
-            <div class="health">
-                <img class="icon-label health-image" src="images/stats/Health.PNG" />
-                <span class="stat-circle health-stat">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
+            <div class="">
+                <img class=" " src="images/stats/Health.PNG" />
+                <span class="">{{vm.hero.crntHeroHealth + '/' + vm.hero.maxHeroHealth}}</span>
                 <input class="btn btn-primary health-add-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == vm.hero.maxHeroHealth ? vm.hero.crntHeroHealth : vm.hero.crntHeroHealth + 1)" type="image" src="images/misc/ArrowUp.png" />
                 <input class="btn btn-primary health-subtract-btn" ng-click="vm.hero.crntHeroHealth = (vm.hero.crntHeroHealth == 0 ? 0 : vm.hero.crntHeroHealth - 1)" type="image" src="images/misc/ArrowDown.png" />
             </div>
-            <div class="stamina">
-                <img class="icon-label stamina-image" src="images/stats/Stamina.PNG" />
-                <span class="stat-circle stamina-stat">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
+            <div class="">
+                <img class="" src="images/stats/Stamina.PNG" />
+                <span class="">{{vm.hero.crntHeroStamina + '/' + vm.hero.maxHeroStamina}}</span>
                 <input class="btn btn-primary stamina-add-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == vm.hero.maxHeroStamina ? vm.hero.crntHeroStamina : vm.hero.crntHeroStamina + 1)" type="image" src="images/misc/ArrowUp.png" />
                 <input class="btn btn-primary stamina-subtract-btn" ng-click="vm.hero.crntHeroStamina = (vm.hero.crntHeroStamina == 0 ? 0 : vm.hero.crntHeroStamina - 1)" type="image" src="images/misc/ArrowDown.png" />
             </div>
-            <div class="defense">
-                <img class="icon-label defense-image" src="images/stats/Defense.png" />
+            <div class="">
+                <img class="" src="images/stats/Defense.png" />
                 <img ng-show="vm.heroDefense" class="stat-circle defense-stat" ng-src="{{vm.hero.heroDefense}}" />
                 <img ng-show="!vm.heroDefense" class="stat-circle defense-stat" src="images/stats/Defense_Gray.PNG" />
             </div> 
-        </div> -->
-            <!-- <div class="row attribute-stats">
+        </div> 
+            <div class="row attribute-stats">
                 <div class="col-md-12">
                     <div class="willpower">
                         <img class="icon-label willpower-image" src="images/attributes/Willpower.PNG" />
@@ -85,7 +49,38 @@
                         <span class="stat-box awareness-stat">{{vm.hero.heroAwareness}}</span>
                     </div>
                 </div>
-            </div> -->
+            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="hero-skill">
+            <div class="hero-ability">
+                <h4>Hero Ability</h4>
+                <p class="text-center">{{chosenHero.hero.heroAbility}}</p>
+            </div>
+            <div class="hero-feat">
+                <h4>Heroic Feat</h4>
+                <p class="text-center">{{chosenHero.hero.heroicFeat}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="class-skill">
+            <h4>Class Skills</h4>
+            <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
+            <span>Show Active Skills</span>
+            <div class="" ng-repeat="skill in chosenHero.class.skills | filter:''">
+                <input type="checkbox" ng-click="skill.active = !skill.active" />
+                <a href="#" class="btn">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
+                <div>
+                    <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
         
 <div style="margin-top: 100px">{{chosenHero}}</div>
     

@@ -1,17 +1,13 @@
 .character-sheet {
-    position: relative;
-
     span {
         font-size: 20px;
     }
 
     .hero {
-        height: 325px;
         text-align: center;
 
         h4 {
             border: 1px solid black;
-            width: 100%;
             background-color: #FFFAFA;
             font-size: 16px;
             padding: 5px;
@@ -19,11 +15,7 @@
         }
 
         .hero-image {
-            position: relative;
-
-            .image {
-                width: 100%;
-            }
+            width: 100%;
         }
     }
 
@@ -53,87 +45,13 @@
 
     .main-stats {
         .stat-circle {
-            position: absolute;
             border-radius: 50%;
             height: 70px;
             width: 70px;
             border: 1px solid black;
             text-align: center;
             padding-top: 20px;
-            z-index: 2;
             color: white;
-        }
-        
-        .speed {
-            .speed-image {
-                left: 205px;
-                top: 0;
-            }
-
-            .speed-stat {
-                left: 240px;
-                top: 10px;
-                background-color: #32CD32;
-            }
-        }
-
-        .health {
-            .health-image {
-                left: 205px;
-                top: 80px;
-            }
-
-            .health-stat {
-                left: 240px;
-                top: 90px;
-                background-color: #FA8072
-            }
-
-            .health-add-btn {
-                left: 300px; 
-                top: 100px; 
-            }
-
-            .health-subtract-btn {
-                left: 300px; 
-                top: 125px;
-            }
-        }
-
-        .stamina {
-            .stamina-image {
-                left: 205px;
-                top: 160px;
-            }
-
-            .stamina-stat {
-                left: 240px;
-                top: 170px;
-                background-color: #FF8C00;
-            }
-
-            .stamina-add-btn {
-                left: 300px; 
-                top: 180px; 
-            }
-
-            .stamina-subtract-btn {
-                left: 300px; 
-                top: 205px;
-            }
-        }
-
-        .defense {
-            .defense-image {
-                left: 205px;
-                top: 240px;
-            }
-
-            .defense-stat {
-                left: 240px;
-                top: 250px;
-                padding-top: 0;
-            }
         }
     }
 
@@ -217,14 +135,12 @@
             text-align: center;
             background-color: #ffdd8a;
             font-size: 16px;
+            margin: auto;
         }
 
         .hero-ability, .hero-feat {
             height: 50%;
-
-            h4 {
-                margin: auto;
-            }
+            padding-top: 15px;
 
             p {
                 padding-left: 50px;
@@ -234,12 +150,13 @@
         }
 
         .hero-ability {
-            
+            border-bottom: 1px solid black;
         }
     }
 
     .class-skill {
         text-align: left;
+        overflow: auto;
     }
 
     .active-skills {

@@ -1,19 +1,13 @@
-.character-sheet {
-  position: relative;
-}
-
 .character-sheet span {
   font-size: 20px;
 }
 
 .character-sheet .hero {
-  height: 325px;
   text-align: center;
 }
 
 .character-sheet .hero h4 {
   border: 1px solid black;
-  width: 100%;
   background-color: #FFFAFA;
   font-size: 16px;
   padding: 5px;
@@ -21,10 +15,6 @@
 }
 
 .character-sheet .hero .hero-image {
-  position: relative;
-}
-
-.character-sheet .hero .hero-image .image {
   width: 100%;
 }
 
@@ -53,79 +43,13 @@
 }
 
 .character-sheet .main-stats .stat-circle {
-  position: absolute;
   border-radius: 50%;
   height: 70px;
   width: 70px;
   border: 1px solid black;
   text-align: center;
   padding-top: 20px;
-  z-index: 2;
   color: white;
-}
-
-.character-sheet .main-stats .speed .speed-image {
-  left: 205px;
-  top: 0;
-}
-
-.character-sheet .main-stats .speed .speed-stat {
-  left: 240px;
-  top: 10px;
-  background-color: #32CD32;
-}
-
-.character-sheet .main-stats .health .health-image {
-  left: 205px;
-  top: 80px;
-}
-
-.character-sheet .main-stats .health .health-stat {
-  left: 240px;
-  top: 90px;
-  background-color: #FA8072;
-}
-
-.character-sheet .main-stats .health .health-add-btn {
-  left: 300px;
-  top: 100px;
-}
-
-.character-sheet .main-stats .health .health-subtract-btn {
-  left: 300px;
-  top: 125px;
-}
-
-.character-sheet .main-stats .stamina .stamina-image {
-  left: 205px;
-  top: 160px;
-}
-
-.character-sheet .main-stats .stamina .stamina-stat {
-  left: 240px;
-  top: 170px;
-  background-color: #FF8C00;
-}
-
-.character-sheet .main-stats .stamina .stamina-add-btn {
-  left: 300px;
-  top: 180px;
-}
-
-.character-sheet .main-stats .stamina .stamina-subtract-btn {
-  left: 300px;
-  top: 205px;
-}
-
-.character-sheet .main-stats .defense .defense-image {
-  left: 205px;
-  top: 240px;
-}
-
-.character-sheet .main-stats .defense .defense-stat {
-  left: 240px;
-  top: 250px;
-  padding-top: 0;
 }
 
 .character-sheet .attribute-stats {
@@ -201,14 +125,12 @@
   text-align: center;
   background-color: #ffdd8a;
   font-size: 16px;
+  margin: auto;
 }
 
 .character-sheet .hero-skill .hero-ability, .character-sheet .hero-skill .hero-feat {
   height: 50%;
-}
-
-.character-sheet .hero-skill .hero-ability h4, .character-sheet .hero-skill .hero-feat h4 {
-  margin: auto;
+  padding-top: 15px;
 }
 
 .character-sheet .hero-skill .hero-ability p, .character-sheet .hero-skill .hero-feat p {
@@ -217,8 +139,13 @@
   overflow: auto;
 }
 
+.character-sheet .hero-skill .hero-ability {
+  border-bottom: 1px solid black;
+}
+
 .character-sheet .class-skill {
   text-align: left;
+  overflow: auto;
 }
 
 .character-sheet .active-skills {
