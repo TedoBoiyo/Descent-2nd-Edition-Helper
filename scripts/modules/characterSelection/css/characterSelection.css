@@ -1,5 +1,4 @@
 .character-selection .selection {
-  display: inline-block;
   margin: 25px;
 }
 
@@ -9,7 +8,7 @@
 }
 
 .character-selection .selection .hero {
-  height: 250px;
+  width: 100%;
 }
 
 .character-selection .selection .skills {

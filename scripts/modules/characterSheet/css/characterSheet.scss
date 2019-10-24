@@ -1,15 +1,21 @@
 .character-sheet {
+    margin-top: 50px;
+    background-color: lightskyblue;
+
     span {
         font-size: 20px;
     }
 
     .hero {
         text-align: center;
+        padding-left: 0;
+        padding-right: 0;
 
         h4 {
             border: 1px solid black;
             background-color: #FFFAFA;
             font-size: 16px;
+            font-weight: bold;
             padding: 5px;
             margin-bottom: 0;
         }
@@ -19,122 +25,57 @@
         }
     }
 
-    .skill-removal {
-        background-color: red;
-        color: white;
-        border-radius: 100%;
-    }
-
     .icon-label {
         width: 50px; 
         height: 50px; 
         border-radius: 50%; 
-        position: absolute; 
         z-index: 3;
     }
 
-    .btn-primary {
-        height: 25px;
+    .hero-stats {
         background-color: lightgray;
-        border-color: black;
-        border-radius: 0 5px  5px 0;
-        color: black; 
-        position: absolute;
-        z-index: 1;
-    }
+        text-align: left;
+        padding: 0;
 
-    .main-stats {
-        .stat-circle {
-            border-radius: 50%;
-            height: 70px;
-            width: 70px;
-            border: 1px solid black;
-            text-align: center;
-            padding-top: 20px;
-            color: white;
-        }
-    }
-
-    .attribute-stats {
-        position: relative;
-        height: 151px;
-        background-color: #ffdd8a;
-        border-radius: 0 0 0 10px;
-
-        .stat-box {
-            position: absolute;
-            height: 50px;
-            width: 50px;
-            border: 1px solid black;
-            text-align: center;
-            padding-top: 10px;
-            color: white;
-            background-color: red;
+        .main-stats, .attribute-stats {
+            height: 50%;
+            padding: 10px;
         }
 
-        .willpower {
-            .willpower-image {
-                left: 10px; 
-                top: 85px;
-            }
-
-            .willpower-stat {
-                left: 50px;
-                top: 85px;
-                background-color: #D2691E;
-            }
+        .main-stats {
+            border-bottom: 1px solid black;
         }
 
-        .might {
-            .might-image {
-                left: 10px; 
-                top: 15px;
-            }
-            
-            .might-stat {
-                left: 50px;
-                top: 15px;
-                background-color: #800000;
-            }
-        }
-
-        .knowledge {
-            .knowledge-image {
-                left: 150px; 
-                top: 15px;
+        .stat-frame {
+            .stat-circle, .stat-value {
+                padding: 5px;
             }
 
-            .knowledge-stat {
-                left: 190px;
-                top: 15px;
-                background-color: #4682B4;
-            }
-        }
-
-        .awareness {
-            .awareness-image {
-                left: 150px; 
-                top: 85px;
+            .stat-circle {
+                border-radius: 50%;
+                height: 70px;
+                width: 70px;
+                padding: 5px;
             }
 
-            .awareness-stat {
-                left: 190px;
-                top: 85px;
-                background-color: #696969;
+            .stat-value {
+                font-weight: bold;
             }
         }
     }
 
     .hero-skill {
-        height: 100%;
         background-color: #ffec9e;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
 
         h4 {
             border: 1px solid black;
             width: 200px;
-            text-align: center;
             background-color: #ffdd8a;
             font-size: 16px;
+            font-weight: bold;
             margin: auto;
         }
 
@@ -143,9 +84,9 @@
             padding-top: 15px;
 
             p {
-                padding-left: 50px;
-                padding-right: 50px;
+                padding: 10px;
                 overflow: auto;
+                margin-bottom: 0;
             }
         }
 
@@ -157,43 +98,10 @@
     .class-skill {
         text-align: left;
         overflow: auto;
-    }
-
-    .active-skills {
-        background-color: #ffdd8a;
+        padding: 10px 0 10px 0;
 
         h4 {
-            border-bottom: 1px solid black;
-            margin-bottom: 10px;
-            text-align: center;
-            padding: 5px;
-            color: black;
-            font-size: 16px;
-            margin: 10px auto 0 auto;
-        }
-
-        .skill-format {
-            font-size: 12px;
-            margin: 5px auto 0 auto;
-            color: white;
-            border-radius: 20px;
-            padding: 5px 10px 5px 10px;
-            text-align: center;
-            width: 100px;
             font-weight: bold;
-            position: relative;
-
-            .skill-removal {
-                background-color: red;
-                color: white;
-                border-radius: 100%;
-                width: 20px;
-                height: 20px;
-                top: -7px;
-                right: -6px;
-                padding: 0;
-                position: absolute;
-            }
         }
     }
 }

@@ -1,15 +1,23 @@
+.character-sheet {
+  margin-top: 50px;
+  background-color: lightskyblue;
+}
+
 .character-sheet span {
   font-size: 20px;
 }
 
 .character-sheet .hero {
   text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .character-sheet .hero h4 {
   border: 1px solid black;
   background-color: #FFFAFA;
   font-size: 16px;
+  font-weight: bold;
   padding: 5px;
   margin-bottom: 0;
 }
@@ -18,113 +26,56 @@
   width: 100%;
 }
 
-.character-sheet .skill-removal {
-  background-color: red;
-  color: white;
-  border-radius: 100%;
-}
-
 .character-sheet .icon-label {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: absolute;
   z-index: 3;
 }
 
-.character-sheet .btn-primary {
-  height: 25px;
+.character-sheet .hero-stats {
   background-color: lightgray;
-  border-color: black;
-  border-radius: 0 5px  5px 0;
-  color: black;
-  position: absolute;
-  z-index: 1;
+  text-align: left;
+  padding: 0;
 }
 
-.character-sheet .main-stats .stat-circle {
+.character-sheet .hero-stats .main-stats, .character-sheet .hero-stats .attribute-stats {
+  height: 50%;
+  padding: 10px;
+}
+
+.character-sheet .hero-stats .main-stats {
+  border-bottom: 1px solid black;
+}
+
+.character-sheet .hero-stats .stat-frame .stat-circle, .character-sheet .hero-stats .stat-frame .stat-value {
+  padding: 5px;
+}
+
+.character-sheet .hero-stats .stat-frame .stat-circle {
   border-radius: 50%;
   height: 70px;
   width: 70px;
-  border: 1px solid black;
-  text-align: center;
-  padding-top: 20px;
-  color: white;
+  padding: 5px;
 }
 
-.character-sheet .attribute-stats {
-  position: relative;
-  height: 151px;
-  background-color: #ffdd8a;
-  border-radius: 0 0 0 10px;
-}
-
-.character-sheet .attribute-stats .stat-box {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  text-align: center;
-  padding-top: 10px;
-  color: white;
-  background-color: red;
-}
-
-.character-sheet .attribute-stats .willpower .willpower-image {
-  left: 10px;
-  top: 85px;
-}
-
-.character-sheet .attribute-stats .willpower .willpower-stat {
-  left: 50px;
-  top: 85px;
-  background-color: #D2691E;
-}
-
-.character-sheet .attribute-stats .might .might-image {
-  left: 10px;
-  top: 15px;
-}
-
-.character-sheet .attribute-stats .might .might-stat {
-  left: 50px;
-  top: 15px;
-  background-color: #800000;
-}
-
-.character-sheet .attribute-stats .knowledge .knowledge-image {
-  left: 150px;
-  top: 15px;
-}
-
-.character-sheet .attribute-stats .knowledge .knowledge-stat {
-  left: 190px;
-  top: 15px;
-  background-color: #4682B4;
-}
-
-.character-sheet .attribute-stats .awareness .awareness-image {
-  left: 150px;
-  top: 85px;
-}
-
-.character-sheet .attribute-stats .awareness .awareness-stat {
-  left: 190px;
-  top: 85px;
-  background-color: #696969;
+.character-sheet .hero-stats .stat-frame .stat-value {
+  font-weight: bold;
 }
 
 .character-sheet .hero-skill {
-  height: 100%;
   background-color: #ffec9e;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
 }
 
 .character-sheet .hero-skill h4 {
   border: 1px solid black;
   width: 200px;
-  text-align: center;
   background-color: #ffdd8a;
   font-size: 16px;
+  font-weight: bold;
   margin: auto;
 }
 
@@ -134,9 +85,9 @@
 }
 
 .character-sheet .hero-skill .hero-ability p, .character-sheet .hero-skill .hero-feat p {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 10px;
   overflow: auto;
+  margin-bottom: 0;
 }
 
 .character-sheet .hero-skill .hero-ability {
@@ -146,43 +97,10 @@
 .character-sheet .class-skill {
   text-align: left;
   overflow: auto;
+  padding: 10px 0 10px 0;
 }
 
-.character-sheet .active-skills {
-  background-color: #ffdd8a;
-}
-
-.character-sheet .active-skills h4 {
-  border-bottom: 1px solid black;
-  margin-bottom: 10px;
-  text-align: center;
-  padding: 5px;
-  color: black;
-  font-size: 16px;
-  margin: 10px auto 0 auto;
-}
-
-.character-sheet .active-skills .skill-format {
-  font-size: 12px;
-  margin: 5px auto 0 auto;
-  color: white;
-  border-radius: 20px;
-  padding: 5px 10px 5px 10px;
-  text-align: center;
-  width: 100px;
+.character-sheet .class-skill h4 {
   font-weight: bold;
-  position: relative;
-}
-
-.character-sheet .active-skills .skill-format .skill-removal {
-  background-color: red;
-  color: white;
-  border-radius: 100%;
-  width: 20px;
-  height: 20px;
-  top: -7px;
-  right: -6px;
-  padding: 0;
-  position: absolute;
 }
 /*# sourceMappingURL=characterSheet.css.map */
