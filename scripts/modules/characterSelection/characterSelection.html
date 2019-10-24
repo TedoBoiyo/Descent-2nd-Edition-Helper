@@ -1,24 +1,24 @@
 <div class="character-selection">
     <div class="row">
         <h2 class="col-md-12">SELECT YOUR CHARACTER!</h2>
-        <div class="col-md-2">
+        <div class="col-lg-2 col-md-12">
             <div class="selection">
-                <h3 class="text-left">ROLE</h3>
+                <h3>ROLE</h3>
                 <select class="select-option" ng-model="selectedRole" ng-options="role.roleName for role in roles"></select>
                 <div ng-show="selectedRole">
-                    <img src="{{selectedRole.roleImage}}" />
+                    <img class="role" src="{{selectedRole.roleImage}}" />
                 </div>
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-lg-7 col-md-12">
             <div class="selection" ng-show="selectedRole">
-                <h3 class="text-left">HERO</h3>
+                <h3>HERO</h3>
                 <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole.roleName}"></select>
                 <div class="row">
-                    <div class="col-md-3" ng-show="selectedHero">
+                    <div class="col-lg-5" ng-show="selectedHero">
                         <img class="hero" src="{{selectedHero.heroImageLink}}" />
                     </div>
-                    <div class="col-md-9" ng-show="selectedHero">
+                    <div class="col-lg-7" ng-show="selectedHero">
                         <h4>Hero Ability</h4>
                         <p>{{selectedHero.heroAbility}}</p>
                         <h4>Heroic Feat</h4>
@@ -27,14 +27,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 text-left">
+        <div class="col-lg-3 col-md-12">
             <div class="selection" ng-show="selectedRole">
-                <h3 class="text-left">CLASS</h3>
+                <h3>CLASS</h3>
                 <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole.roleName}"></select>
                 <div ng-show="selectedClass">
                     <ul class="skills">
                         <li ng-repeat="skill in selectedClass.skills" ng-init="skill.viewSkillInfo" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">
-                            <a href="#" class="btn">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
+                            <a href="#" class="btn text-left">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
                             <div>
                                 <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
                             </div>
