@@ -16,8 +16,14 @@
     function frameworkController($scope, $window, $timeout, $rootScope, $location) {
         $scope.isLoading = false;
         $scope.characterSelected = null;
+        $scope.isMobile = false;
 
         _addBindings();
+
+        $timeout(function() {
+            checkWidth();
+            broadcastWindowSize();
+        }, 2000);
 
         ///////////
 
@@ -25,6 +31,28 @@
             $scope.$on('character-selected', function(evt, data) {
                 $scope.characterSelected = data.selectedCharacter
             });
-        }        
+
+            $($window).on('resize.framework', function() {
+                $scope.$apply(function() {
+                    checkWidth();
+                    broadcastWindowSize();
+                });
+            });
+
+            $scope.$on('$destory', function() {
+                $($window).off('resize.framework');
+            });
+        }     
+        
+        function checkWidth() {
+            var width = Math.max($($window).innerWidth(), $window.innerWidth);
+            $scope.isMobile = (width < 992);
+        }
+
+        function broadcastWindowSize() {
+            $rootScope.$broadcast('window-size', {
+                isMobile: $scope.isMobile
+            });
+        }
     }
 })();

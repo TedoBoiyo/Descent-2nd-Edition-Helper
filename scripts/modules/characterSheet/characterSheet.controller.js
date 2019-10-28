@@ -11,6 +11,7 @@
 
     function characterSheetController($scope, $parent) {
         $scope.showActiveSkills = false;
+        $scope.isMobile = false;
 
         $scope.hero = $scope.$parent.$parent.characterSelected.hero;
         $scope.class = $scope.$parent.$parent.characterSelected.class;
@@ -26,6 +27,8 @@
         $scope.statMinus = statMinus
         $scope.activeSkillFilter = activeSkillFilter;
         $scope.changeFilter = changeFilter;
+
+        _addBindings();
         
         ///////////
 
@@ -63,6 +66,12 @@
 
         function changeFilter() {
             $scope.showActiveSkills = !$scope.showActiveSkills;
+        }
+
+        function _addBindings() {
+            $scope.$on('window-size', function(_evt, data) {
+                $scope.isMobile = data.isMobile;
+            })
         }
     }
 })();

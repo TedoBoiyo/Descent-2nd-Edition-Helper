@@ -5,7 +5,7 @@
             <div class="selection">
                 <h3>ROLE</h3>
                 <select class="select-option" ng-model="selectedRole" ng-options="role.roleName for role in roles"></select>
-                <div ng-show="selectedRole">
+                <div ng-show="selectedRole && !isMobile">
                     <img class="role" src="{{selectedRole.roleImage}}" />
                 </div>
             </div>
@@ -14,11 +14,11 @@
             <div class="selection" ng-show="selectedRole">
                 <h3>HERO</h3>
                 <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole.roleName}"></select>
-                <div class="row">
-                    <div class="col-lg-5" ng-show="selectedHero">
+                <div class="row" ng-show="selectedHero">
+                    <div class="col-lg-5" ng-show="!isMobile">
                         <img class="hero" src="{{selectedHero.heroImageLink}}" />
                     </div>
-                    <div class="col-lg-7" ng-show="selectedHero">
+                    <div class="col-lg-7">
                         <h4>Hero Ability</h4>
                         <p>{{selectedHero.heroAbility}}</p>
                         <h4>Heroic Feat</h4>

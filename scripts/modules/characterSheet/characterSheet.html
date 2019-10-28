@@ -1,28 +1,33 @@
 <div class="row">
-    <div class="col-md-3 hero">
-        <h4>{{chosenHero.hero.heroName || 'Hero Name'}}</h4>
-        <img class="hero-image" ng-show="hero" ng-src="{{hero.heroImageLink}}" />
-        <img class="hero-image" ng-show="!hero" src="images/heroes/Hero_Selection.PNG" />
+    <div class="col-lg-3 col-md-12 hero">
+        <h4>
+            {{chosenHero.hero.heroName || 'Hero Name'}}
+            <span class="fa" ng-class="{'fa-plus-circle' : !showHeroImage, 'fa-minus-circle' : showHeroImage}" ng-show="isMobile" ng-click="showHeroImage = !showHeroImage"></span>
+        </h4>
+        <div ng-show="showHeroImage || !isMobile">
+            <img class="hero-image" ng-show="hero" ng-src="{{hero.heroImageLink}}" />
+            <img class="hero-image" ng-show="!hero" src="images/heroes/Hero_Selection.PNG" />
+        </div>
     </div>
-    <div class="col-md-3 hero-stats">
+    <div class="col-lg-3 col-md-12 hero-stats">
         <div class="main-stats">
-            <div class="col-md-12 stat-frame">
+            <div class="col-md-12 col-sm-3 stat-frame">
                 <img class="stat-circle" src="images/stats/Speed.PNG" />
                 <span class="stat-value">{{hero.heroSpeed}}</span>
             </div>
-            <div class="col-md-12 stat-frame">
+            <div class="col-md-12 col-sm-3 stat-frame">
                 <img class="stat-circle" src="images/stats/Health.PNG" />
                 <span class="stat-value">{{crntHeroHealth + '/' + maxHeroHealth}}</span>
                 <button class="btn fa fa-plus" ng-click="crntHeroHealth = statAdd(crntHeroHealth, maxHeroHealth)"></button>
                 <button class="btn fa fa-minus" ng-click="crntHeroHealth = statMinus(crntHeroHealth, 'health')"></button>
             </div>
-            <div class="col-md-12 stat-frame">
+            <div class="col-md-12 col-sm-3 stat-frame">
                 <img class="stat-circle" src="images/stats/Stamina.PNG" />
                 <span class="stat-value">{{crntHeroStamina + '/' + maxHeroStamina}}</span>
                 <button class="btn fa fa-plus" ng-click="crntHeroStamina = statAdd(crntHeroStamina, maxHeroStamina, 'stamina')"></button>
                 <button class="btn fa fa-minus" ng-click="crntHeroStamina = crntHeroStamina == 0 ? 0 : crntHeroStamina - 1"></button>
             </div>
-            <div class="col-md-12 stat-frame">
+            <div class="col-md-12 col-sm-3 stat-frame">
                 <img class="stat-circle" src="images/stats/Defense.png" />
                 <img ng-show="hero.heroDefense" class="stat-circle defense-stat" ng-src="{{hero.heroDefense}}" />
             </div> 
@@ -46,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 hero-skill">
+    <div class="col-lg-3 col-md-12 hero-skill">
         <div class="hero-ability">
             <h4>Hero Ability</h4>
             <p class="text-center">{{hero.heroAbility}}</p>
@@ -57,7 +62,7 @@
             <button>Activate</button>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-12">
         <div class="class-skill">
             <h4>Class Skills</h4>
             <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
