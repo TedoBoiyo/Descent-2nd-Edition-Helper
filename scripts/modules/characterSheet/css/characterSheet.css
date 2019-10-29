@@ -26,13 +26,6 @@
   width: 100%;
 }
 
-.character-sheet .icon-label {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 3;
-}
-
 .character-sheet .hero-stats {
   background-color: lightgray;
   text-align: left;
@@ -54,13 +47,17 @@
 
 .character-sheet .hero-stats .stat-frame .stat-circle {
   border-radius: 50%;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   padding: 5px;
 }
 
 .character-sheet .hero-stats .stat-frame .stat-value {
   font-weight: bold;
+}
+
+.character-sheet .hero-stats .btn {
+  padding: 0 6px 0 6px;
 }
 
 .character-sheet .hero-skill {
@@ -80,8 +77,14 @@
 }
 
 .character-sheet .hero-skill .hero-ability, .character-sheet .hero-skill .hero-feat {
-  height: 50%;
   padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .character-sheet .hero-skill .hero-ability, .character-sheet .hero-skill .hero-feat {
+    height: 50%;
+  }
 }
 
 .character-sheet .hero-skill .hero-ability p, .character-sheet .hero-skill .hero-feat p {

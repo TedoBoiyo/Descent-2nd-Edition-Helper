@@ -46,7 +46,7 @@
         
         function checkWidth() {
             var width = Math.max($($window).innerWidth(), $window.innerWidth);
-            $scope.isMobile = (width < 992);
+            $scope.isMobile = (width < 576);
         }
 
         function broadcastWindowSize() {

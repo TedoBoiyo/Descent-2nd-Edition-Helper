@@ -25,13 +25,6 @@
         }
     }
 
-    .icon-label {
-        width: 50px; 
-        height: 50px; 
-        border-radius: 50%; 
-        z-index: 3;
-    }
-
     .hero-stats {
         background-color: lightgray;
         text-align: left;
@@ -53,14 +46,18 @@
 
             .stat-circle {
                 border-radius: 50%;
-                height: 70px;
-                width: 70px;
+                height: 60px;
+                width: 60px;
                 padding: 5px;
             }
 
             .stat-value {
                 font-weight: bold;
             }
+        }
+
+        .btn {
+            padding: 0 6px 0 6px;
         }
     }
 
@@ -80,8 +77,12 @@
         }
 
         .hero-ability, .hero-feat {
-            height: 50%;
             padding-top: 15px;
+            padding-bottom: 15px;
+
+            @media only screen and (min-width: 768px) {
+                height: 50%;
+            }
 
             p {
                 padding: 10px;
