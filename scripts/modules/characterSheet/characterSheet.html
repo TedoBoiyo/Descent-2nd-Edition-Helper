@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 hero">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 hero">
         <h4>
             {{chosenHero.hero.heroName || 'Hero Name'}}
             <span class="fa" ng-class="{'fa-plus-circle' : !showHeroImage, 'fa-minus-circle' : showHeroImage}" ng-show="isMobile" ng-click="showHeroImage = !showHeroImage"></span>
@@ -9,7 +9,7 @@
             <img class="hero-image" ng-show="!hero" src="images/heroes/Hero_Selection.PNG" />
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 hero-stats">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 hero-stats">
         <div class="main-stats">
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Speed.PNG" />
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 hero-skill">
+    <div class="col-lg-3 col-md-6 col-sm-12 col-12 hero-skill">
         <div class="hero-ability">
             <h4>Hero Ability</h4>
             <p class="text-center">{{hero.heroAbility}}</p>
@@ -62,7 +62,7 @@
             <button>Activate</button>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-xs-12">
+    <div class="col-lg-3 col-md-6 col-12">
         <div class="class-skill">
             <h4>Class Skills</h4>
             <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
