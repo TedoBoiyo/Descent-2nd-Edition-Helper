@@ -30,4 +30,8 @@
             transform: rotate(360deg);
   }
 }
+
+.character-nav {
+  margin-top: 25px;
+}
 /*# sourceMappingURL=framework.css.map */
