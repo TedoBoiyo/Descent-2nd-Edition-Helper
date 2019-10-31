@@ -1,7 +1,7 @@
 <div class="character-selection">
     <div class="row">
         <h2 class="col-md-12">SELECT YOUR CHARACTER!</h2>
-        <div class="col-lg-2 col-md-12">
+        <div class="col-lg-2 col-md-2 col-sm-3">
             <div class="selection">
                 <h3>ROLE</h3>
                 <select class="select-option" ng-model="selectedRole" ng-options="role.roleName for role in roles"></select>
@@ -10,15 +10,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7 col-md-12">
+        <div class="col-lg-6 col-md-6 col-sm-9">
             <div class="selection" ng-show="selectedRole">
                 <h3>HERO</h3>
                 <select class="select-option" ng-model="selectedHero" ng-options="hero.heroName for hero in heroes | filter:{heroArcheType:selectedRole.roleName}"></select>
                 <div class="row" ng-show="selectedHero">
-                    <div class="col-lg-5" ng-show="!isMobile">
+                    <div class="col-lg-5 col-md-4 col-sm-4" ng-show="!isMobile">
                         <img class="hero" src="{{selectedHero.heroImageLink}}" />
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 col-md-8 col-sm-8">
                         <h4>Hero Ability</h4>
                         <p>{{selectedHero.heroAbility}}</p>
                         <h4>Heroic Feat</h4>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-12">
+        <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="selection" ng-show="selectedRole">
                 <h3>CLASS</h3>
                 <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole.roleName}"></select>
