@@ -57,9 +57,9 @@
             <p class="text-center">{{hero.heroAbility}}</p>
         </div>
         <div class="hero-feat">
-            <h4>Heroic Feat</h4>
-            <p class="text-center">{{hero.heroicFeat}}</p>
-            <button>Activate</button>
+            <h4>Heroic Feat{{activateHeroicFeat ? ' Expended' : ''}}</h4>
+            <p class="text-center">{{activateHeroicFeat ? hero.heroQuote : hero.heroicFeat}}</p>
+            <button ng-click="activateHeroicFeat = !activateHeroicFeat">{{activateHeroicFeat ? 'Reset' : 'Activate'}}</button>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-12">

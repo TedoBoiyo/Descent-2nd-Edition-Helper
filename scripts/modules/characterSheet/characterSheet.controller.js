@@ -7,11 +7,13 @@
 
         characterSheetController.$inject = [
         '$scope',
+        '$window'
     ];
 
-    function characterSheetController($scope, $parent) {
+    function characterSheetController($scope, $window) {
         $scope.showActiveSkills = false;
         $scope.isMobile = false;
+        $scope.activateHeroicFeat = false;
 
         $scope.hero = $scope.$parent.$parent.characterSelected.hero;
         $scope.class = $scope.$parent.$parent.characterSelected.class;
@@ -21,7 +23,6 @@
         $scope.crntHeroHealth = $scope.hero.heroHealth;
         $scope.maxHeroStamina = $scope.hero.heroStamina;
         $scope.crntHeroStamina = 0;
-        $scope.activate
 
         $scope.statAdd = statAdd;
         $scope.statMinus = statMinus
@@ -29,8 +30,14 @@
         $scope.changeFilter = changeFilter;
 
         _addBindings();
+        activate();
         
         ///////////
+
+        function activate() {
+            var width = Math.max($($window).innerWidth(), $window.innerWidth);
+            $scope.isMobile = (width < 576);
+        }
 
         function statAdd(crntVal, maxVal, statType = null) {
             if (crntVal === maxVal) {
