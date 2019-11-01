@@ -16,8 +16,7 @@
         $scope.activateHeroicFeat = false;
 
         $scope.hero = $scope.$parent.$parent.characterSelected.hero;
-        $scope.class = $scope.$parent.$parent.characterSelected.class;
-        $scope.skills = $scope.$parent.$parent.characterSelected.skills;
+        $scope.skills = $scope.$parent.$parent.characterSelected.class.skills;
 
         $scope.maxHeroHealth = $scope.hero.heroHealth;
         $scope.crntHeroHealth = $scope.hero.heroHealth;

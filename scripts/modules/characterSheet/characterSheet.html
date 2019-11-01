@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12 hero">
         <h4>
-            {{chosenHero.hero.heroName || 'Hero Name'}}
+            {{hero.heroName || 'Hero Name'}}
             <span class="fa" ng-class="{'fa-plus-circle' : !showHeroImage, 'fa-minus-circle' : showHeroImage}" ng-show="isMobile" ng-click="showHeroImage = !showHeroImage"></span>
         </h4>
         <div ng-show="showHeroImage || !isMobile">
@@ -67,14 +67,15 @@
             <h4>Class Skills</h4>
             <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
             <span>Show Active Skills</span>
-            <div class="" ng-repeat="skill in chosenHero.class.skills | filter:''">
+            <div class="" ng-repeat="skill in skills | filter:active:'showActiveSkills'">
                 <input type="checkbox" ng-click="skill.active = !skill.active" />
-                <a href="#" class="btn">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
-                <div>
-                    <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
+                <a href="#" class="btn" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
+                <div ng-show="skill.viewSkillInfo">
+                    <img class="skill-info" src="{{skill.Image}}" />
                 </div>
             </div>
         </div>
     </div>
 </div>
+
     
