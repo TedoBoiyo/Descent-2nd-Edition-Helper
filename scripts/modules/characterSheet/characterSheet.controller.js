@@ -17,6 +17,7 @@
 
         $scope.hero = $scope.$parent.$parent.characterSelected.hero;
         $scope.skills = $scope.$parent.$parent.characterSelected.class.skills;
+        $scope.skills.map(x => x.active = false);
 
         $scope.maxHeroHealth = $scope.hero.heroHealth;
         $scope.crntHeroHealth = $scope.hero.heroHealth;
@@ -25,12 +26,11 @@
 
         $scope.statAdd = statAdd;
         $scope.statMinus = statMinus
-        $scope.activeSkillFilter = activeSkillFilter;
         $scope.changeFilter = changeFilter;
 
         _addBindings();
         activate();
-        
+
         ///////////
 
         function activate() {
@@ -62,16 +62,12 @@
             }
         }
 
-        function activeSkillFilter () {
-            if ($scope.showActiveSkills) {
-                return true;
-            } else {
-                return '';
-            }
-        }
-
         function changeFilter() {
-            $scope.showActiveSkills = !$scope.showActiveSkills;
+            if($scope.showActiveSkills) {
+                return '';
+            } else {
+                return true;
+            }
         }
 
         function _addBindings() {

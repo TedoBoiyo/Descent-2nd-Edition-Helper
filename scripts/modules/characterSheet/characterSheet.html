@@ -65,10 +65,10 @@
     <div class="col-lg-3 col-md-6 col-12">
         <div class="class-skill">
             <h4>Class Skills</h4>
-            <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" ng-click="changeFilter" />
+            <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" />
             <span>Show Active Skills</span>
-            <div class="" ng-repeat="skill in skills | filter:active:'showActiveSkills'">
-                <input type="checkbox" ng-click="skill.active = !skill.active" />
+            <div class="" ng-show="(showActiveSkills && skill.active) || !showActiveSkills" ng-repeat="skill in skills">
+                <input type="checkbox" ng-model='skill.active' ng-init='skill.active = false' />
                 <a href="#" class="btn" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
                 <div ng-show="skill.viewSkillInfo">
                     <img class="skill-info" src="{{skill.Image}}" />
