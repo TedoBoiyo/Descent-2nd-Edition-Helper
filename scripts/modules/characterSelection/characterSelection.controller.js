@@ -26,10 +26,10 @@
         _addBindings();
 
         // For testing purposes only
-        $scope.selectedRole = $scope.roles[3]
-        $scope.selectedHero = $scope.heroes[3]
-        $scope.selectedClass = $scope.classes[20]
-        confirmSelection();
+        // $scope.selectedRole = $scope.roles[3]
+        // $scope.selectedHero = $scope.heroes[3]
+        // $scope.selectedClass = $scope.classes[20]
+        // confirmSelection();
 
         ///////////
 
