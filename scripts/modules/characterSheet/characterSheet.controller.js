@@ -19,11 +19,12 @@
         $scope.skills = $scope.$parent.$parent.characterSelected.class.skills;
         $scope.skills.map(x => x.active = false);
 
-        $scope.maxHeroHealth = $scope.hero.heroHealth;
-        $scope.crntHeroHealth = $scope.hero.heroHealth;
-        $scope.maxHeroStamina = $scope.hero.heroStamina;
+        $scope.maxHeroHealth = $scope.hero.Health;
+        $scope.crntHeroHealth = $scope.hero.Health;
+        $scope.maxHeroStamina = $scope.hero.Stamina;
         $scope.crntHeroStamina = 0;
 
+        $scope.getDefense = getDefense;
         $scope.statAdd = statAdd;
         $scope.statMinus = statMinus
         $scope.changeFilter = changeFilter;
@@ -36,6 +37,16 @@
         function activate() {
             var width = Math.max($($window).innerWidth(), $window.innerWidth);
             $scope.isMobile = (width < 576);
+        }
+
+        function getDefense(color) {
+            if(color === 'gray') {
+                return 'images/stats/Defense_Gray.PNG';
+            } else if (color === 'black') {
+                return 'images/stats/Defense_Black.PNG';
+            } else if (color === 'brown') {
+                return 'images/stats/Defense_Brown.PNG';
+            }
         }
 
         function statAdd(crntVal, maxVal, statType = null) {

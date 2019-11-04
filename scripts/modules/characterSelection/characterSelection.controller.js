@@ -19,6 +19,7 @@
         $scope.roles = characterSelectionService.getRoles();
         $scope.heroes = characterSelectionService.getHeroes();
         $scope.classes = characterSelectionService.getClasses();
+        console.log($scope.heroes);
 
         $scope.confirmSelection = confirmSelection;
         $scope.resetSelection = resetSelection;

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12 hero">
         <h4>
-            {{hero.heroName || 'Hero Name'}}
+            {{hero.Name || 'Hero Name'}}
             <span class="fa" ng-class="{'fa-plus-circle' : !showHeroImage, 'fa-minus-circle' : showHeroImage}" ng-show="isMobile" ng-click="showHeroImage = !showHeroImage"></span>
         </h4>
         <div ng-show="showHeroImage || !isMobile">
@@ -13,7 +13,7 @@
         <div class="main-stats">
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Speed.PNG" />
-                <span class="stat-value">{{hero.heroSpeed}}</span>
+                <span class="stat-value">{{hero.Speed}}</span>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Health.PNG" />
@@ -29,36 +29,36 @@
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Defense.png" />
-                <img ng-show="hero.heroDefense" class="stat-circle defense-stat" ng-src="{{hero.heroDefense}}" />
+                <img ng-show="hero.Defense_Die" class="stat-circle defense-stat" ng-src="{{getDefense(hero.Defense_Die)}}" />
             </div> 
         </div> 
         <div class="attribute-stats">
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/attributes/Willpower.PNG" />
-                <span class="stat-value">{{hero.heroWillpower}}</span>
+                <span class="stat-value">{{hero.Willpower}}</span>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/attributes/Might.PNG">
-                <span class="stat-value">{{hero.heroMight}}</span>
+                <span class="stat-value">{{hero.Strength}}</span>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/attributes/Knowledge.PNG" />
-                <span class="stat-value">{{hero.heroKnowledge}}</span>
+                <span class="stat-value">{{hero.Knowledge}}</span>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/attributes/Awareness.PNG" />
-                <span class="stat-value">{{hero.heroAwareness}}</span>
+                <span class="stat-value">{{hero.Awareness}}</span>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-6 col-sm-12 col-12 hero-skill">
         <div class="hero-ability">
             <h4>Hero Ability</h4>
-            <p class="text-center">{{hero.heroAbility}}</p>
+            <p class="text-center">{{hero.Hero_Ability}}</p>
         </div>
         <div class="hero-feat">
             <h4>Heroic Feat{{activateHeroicFeat ? ' Expended' : ''}}</h4>
-            <p class="text-center">{{activateHeroicFeat ? hero.heroQuote : hero.heroicFeat}}</p>
+            <p class="text-center">{{activateHeroicFeat ? hero.Fluff_Text : hero.Heroic_Feat}}</p>
             <button ng-click="activateHeroicFeat = !activateHeroicFeat">{{activateHeroicFeat ? 'Reset' : 'Activate'}}</button>
         </div>
     </div>
