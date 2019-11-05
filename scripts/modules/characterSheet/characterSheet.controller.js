@@ -19,9 +19,9 @@
         $scope.skills = $scope.$parent.$parent.characterSelected.class.skills;
         $scope.skills.map(x => x.active = false);
 
-        $scope.maxHeroHealth = $scope.hero.Health;
-        $scope.crntHeroHealth = $scope.hero.Health;
-        $scope.maxHeroStamina = $scope.hero.Stamina;
+        $scope.maxHeroHealth = Number($scope.hero.Health);
+        $scope.crntHeroHealth = Number($scope.hero.Health);
+        $scope.maxHeroStamina = Number($scope.hero.Stamina);
         $scope.crntHeroStamina = 0;
 
         $scope.getDefense = getDefense;

@@ -18,14 +18,14 @@
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Health.PNG" />
                 <span class="stat-value">{{crntHeroHealth + '/' + maxHeroHealth}}</span>
-                <button class="btn fa fa-plus" ng-click="crntHeroHealth = statAdd(crntHeroHealth, maxHeroHealth)"></button>
-                <button class="btn fa fa-minus" ng-click="crntHeroHealth = statMinus(crntHeroHealth, 'health')"></button>
+                <button class="btn btn-secondary fa fa-plus" ng-click="crntHeroHealth = statAdd(crntHeroHealth, maxHeroHealth)"></button>
+                <button class="btn btn-secondary fa fa-minus" ng-click="crntHeroHealth = statMinus(crntHeroHealth, 'health')"></button>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Stamina.PNG" />
                 <span class="stat-value">{{crntHeroStamina + '/' + maxHeroStamina}}</span>
-                <button class="btn fa fa-plus" ng-click="crntHeroStamina = statAdd(crntHeroStamina, maxHeroStamina, 'stamina')"></button>
-                <button class="btn fa fa-minus" ng-click="crntHeroStamina = crntHeroStamina == 0 ? 0 : crntHeroStamina - 1"></button>
+                <button class="btn btn-secondary fa fa-plus" ng-click="crntHeroStamina = statAdd(crntHeroStamina, maxHeroStamina, 'stamina')"></button>
+                <button class="btn btn-secondary fa fa-minus" ng-click="crntHeroStamina = statMinus(crntHeroStamina, 'stamina')"></button>
             </div>
             <div class="col-md-12 stat-frame">
                 <img class="stat-circle" src="images/stats/Defense.png" />
