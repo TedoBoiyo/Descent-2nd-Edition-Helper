@@ -5,7 +5,7 @@
             <span class="fa" ng-class="{'fa-plus-circle' : !showHeroImage, 'fa-minus-circle' : showHeroImage}" ng-show="isMobile" ng-click="showHeroImage = !showHeroImage"></span>
         </h4>
         <div ng-show="showHeroImage || !isMobile">
-            <img class="hero-image" ng-show="hero" ng-src="{{hero.heroImageLink}}" />
+            <img class="hero-image" ng-show="hero" ng-src="/images/heroes/{{hero.Name}}.jpg" />
             <img class="hero-image" ng-show="!hero" src="images/heroes/Hero_Selection.PNG" />
         </div>
     </div>

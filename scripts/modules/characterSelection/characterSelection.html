@@ -16,7 +16,7 @@
                 <select class="select-option" ng-model="selectedHero" ng-options="hero.Name + ' ' + hero.CK for hero in heroes | filter:{Type:selectedRole.roleName}"></select>
                 <div class="row" ng-show="selectedHero">
                     <div class="col-lg-5 col-md-4 col-sm-4" ng-show="!isMobile">
-                        <img class="hero" src="{{selectedHero.heroImageLink}}" />
+                        <img class="hero" ng-src="/images/heroes/{{selectedHero.Name}}.jpg" />
                     </div>
                     <div class="col-lg-7 col-md-8 col-sm-8">
                         <h4>Hero Ability</h4>
