@@ -30,13 +30,15 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="selection" ng-show="selectedRole">
                 <h3>CLASS</h3>
-                <select class="select-option" ng-model="selectedClass" ng-options="class.className for class in classes | filter:{classType:selectedRole.roleName}"></select>
+                <select class="select-option" ng-model="selectedClass" ng-options="class.name for class in classes | filter:{role:selectedRole.roleName}"></select>
                 <div ng-show="selectedClass">
                     <ul class="skills">
                         <li ng-repeat="skill in selectedClass.skills" ng-init="skill.viewSkillInfo" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">
                             <a href="#" class="btn text-left">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
-                            <div>
-                                <img ng-show="skill.viewSkillInfo" class="skill-info" src="{{skill.Image}}" />
+                            <div ng-show="skill.viewSkillInfo" class="skill-info">
+                                <p><strong>XP: </strong>{{skill.XP}}</p>
+                                <p><strong>TEXT: </strong>{{skill.Text}}</p>
+                                <p><strong>COST: </strong>{{skill.Cost}}</p>
                             </div>
                         </li>
                     </ul>

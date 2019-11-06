@@ -70,8 +70,10 @@
             <div class="" ng-show="(showActiveSkills && skill.active) || !showActiveSkills" ng-repeat="skill in skills">
                 <input type="checkbox" ng-model='skill.active' ng-init='skill.active = false' />
                 <a href="#" class="btn" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
-                <div ng-show="skill.viewSkillInfo">
-                    <img class="skill-info" src="{{skill.Image}}" />
+                <div ng-show="skill.viewSkillInfo" class="skill-info">
+                    <p><strong>XP: </strong>{{skill.XP}}</p>
+                    <p><strong>TEXT: </strong>{{skill.Text}}</p>
+                    <p><strong>COST: </strong>{{skill.Cost}}</p>
                 </div>
             </div>
         </div>

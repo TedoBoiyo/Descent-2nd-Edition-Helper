@@ -1,0 +1,458 @@
+[
+    {
+        "name" : "Apothecary",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Brew Elixir",
+                "Text" : "Exhaust this card during your turn. Choose yourself or an adjacent hero to gain 1 elixir token. Once during his turn, a hero may discard 1 elixir token to roll 1 red power die and recover Heart equal to the Heart rolled.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Concotion",
+                "Text" : "Action: Perform an attack. If you have at least 1 elixir token, add 1 Surge to the results. This attack gains: Pierce 1 and Surge: +1 Heart",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Herbal Lore",
+                "Text" : "Exhaust this card when a hero discards 1 elixir token. In addition to any other effect from the discarded elixir token, the hero may also discard 1 of his Condition cards.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Inky Substance",
+                "Text" : "Exhaust this card to choose 1 monster within 3 spaces of you and place an elixir token on it. A hero targeting that monster with an attack may discard the elixir token, before his attack roll, to add 1 additional green power die to his attack pool.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Bottled Courage",
+                "Text" : "Exhaust this card during your turn to perform an attack. This attack does not require an action. If you deal at least 1 Heart (after rolling defense dice), choose yourself or an adjacent hero to gain 1 elixir token.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Protective Tonic",
+                "Text" : "Exhaust this card immediately after a hero discards an elixir token to place 1 of his hero tokens on this card. A hero may discard 1 of his hero tokens from this card, before rolling defense dice, to add 1 gray die to his defense pool.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Secret Formula",
+                "Text" : "You gain +2 Health, even while this card is exhausted. Exhaust this card when a hero with an elixir token declares the target for an attack. He may add 1 additional green power die to his attack pool and the attack gains: Surge: +2 Heart",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Hidden Stash",
+                "Text" : "Action: Exhaust this card. You and each adjacent hero gain 1 elixir token.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Potent Remedies",
+                "Text" : "When a hero discards an elixir token from his Hero sheet, he may roll 1 additional green power die and recover Fatigue equal to the Surge rolled, in addition to any Heart recovered (even if this card is exhausted). You may exhaust this card to revive an adjacent hero without using an action.",
+                "Cost" : ""
+            }
+        ]
+    }, 
+    {
+        "name" : "Bard",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Song of Mending",
+                "Text" : "Use this card during your turn to place a song token on this card. 𝄞 At the end of your turn, each hero within 3 spaces of you recovers 1 Heart. 𝄢 At the end of your turn, each other hero within 3 spaces of you recovers 1 Fatigue",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Dissonance",
+                "Text" : "Use this card during your turn to place a song token on this card. 𝄞 If a hero starts his turn within 3 spaces of you, he gains 1 movement point. 𝄢 If a monster within 3 spaces of you is activated, it suffers 1 Heart.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Peaceful Rest",
+                "Text" : "If a hero within 3 spaces of you recovers Fatigue as the result of a rest action, he recovers 2 Heart in addition to the Fatigue.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Understudy",
+                "Text" : "Use this card during your turn to place a song token on this card. 𝄞 Each time a hero within 3 spaces of your recovers 1 or more Heart, he recovers 1 additional Heart. 𝄢 Each time a hero within 3 spaces of your recovers 1 or more Fatigue, he recovers 1 additional Fatigue.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Aria of War",
+                "Text" : "Use this card during your turn to place a song token on this card. 𝄞 If a hero within 3 spaces of you is attacked, he adds 1 Shield to his defense results. 𝄢 If a hero within 3 spaces of you performs an attack, his attack gains +1 Heart.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Concentration",
+                "Text" : "At the start of your turn, if both your song tokens are on different Class cards, you recover 1 Heart and 1 Fatigue. Exhaust this card when a hero within 3 spaces of you recovers 1 or more Heart. That hero recovers 2 additional Heart.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Rehearsal",
+                "Text" : "Use this card during your turn to place a song token on this card. 𝄞 At the end of your turn, choose 1 hero within 3 spaces of you. He may discard 1 Condition card. 𝄢 Each hero within 3 spaces of you may reroll 1 die once per round.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Cacophony",
+                "Text" : "Apply +1 to your Stamina (even while this card is exhausted). Exhaust this card and choose 1 of your Class cards. While this card is exhausted the 𝄞 and 𝄢 effects of the chosen card trigger.",
+                "Cost" : "3 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Wayfarer",
+                "Text" : "Apply +2 to your Health. All of your 𝄞 and 𝄢 effects apply within 5 spaces instead of 3 spaces. Each time you place a song token on one of your Class cards, you may move 1 space.",
+                "Cost" : ""
+            }
+        ]
+    }, 
+    {
+        "name" : "Disciple",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Prayer of Healing",
+                "Text" : "Exhaust this card during your turn and choose yourself or an adjacent hero. Roll 1 red power die. The chosen hero recovers Heart equal to the Heart rolled.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Armor of Faith",
+                "Text" : "Each time you use Prayer of Healing on a hero, that hero adds 1 additional brown die to his defense pool until the start of your next turn. Place a hero token belonging to that hero on this card as a reminder.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Blessed Strike",
+                "Text" : "Action: Perform an attack with a Melee weapon. If you deal at least 1 Heart (after rolling defense dice), you and 1 hero of your choice adjacent to you each recover 2 Heart.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Cleansing Touch",
+                "Text" : "Each time you use Prayer of Healing on a hero, that hero may also discard 1 of his Condition cards.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 2,
+                "Name" : "Divine Fury",
+                "Text" : "Each time you use Prayer of Healing on a hero, that hero adds 1 additional yellow power die to his attack pool on his next attack this round. Place a hero token belonging to that hero on this card as a reminder.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 2,
+                "Name" : "Prayer of Peace",
+                "Text" : "Action: Exhaust this card. While this card is exhausted, monsters cannot perform an attack while adjacent to you.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Time of Need",
+                "Text" : "Action: You receive 2 movement points and recover 2 Fatigue.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 3,
+                "Name" : "Holy Power",
+                "Text" : "Your Prayer of Healing may now affect 2 different heroes. If you roll a Surge on the red power die when using Prayer of Healing, both heroes recover 1 Fatigue.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 3,
+                "Name" : "Radiant Light",
+                "Text" : "Action: Roll 1 red power die. Each hero in your line of sight (including yourself) recovers the amount of Heart rolled. Each monster in your line of sight suffers the amount of Heart rolled.",
+                "Cost" : "3 Fatigue"
+            }
+        ]
+    }, 
+    {
+        "name" : "Prophet",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Soothing Insight",
+                "Text" : "Exhaust this card during your turn. You or 1 hero of your choice gains the insight token. When a hero gains the insight token, he recovers 1Heart and 1Fatigue. A hero with the insight token may discard it during his turn to recover 1Heart.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Battle Vision",
+                "Text" : "You gain +1 Awareness up to a maximum of 6. Each hero within two spaces of the hero with the insight token may suffer 2 Fatigue to reroll 1 attack die once on each attack.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Forewarning",
+                "Text" : "Exhaust this card when a monster attacks a hero with the insight token, after rolling dice. Discard the insight token to add 2 Shield to his result.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Grim Fate",
+                "Text" : "A hero with the insight token may suffer 2 Fatigue and exhaust this card during his turn to force the overlord to reveal the top card of the Overlord deck. That hero forces the overlord to place the revealed card either on the top or the bottom of the Overlord deck.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 2,
+                "Name" : "All-Seeing",
+                "Text" : "Exhaust this card when the insight token is discarded. Another hero of your choice gains the insight token.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Lifeline",
+                "Text" : "Exhaust this card when a hero with the insight token would be defeated. Discard the insight token for that hero to immediately recover 1 Heart.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Victory Foretold",
+                "Text" : "Exhaust this card when a hero with the insight token attacks a monster, before rolling dice. Discard the insight token for that hero to roll an additional green power die on the attack. If the monster is defeated, the hero recovers 3 Heart.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Focused Insights",
+                "Text" : "You gain +2 Health. When a hero gains the insight token, each hero adjacent to that hero recovers 1 Heart and 1 Fatigue.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 3,
+                "Name" : "Omniscience",
+                "Text" : "Exhaust this card when a monster declares a hero with the insight token as the target of an attack, before rolling dice. Discard the insight token to cause the attack to automatically miss.",
+                "Cost" : "3 Fatigue"
+            }
+        ]
+    }, 
+    {
+        "name" : "Soul Reaper",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Essence Harvest",
+                "Text" : "When any monster is defeated, place one damage token on this card. Damage tokens on this card are essence. If you are defeated, discard all essence on this card.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 0,
+                "Name" : "Stream of Life",
+                "Text" : "Exhaust this card during your turn and discard up to 4 essence. Then choose a hero within 3 spaces of you to recover an equal amount of Heart",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Blight Extraction",
+                "Text" : "Each time you use Stream of Life, the chosen hero may also discard 1 Condition. If they do, you may gain that Condition and place 2 damage tokens on Essence Harvest.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Unholy Bond",
+                "Text" : "Each time a monster within 3 spaces performs an attack, you may spend 1 essence to reroll 1 attack or power die.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Spirit Link",
+                "Text" : "At the start of each encounter, place 4 damage tokens on Essence Harvest.Exhaust this card when another hero within 3 spaces of you would be knocked out. Discard any amount of essence. That hero recovers an equal amount of Heart instead.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Cursed Soul",
+                "Text" : "Exhaust this card during your turn and discard 2 essence to choose a monster within 3 spaces of you. Until you refresh this card, each attack that targets that monster deals +1 Heart. Place one of your hero tokens near that monster as a reminder.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Galvanize",
+                "Text" : "When you use Stream of Life, the chosen hero may place one of their hero tokens on this card. A hero may discard their hero token from this card to do 1 of the following: Reroll any 1 die. Move up to 2 spaces and recover 1 Heart during their turn.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 2,
+                "Name" : "Ethereal Armor",
+                "Text" : "Exhaust this card during your turn to choose yourself or an adjacent hero. Place that hero's hero token on this card as a reminder. Until this card is refreshed, each time that hero is affected by an attack, add 1 Shield to the defense results and place 1 damage token on Essence Harvest.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Reaper's Pact",
+                "Text" : "When you use Stream of Life, you may spend 2 additional essence to choose 1 additional hero. When you use Stream of Life, you may spend 1 additional essence to have each chosen hero recover 1 Fatigue.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 3,
+                "Name" : "Font of Vitality",
+                "Text" : "Each time you use Stream of Life or Spirit Link, each hero who recovers Heart recovers 1 additional Heart. When another hero within 3 spaces of you performs a rest action, place 2 damage tokens on Essence Harvest.",
+                "Cost" : ""
+            }
+        ]
+    }, 
+    {
+        "name" : "Spiritspeaker",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Stoneskin",
+                "Text" : "When you or a hero within 3 spaces of you is attacked, before dice are rolled, exhaust this card to add 1 additional gray die to that hero's defense pool.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Drain Spirit",
+                "Text" : "Action: Perform an attack. If you deal at least 1 Heart (after rolling defense dice), each hero within 3 spaces of you (including yourself) recovers 1 Heart.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Healing Rain",
+                "Text" : "Action: Roll 1 red power die. Each hero within 3 spaces of you (including yourself) recovers Heart equal to the Heart rolled.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "Shared Pain",
+                "Text" : "Action: Perform an attack. If you deal at least 1 Heart (after rolling defense dice), each other figure in the target's monster group suffers 1 Heart.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Cloud of Mist",
+                "Text" : "Action: Exhaust this card. While this card is exhausted, each attack that targets a space within 3 spaces of you misses unless the attacker spends 1 Surge.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Nature's Bounty",
+                "Text" : "Each time you recover Fatigue by resting, you also recover Heart equal to the amount of Fatigue recovered.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 2,
+                "Name" : "Tempest",
+                "Text" : "Action: Exhaust this card and test Willpower. If you fail, recover 1 Fatigue. If you pass, each monster within 3 spaces of you suffers 2 Heart and each hero within 3 spaces of you recovers 1 Heart.",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Ancestor Spirits",
+                "Text" : "Exhaust this card when 1 or more monsters suffer Heart from 1 of your class skills. Each of those monsters is Poisoned. Exhaust this card when 1 or more heroes recover Heart or Fatigue from 1 of your class skills. Each of those heroes recovers 1 Heart and 1 Fatigue.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "Vigor",
+                "Text" : "Each of your attacks gains: Surge: Each hero recovers 1 Fatigue.",
+                "Cost" : ""
+            }
+        ]
+    }, 
+    {
+        "name" : "Watchman",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "Vigilance",
+                "Text" : "When you gain this card, choose 1 standard Class deck belonging to the Scout archetype. When you spend experience points, you may purchase skills from either Class deck, excluding cards with an XP cost of 3 from the chosen standard Class deck.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "Quick Recover",
+                "Text" : "Use this card when a hero in your line of sight starts his turn. That hero gains 1 movement point and recovers 1 Heart. Use this card during a heros turn. That hero may immediately flip 1 search card in his play area facedown to discard 1 Condition card.",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "Trailblazer",
+                "Text" : "During the Travel step, apply +2 to your Might, Awareness, Willpower, and Knowledge (to a maximum of 6 each). Exhaust this card during a heros turn. You and each hero adjacent to you may immediately move 1 space.",
+                "Cost" : ""
+            },
+            {
+                "XP" : 3,
+                "Name" : "Unity",
+                "Text" : "Use this card when a hero in your line of sight recovers 1 or more Heart. That hero also recovery 1 Fatigue. Then test Willpower. If you fail, exhaust this card. Each other hero may treat Search cards in your play area as if they were also in his own play area.",
+                "Cost" : ""
+            }
+        ]
+    }, 
+    {
+        "name" : "Bard",
+        "role" : "Healer", 
+        "skills" : [
+            { 
+                "XP" : 0,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 1,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : ""
+            },
+            {
+                "XP" : 1,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "2 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 2,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "1 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : "3 Fatigue"
+            },
+            {
+                "XP" : 3,
+                "Name" : "",
+                "Text" : "",
+                "Cost" : ""
+            }
+        ]
+    }
+]

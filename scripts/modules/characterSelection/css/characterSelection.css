@@ -17,7 +17,7 @@
 }
 
 .character-selection .selection .skills .skill-info {
-  height: 250px;
+  padding-left: 12px;
 }
 
 .footer-controls {

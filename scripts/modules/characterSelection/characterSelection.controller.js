@@ -19,7 +19,7 @@
         $scope.roles = characterSelectionService.getRoles();
         $scope.heroes = characterSelectionService.getHeroes();
         $scope.classes = characterSelectionService.getClasses();
-        console.log($scope.heroes);
+        console.log($scope.classes);
 
         $scope.confirmSelection = confirmSelection;
         $scope.resetSelection = resetSelection;
@@ -27,10 +27,10 @@
         _addBindings();
 
         // For testing purposes only
-        $scope.selectedRole = $scope.roles[3]
-        $scope.selectedHero = $scope.heroes[3]
-        $scope.selectedClass = $scope.classes[20]
-        confirmSelection();
+        // $scope.selectedRole = $scope.roles[3]
+        // $scope.selectedHero = $scope.heroes[3]
+        // $scope.selectedClass = $scope.classes[20]
+        // confirmSelection();
 
         ///////////
 
