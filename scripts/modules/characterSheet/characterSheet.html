@@ -67,7 +67,7 @@
             <h4>Class Skills</h4>
             <input type="checkbox" ng-model='showActiveSkills' ng-init="showActiveSkills = false" />
             <span>Show Active Skills</span>
-            <div class="" ng-show="(showActiveSkills && skill.active) || !showActiveSkills" ng-repeat="skill in skills">
+            <div ng-show="(showActiveSkills && skill.active) || !showActiveSkills" ng-repeat="skill in skills">
                 <input type="checkbox" ng-model='skill.active' ng-init='skill.active = false' />
                 <a href="#" class="btn" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
                 <div ng-show="skill.viewSkillInfo" class="skill-info">
@@ -76,6 +76,20 @@
                     <p><strong>COST: </strong>{{skill.Cost}}</p>
                 </div>
             </div>
+            <!-- <div ng-show="(showActiveSkills && hybridSkill.active) || !showActiveSkills" ng-repeat="hybridSkill in hybridSkills">
+                <h3>HYBRID</h3>
+                <select class="select-option" ng-model="selectedHybridClass" ng-options="hybridClass.name for hybridClass in classes | filter:{role:selectedClass.hybrid}"></select>
+                <ul class="skills">
+                    <li ng-repeat="skill in selectedHybridClass.skills | filter:{XP:'!3'}" ng-init="skill.viewSkillInfo" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">
+                        <a href="#" class="btn text-left">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
+                        <div ng-show="skill.viewSkillInfo" class="skill-info">
+                            <p><strong>XP: </strong>{{skill.XP}}</p>
+                            <p><strong>TEXT: </strong>{{skill.Text}}</p>
+                            <p><strong>COST: </strong>{{skill.Cost}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
         </div>
     </div>
 </div>

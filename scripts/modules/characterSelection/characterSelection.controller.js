@@ -19,7 +19,6 @@
         $scope.roles = characterSelectionService.getRoles();
         $scope.heroes = characterSelectionService.getHeroes();
         $scope.classes = characterSelectionService.getClasses();
-        console.log($scope.classes);
 
         $scope.confirmSelection = confirmSelection;
         $scope.resetSelection = resetSelection;
@@ -38,7 +37,8 @@
             $scope.characterSelected = {
                 role: $scope.selectedRole,
                 hero: $scope.selectedHero,
-                class: $scope.selectedClass
+                class: $scope.selectedClass,
+                hybrid: $scope.selectedHybridClass
             };
             
             $rootScope.$broadcast('character-selected', {
@@ -51,6 +51,7 @@
             $scope.selectedRole = null;
             $scope.selectedHero = null;
             $scope.selectedClass = null;
+            $scope.selectedHybridClass = null;
             $scope.characterSelected = null;
         }
 
