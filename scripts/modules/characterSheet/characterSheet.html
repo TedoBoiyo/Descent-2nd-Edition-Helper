@@ -76,20 +76,18 @@
                     <p><strong>COST: </strong>{{skill.Cost}}</p>
                 </div>
             </div>
-            <!-- <div ng-show="(showActiveSkills && hybridSkill.active) || !showActiveSkills" ng-repeat="hybridSkill in hybridSkills">
-                <h3>HYBRID</h3>
-                <select class="select-option" ng-model="selectedHybridClass" ng-options="hybridClass.name for hybridClass in classes | filter:{role:selectedClass.hybrid}"></select>
-                <ul class="skills">
-                    <li ng-repeat="skill in selectedHybridClass.skills | filter:{XP:'!3'}" ng-init="skill.viewSkillInfo" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">
-                        <a href="#" class="btn text-left">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
-                        <div ng-show="skill.viewSkillInfo" class="skill-info">
-                            <p><strong>XP: </strong>{{skill.XP}}</p>
-                            <p><strong>TEXT: </strong>{{skill.Text}}</p>
-                            <p><strong>COST: </strong>{{skill.Cost}}</p>
-                        </div>
-                    </li>
-                </ul>
-            </div> -->
+            <div ng-show="hybridSkills">
+                <h5>HYBRID</h5>
+                <div ng-repeat="hybridSkill in hybridSkills | filter:{XP:'!3'}" ng-show="(showActiveSkills && hybridSkill.active) || !showActiveSkills">
+                    <input type="checkbox" ng-model='hybridSkill.active' ng-init='hybridSkill.active = false' />
+                    <a href="#" class="btn" ng-click="hybridSkill.viewSkillInfo = !hybridSkill.viewSkillInfo">{{hybridSkill.Name}} <i ng-class="{'fa-plus-circle': !hybridSkill.viewSkillInfo, 'fa-minus-circle': hybridSkill.viewSkillInfo }" class="fa"></i></a>
+                    <div ng-show="hybridSkill.viewSkillInfo" class="skill-info">
+                        <p><strong>XP: </strong>{{hybridSkill.XP}}</p>
+                        <p><strong>TEXT: </strong>{{hybridSkill.Text}}</p>
+                        <p><strong>COST: </strong>{{hybridSkill.Cost}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

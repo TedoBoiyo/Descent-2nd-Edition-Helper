@@ -1,7 +1,8 @@
 [
     {
         "name" : "Apothecary",
-        "role" : "Healer", 
+        "role" : "Healer",
+        "hybrid" : "No", 
         "skills" : [
             { 
                 "XP" : 0,
@@ -61,7 +62,8 @@
     }, 
     {
         "name" : "Bard",
-        "role" : "Healer", 
+        "role" : "Healer",
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -122,6 +124,7 @@
     {
         "name" : "Disciple",
         "role" : "Healer", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -182,6 +185,7 @@
     {
         "name" : "Prophet",
         "role" : "Healer", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -242,6 +246,7 @@
     {
         "name" : "Soul Reaper",
         "role" : "Healer", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -308,6 +313,7 @@
     {
         "name" : "Spiritspeaker",
         "role" : "Healer", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -399,6 +405,7 @@
     {
         "name" : "Bounty Hunter",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -522,6 +529,7 @@
     {
         "name" : "Shadow Walker",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -582,6 +590,7 @@
     {
         "name" : "Stalker",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -642,6 +651,7 @@
     {
         "name" : "Thief",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -702,6 +712,7 @@
     {
         "name" : "Treasure Hunter",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -793,6 +804,7 @@
     {
         "name" : "Wildlander",
         "role" : "Scout", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -884,6 +896,7 @@
     {
         "name" : "Conjurer",
         "role" : "Mage", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -950,6 +963,7 @@
     {
         "name" : "Geomancer",
         "role" : "Mage", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1010,6 +1024,7 @@
     {
         "name" : "Hexer",
         "role" : "Mage", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1101,6 +1116,7 @@
     {
         "name" : "Necromancer",
         "role" : "Mage", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1161,6 +1177,7 @@
     {
         "name" : "Runemaster",
         "role" : "Mage", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1252,6 +1269,7 @@
     {
         "name" : "Beastmaster",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1312,6 +1330,7 @@
     {
         "name" : "Beserker",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1372,6 +1391,7 @@
     {
         "name" : "Champion",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1432,6 +1452,7 @@
     {
         "name" : "Knight",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 1,
@@ -1486,6 +1507,7 @@
     {
         "name" : "Marshal",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,
@@ -1546,6 +1568,7 @@
     {
         "name" : "Skirmisher",
         "role" : "Warrior", 
+        "hybrid" : "No",  
         "skills" : [
             { 
                 "XP" : 0,

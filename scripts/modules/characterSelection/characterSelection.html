@@ -43,9 +43,9 @@
                         </li>
                     </ul>
                 </div>
-                <div ng-show="selectedClass.hybrid">
+                <div ng-show="selectedClass.hybrid !== 'No' && selectedClass.hybrid">
                     <h3>HYBRID</h3>
-                    <select class="select-option" ng-model="selectedHybridClass" ng-options="hybridClass.name for hybridClass in classes | filter:{role:selectedClass.hybrid}"></select>
+                    <select class="select-option" ng-model="selectedHybridClass" ng-options="hybridClass.name for hybridClass in classes | filter:{role:selectedClass.hybrid} | filter:{hybrid:'No'}"></select>
                     <ul class="skills">
                         <li ng-repeat="skill in selectedHybridClass.skills | filter:{XP:'!3'}" ng-init="skill.viewSkillInfo" ng-click="skill.viewSkillInfo = !skill.viewSkillInfo">
                             <a href="#" class="btn text-left">{{skill.Name}} <i ng-class="{'fa-plus-circle': !skill.viewSkillInfo, 'fa-minus-circle': skill.viewSkillInfo }" class="fa"></i></a>
@@ -67,7 +67,7 @@
         </div>
         <div class="col-9 text-right">
             <button ng-click="resetSelection()" ng-disabled="!selectedRole">Reset</button>
-            <button ng-click="confirmSelection()" ng-disabled="!selectedHero || !selectedClass || (selectedClass.hybrid && !selectedHybridClass)">Confirm</button>
+            <button ng-click="confirmSelection()" ng-disabled="!selectedHero || !selectedClass || (selectedClass.hybrid !== 'No' && !selectedHybridClass)">Confirm</button>
         </div>
     </div>
 </div>
