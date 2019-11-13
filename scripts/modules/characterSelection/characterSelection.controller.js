@@ -34,11 +34,13 @@
         ///////////
 
         function confirmSelection() {
+            let isHybrid = $scope.selectedHybridClass ? $scope.selectedHybridClass : null;
+
             $scope.characterSelected = {
                 role: $scope.selectedRole,
                 hero: $scope.selectedHero,
                 class: $scope.selectedClass,
-                hybrid: $scope.selectedHybridClass
+                hybrid: isHybrid
             };
             
             $rootScope.$broadcast('character-selected', {
@@ -51,7 +53,7 @@
             $scope.selectedRole = null;
             $scope.selectedHero = null;
             $scope.selectedClass = null;
-            $scope.selectedHybridClass = null;
+            $scope.selectedHybridClass = undefined;
             $scope.characterSelected = null;
         }
 

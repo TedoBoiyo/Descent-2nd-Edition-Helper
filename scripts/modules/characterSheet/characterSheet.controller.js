@@ -17,10 +17,8 @@
 
         $scope.hero = $scope.$parent.$parent.characterSelected.hero;
         $scope.skills = $scope.$parent.$parent.characterSelected.class.skills;
-        $scope.hybridSkills = $scope.$parent.$parent.characterSelected.hybrid.skills;
-        
+
         $scope.skills.map(x => x.active = false);
-        $scope.hybridSkills.map(x => x.active = false);
 
         $scope.maxHeroHealth = Number($scope.hero.Health);
         $scope.crntHeroHealth = Number($scope.hero.Health);
@@ -31,6 +29,11 @@
         $scope.statAdd = statAdd;
         $scope.statMinus = statMinus
         $scope.changeFilter = changeFilter;
+
+        if ($scope.$parent.$parent.characterSelected.hybrid !== null) {
+            $scope.hybridSkills = $scope.$parent.$parent.characterSelected.hybrid.skills; 
+            $scope.hybridSkills.map(x => x.active = false);
+        }
 
         _addBindings();
         activate();
